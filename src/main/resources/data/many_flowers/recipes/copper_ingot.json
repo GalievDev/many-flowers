@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#D#",
+    "DID",
+    "#D#"
+  ],
+  "key": {
+    "#": {
+      "item": "many_flowers:copper_petal"
+    },
+    "D": {
+      "item": "many_flowers:copper_petal_block"
+    },
+    "I": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "minecraft:copper_ingot",
+    "count": 2
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "many_flowers:block/emerald_petal_block"
+  }
+}

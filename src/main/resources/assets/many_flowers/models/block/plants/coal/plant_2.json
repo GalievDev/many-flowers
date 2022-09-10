@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "many_flowers:block/plants/coal/plant_2"
+  }
+}

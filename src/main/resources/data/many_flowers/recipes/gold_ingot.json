@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#D#",
+    "DID",
+    "#D#"
+  ],
+  "key": {
+    "#": {
+      "item": "many_flowers:gold_petal"
+    },
+    "D": {
+      "item": "many_flowers:gold_petal_block"
+    },
+    "I": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "minecraft:gold_ingot",
+    "count": 2
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "manyflowers",
+  "version": "${version}",
+  "name": "ManyFlowers",
+  "description": "",
+  "authors": [
+    "GalievDev before _VaLiOn_"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.valion.manyflowers.client.ManyFlowersClient"
+    ],
+    "main": [
+      "net.valion.manyflowers.ManyFlowers"
+    ]
+  },
+  "mixins": [
+    "ManyFlowers.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.8",
+    "fabric": "*",
+    "minecraft": "1.18.2"
+  }
+}

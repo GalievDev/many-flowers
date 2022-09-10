@@ -1,0 +1,39 @@
+{
+  "item.many_flowers.diamond_seeds": "Семена Алмаза",
+  "item.many_flowers.coal_seeds": "Семена Угля",
+  "item.many_flowers.iron_seeds": "Семена Железа",
+  "item.many_flowers.gold_seeds": "Семена Золота",
+  "item.many_flowers.emerald_seeds": "Семена Емеральда",
+  "item.many_flowers.copper_seeds": "Семена Меди",
+  "item.many_flowers.diamond_petal": "Алмазный Лепесток",
+  "item.many_flowers.coal_petal": "Угольный Лепесток",
+  "item.many_flowers.iron_petal": "Железный Лепесток",
+  "item.many_flowers.gold_petal": "Золотой Лепесток",
+  "item.many_flowers.emerald_petal": "Емеральдовый Лепесток",
+  "item.many_flowers.copper_petal": "Медный Лепесток",
+
+  "block.many_flowers.alstroemeria_flower": "Алстроемерия",
+  "block.many_flowers.hydrangea_flower": "Гортензия",
+  "block.many_flowers.marigold_flower": "Бархатцы",
+
+  "block.many_flowers.diamond_flower": "Алмазный Цветок",
+  "block.many_flowers.coal_flower": "Угольный Цветок",
+  "block.many_flowers.iron_flower": "Железный Цветок",
+  "block.many_flowers.gold_flower": "Золотой Цветок",
+  "block.many_flowers.emerald_flower": "Емеральдовый Цветок",
+  "block.many_flowers.copper_flower": "Медный Цветок",
+
+  "block.many_flowers.diamond_plant": "Алмазный Поссев",
+  "block.many_flowers.coal_plant": "Угольный Поссев",
+  "block.many_flowers.iron_plant": "Железный Поссев",
+  "block.many_flowers.gold_plant": "Золотой Поссев",
+  "block.many_flowers.emerald_plant": "Емеральдовый Пассев",
+  "block.many_flowers.copper_plant": "Медный Пассев",
+
+  "block.many_flowers.diamond_petal_block": "Алмазный Блок Лепестков",
+  "block.many_flowers.coal_petal_block": "Угольный Блок Лепестков",
+  "block.many_flowers.iron_petal_block": "Железный Блок Лепестков",
+  "block.many_flowers.gold_petal_block": "Золотой Блок Лепестков",
+  "block.many_flowers.emerald_petal_block": "Емеральдовый Блок Лепестков",
+  "block.many_flowers.copper_petal_block": "Медный Блок Лепестков"
+}
