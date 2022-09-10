@@ -28,32 +28,32 @@ public class ModConfiguredFeatures {
     ///Ore Flowers///
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> DIAMOND_FLOWER =
             ConfiguredFeatures.register("diamond_flower", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(1, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(OreFlowers.DIAMOND_FLOWER)))));
 
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> COAL_FLOWER =
             ConfiguredFeatures.register("coal_flower", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(1, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(OreFlowers.COAL_FLOWER)))));
 
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> IRON_FLOWER =
             ConfiguredFeatures.register("iron_flower", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(1, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(OreFlowers.IRON_FLOWER)))));
 
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> GOLD_FLOWER =
             ConfiguredFeatures.register("gold_flower", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(1, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(OreFlowers.GOLD_FLOWER)))));
 
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> EMERALD_FLOWER =
             ConfiguredFeatures.register("emerald_flower", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(1, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(OreFlowers.EMERALD_FLOWER)))));
 
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> COPPER_FLOWER =
             ConfiguredFeatures.register("copper_flower", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(1, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(OreFlowers.COPPER_FLOWER)))));
 
     public static void registerConfiguredFeatures() {

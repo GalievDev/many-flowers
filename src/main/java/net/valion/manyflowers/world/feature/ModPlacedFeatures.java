@@ -22,26 +22,26 @@ public class ModPlacedFeatures {
 
     //Ore FLowers//
     public static final RegistryEntry<PlacedFeature> DIAMOND_PLACED = PlacedFeatures.register("diamond_placed",
-            ModConfiguredFeatures.DIAMOND_FLOWER, RarityFilterPlacementModifier.of(50), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.DIAMOND_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> COAL_PLACED = PlacedFeatures.register("coal_placed",
-            ModConfiguredFeatures.COAL_FLOWER, RarityFilterPlacementModifier.of(50), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.COAL_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> IRON_PLACED = PlacedFeatures.register("iron_placed",
-            ModConfiguredFeatures.IRON_FLOWER, RarityFilterPlacementModifier.of(50), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.IRON_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> GOLD_PLACED = PlacedFeatures.register("gold_placed",
-            ModConfiguredFeatures.GOLD_FLOWER, RarityFilterPlacementModifier.of(50), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.GOLD_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> EMERALD_PLACED = PlacedFeatures.register("emerald_placed",
-            ModConfiguredFeatures.EMERALD_FLOWER, RarityFilterPlacementModifier.of(50), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.EMERALD_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> COPPER_PLACED = PlacedFeatures.register("copper_placed",
-            ModConfiguredFeatures.COPPER_FLOWER, RarityFilterPlacementModifier.of(50), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.COPPER_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 }
