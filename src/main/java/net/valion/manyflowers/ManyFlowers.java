@@ -1,6 +1,7 @@
 package net.valion.manyflowers;
 
 import net.fabricmc.api.ModInitializer;
+import net.valion.manyflowers.particle.FlowerParticles;
 import net.valion.manyflowers.setup.Flowers;
 import net.valion.manyflowers.setup.OreFlowers;
 import net.valion.manyflowers.setup.ItemsReg;
@@ -18,6 +19,7 @@ public class ManyFlowers implements ModInitializer {
         ItemsReg.registerModItems();
         Flowers.registerModBlocks();
         OreFlowers.registerModBlocks();
+        FlowerParticles.registerParticles();
 
         ModConfiguredFeatures.registerConfiguredFeatures();
 

@@ -20,6 +20,10 @@ public class ModPlacedFeatures {
             ModConfiguredFeatures.MARIGOLD_FLOWER, RarityFilterPlacementModifier.of(3), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
+    public static final RegistryEntry<PlacedFeature> ALYSSUM_PLACED = PlacedFeatures.register("alyssum_placed",
+            ModConfiguredFeatures.SWEET_ALYSSUM, RarityFilterPlacementModifier.of(16), SquarePlacementModifier.of(),
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+
     //Ore FLowers//
     public static final RegistryEntry<PlacedFeature> DIAMOND_PLACED = PlacedFeatures.register("diamond_placed",
             ModConfiguredFeatures.DIAMOND_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),

@@ -5,18 +5,21 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
+import net.minecraft.block.Material;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.block.SweetAlyssum;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -37,7 +40,9 @@ public class Flowers {
             new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 3,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()));
 
-
+    public static final Block SWEET_ALYSSUM = registerBlock("sweet_alyssum",
+            new SweetAlyssum(StatusEffects.ABSORPTION, 3,
+                    FabricBlockSettings.of(Material.PLANT).nonOpaque().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(5)));
 
     private static Item registerBlockItem(String name, Block block, ItemGroup group, String tooltipKey) {
         return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name),
