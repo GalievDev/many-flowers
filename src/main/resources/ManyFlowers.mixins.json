@@ -4,6 +4,7 @@
   "package": "net.valion.manyflowers.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "CreeperEntityMixin"
   ],
   "client": [
   ],

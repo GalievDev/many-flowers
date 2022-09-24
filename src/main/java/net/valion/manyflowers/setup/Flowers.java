@@ -42,7 +42,11 @@ public class Flowers {
 
     public static final Block SWEET_ALYSSUM = registerBlock("sweet_alyssum",
             new SweetAlyssum(StatusEffects.ABSORPTION, 3,
-                    FabricBlockSettings.of(Material.PLANT).nonOpaque().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(5)));
+                    FabricBlockSettings.of(Material.PLANT).nonOpaque().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(7)));
+
+    public static final Block CREEPER_FEAR = registerBlock("creeper_fear",
+            new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 3,
+                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()));
 
     private static Item registerBlockItem(String name, Block block, ItemGroup group, String tooltipKey) {
         return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name),
