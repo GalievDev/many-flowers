@@ -1,4 +1,4 @@
-package net.valion.manyflowers.block;
+package net.valion.manyflowers.block.flowers;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FlowerBlock;

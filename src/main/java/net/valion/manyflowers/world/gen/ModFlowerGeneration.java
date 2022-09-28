@@ -16,6 +16,8 @@ public class ModFlowerGeneration {
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.MARIGOLD_PLACED.getKey().get());
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.RIVER, Biome.Category.OCEAN),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ALYSSUM_PLACED.getKey().get());
+        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.SWAMP),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.HEMLOCK_PLACED.getKey().get());
 
         //Ore FLowers//
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.FOREST),

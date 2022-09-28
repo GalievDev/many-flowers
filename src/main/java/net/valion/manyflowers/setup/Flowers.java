@@ -2,10 +2,7 @@ package net.valion.manyflowers.setup;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowerBlock;
-import net.minecraft.block.Material;
+import net.minecraft.block.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
@@ -19,7 +16,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
-import net.valion.manyflowers.block.SweetAlyssum;
+import net.valion.manyflowers.block.flowers.SweetAlyssum;
+import net.valion.manyflowers.block.flowers.WaterHemlock;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -43,6 +41,9 @@ public class Flowers {
     public static final Block SWEET_ALYSSUM = registerBlock("sweet_alyssum",
             new SweetAlyssum(StatusEffects.ABSORPTION, 3,
                     FabricBlockSettings.of(Material.PLANT).nonOpaque().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(5)));
+
+    public static final Block WATER_HEMLOCK = registerBlock("water_hemlock",
+            new WaterHemlock(AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS)));
 
     private static Item registerBlockItem(String name, Block block, ItemGroup group, String tooltipKey) {
         return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name),

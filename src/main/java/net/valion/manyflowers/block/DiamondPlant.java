@@ -6,6 +6,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 
@@ -45,5 +46,10 @@ public class DiamondPlant extends CropBlock {
     }
     protected int getGrowthAmount(World world) {
         return MathHelper.nextInt(world.random, 2, 5);
+    }
+
+    @Override
+    public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
+        return false;
     }
 }

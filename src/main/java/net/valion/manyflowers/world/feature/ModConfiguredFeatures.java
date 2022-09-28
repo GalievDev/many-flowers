@@ -1,6 +1,7 @@
 package net.valion.manyflowers.world.feature;
 
 import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.world.gen.ProbabilityConfig;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.valion.manyflowers.setup.Flowers;
@@ -29,6 +30,9 @@ public class ModConfiguredFeatures {
             ConfiguredFeatures.register("sweet_alyssum", Feature.FLOWER,
                     ConfiguredFeatures.createRandomPatchFeatureConfig(25, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.SWEET_ALYSSUM)))));
+
+    public static final RegistryEntry<ConfiguredFeature<SimpleBlockFeatureConfig, ?>> WATER_HEMLOCK =
+            ConfiguredFeatures.register("water_hemlock", Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.WATER_HEMLOCK)));
 
     ///Ore Flowers///
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> DIAMOND_FLOWER =
