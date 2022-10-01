@@ -17,6 +17,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.flowers.Hemlock;
+import net.valion.manyflowers.block.flowers.Oenothera;
 import net.valion.manyflowers.block.flowers.SweetAlyssum;
 import net.valion.manyflowers.block.flowers.WaterHemlock;
 
@@ -49,6 +50,9 @@ public class Flowers {
     public static final Block HEMLOCK = registerBlock("hemlock",
             new Hemlock(StatusEffects.FIRE_RESISTANCE, 3,
                     (AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))));
+
+    public static final Block OENOTHERA = registerBlock("oenothera",
+            new Oenothera(FabricBlockSettings.copy(Blocks.ROSE_BUSH).nonOpaque()));
 
 
 
