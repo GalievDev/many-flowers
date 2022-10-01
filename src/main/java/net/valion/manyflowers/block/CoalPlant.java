@@ -12,7 +12,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 import static net.valion.manyflowers.setup.ItemsReg.COAL_SEEDS;
-import static net.valion.manyflowers.setup.ItemsReg.DIAMOND_SEEDS;
 
 public class CoalPlant extends CropBlock {
     public CoalPlant(Settings settings) {
