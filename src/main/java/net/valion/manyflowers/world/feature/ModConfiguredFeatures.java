@@ -1,8 +1,6 @@
 package net.valion.manyflowers.world.feature;
 
-import com.mojang.serialization.Codec;
 import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.world.gen.ProbabilityConfig;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.valion.manyflowers.setup.Flowers;

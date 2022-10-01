@@ -10,11 +10,10 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
-
-import java.util.Random;
 
 public class Gaillardia extends FlowerBlock {
     public Gaillardia(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
@@ -31,14 +30,14 @@ public class Gaillardia extends FlowerBlock {
     }
 
     @Override
-    public void randomDisplayTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         float chance = 0.35f;
-        if(chance < rand.nextFloat()) {
-            worldIn.addParticle(ParticleTypes.LAVA, pos.getX() + 0.5D,
+        if(chance < random.nextFloat()) {
+            world.addParticle(ParticleTypes.LAVA, pos.getX() + 0.5D,
                     pos.getY() + 0.5D, pos.getZ() + 0.5D,
                     0.2d,0.1d,0.3d);
         }
-        super.randomDisplayTick(stateIn, worldIn, pos, rand);
+        super.randomDisplayTick(state, world, pos, random);
     }
 
     @Override
