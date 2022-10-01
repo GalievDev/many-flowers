@@ -26,11 +26,15 @@ public class ModPlacedFeatures {
 
     public static final RegistryEntry<PlacedFeature> HEMLOCK_PLACED = PlacedFeatures.register("hemlock_placed",
             ModConfiguredFeatures.HEMLOCK, RarityFilterPlacementModifier.of(36), SquarePlacementModifier.of(),
-            PlacedFeatures.OCEAN_FLOOR_WG_HEIGHTMAP, BiomePlacementModifier.of());
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> OENOTHERA_PLACED = PlacedFeatures.register("oenothera_placed",
             ModConfiguredFeatures.OENOTHERA, RarityFilterPlacementModifier.of(27), SquarePlacementModifier.of(),
-            PlacedFeatures.OCEAN_FLOOR_WG_HEIGHTMAP, BiomePlacementModifier.of());
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+
+    public static final RegistryEntry<PlacedFeature> GAILLARDIA_PLACED = PlacedFeatures.register("gaillardia_placed",
+            ModConfiguredFeatures.GAILLARDIA, RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(),
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     //Ore FLowers//
     public static final RegistryEntry<PlacedFeature> DIAMOND_PLACED = PlacedFeatures.register("diamond_placed",

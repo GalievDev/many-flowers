@@ -42,6 +42,11 @@ public class ModConfiguredFeatures {
                     ConfiguredFeatures.createRandomPatchFeatureConfig(15, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.OENOTHERA)))));
 
+    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> GAILLARDIA =
+            ConfiguredFeatures.register("gaillardia", Feature.FLOWER,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(15, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.GAILLARDIA)))));
+
     ///Ore Flowers///
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> DIAMOND_FLOWER =
             ConfiguredFeatures.register("diamond_flower", Feature.FLOWER,

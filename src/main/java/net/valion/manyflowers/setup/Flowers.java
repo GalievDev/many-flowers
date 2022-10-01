@@ -16,10 +16,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
-import net.valion.manyflowers.block.flowers.Hemlock;
-import net.valion.manyflowers.block.flowers.Oenothera;
-import net.valion.manyflowers.block.flowers.SweetAlyssum;
-import net.valion.manyflowers.block.flowers.WaterHemlock;
+import net.valion.manyflowers.block.flowers.*;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -53,6 +50,10 @@ public class Flowers {
 
     public static final Block OENOTHERA = registerBlock("oenothera",
             new Oenothera(FabricBlockSettings.copy(Blocks.ROSE_BUSH).nonOpaque()));
+
+    public static final Block GAILLARDIA = registerBlock("gaillardia",
+            new Gaillardia(StatusEffects.FIRE_RESISTANCE, 3,
+                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()));
 
 
 
