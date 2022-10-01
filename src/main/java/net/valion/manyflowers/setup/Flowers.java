@@ -16,6 +16,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.block.flowers.Hemlock;
 import net.valion.manyflowers.block.flowers.SweetAlyssum;
 import net.valion.manyflowers.block.flowers.WaterHemlock;
 
@@ -44,6 +45,12 @@ public class Flowers {
 
     public static final Block WATER_HEMLOCK = registerBlock("water_hemlock",
             new WaterHemlock(AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS)));
+
+    public static final Block HEMLOCK = registerBlock("hemlock",
+            new Hemlock(StatusEffects.FIRE_RESISTANCE, 3,
+                    (AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))));
+
+
 
     private static Item registerBlockItem(String name, Block block, ItemGroup group, String tooltipKey) {
         return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name),

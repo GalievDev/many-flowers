@@ -25,7 +25,7 @@ public class ModPlacedFeatures {
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> HEMLOCK_PLACED = PlacedFeatures.register("hemlock_placed",
-            ModConfiguredFeatures.WATER_HEMLOCK, RarityFilterPlacementModifier.of(36), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.HEMLOCK, RarityFilterPlacementModifier.of(36), SquarePlacementModifier.of(),
             PlacedFeatures.OCEAN_FLOOR_WG_HEIGHTMAP, BiomePlacementModifier.of());
 
     //Ore FLowers//
