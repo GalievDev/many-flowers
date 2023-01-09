@@ -36,6 +36,10 @@ public class ModPlacedFeatures {
             ModConfiguredFeatures.GAILLARDIA, RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
+    public static final RegistryEntry<PlacedFeature> POPPY_PLACED = PlacedFeatures.register("poppy_placed",
+            ModConfiguredFeatures.ORIENTAL_POPPY, RarityFilterPlacementModifier.of(13), SquarePlacementModifier.of(),
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+
     //Ore FLowers//
     public static final RegistryEntry<PlacedFeature> DIAMOND_PLACED = PlacedFeatures.register("diamond_placed",
             ModConfiguredFeatures.DIAMOND_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),

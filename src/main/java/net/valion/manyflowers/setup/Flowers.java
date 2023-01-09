@@ -55,17 +55,9 @@ public class Flowers {
             new Gaillardia(StatusEffects.FIRE_RESISTANCE, 3,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()));
 
-
-
-    private static Item registerBlockItem(String name, Block block, ItemGroup group, String tooltipKey) {
-        return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(group)) {
-                    @Override
-                    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-                        tooltip.add(new TranslatableText(tooltipKey));
-                    }
-                });
-    }
+    public static final Block ORIENTAL_POPPY = registerBlock("oriental_poppy",
+            new OrientalPoppy(StatusEffects.FIRE_RESISTANCE, 3,
+                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

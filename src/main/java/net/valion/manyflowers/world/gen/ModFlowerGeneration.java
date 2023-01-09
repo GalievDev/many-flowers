@@ -29,6 +29,9 @@ public class ModFlowerGeneration {
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.NETHER, Biome.Category.SAVANNA),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.GAILLARDIA_PLACED.getKey().get());
 
+        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS, Biome.Category.MOUNTAIN),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.POPPY_PLACED.getKey().get());
+
         //Ore FLowers//
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DIAMOND_PLACED.getKey().get());
