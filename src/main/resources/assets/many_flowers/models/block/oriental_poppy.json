@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "many_flowers:block/oriental_poppy"
+  }
+}

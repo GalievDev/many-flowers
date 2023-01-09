@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "many_flowers:block/water_hemlock"
+    "layer0": "many_flowers:block/oriental_poppy"
   }
 }
