@@ -1,6 +1,8 @@
 package net.valion.manyflowers;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.valion.manyflowers.helpers.WorldsHelper;
 import net.valion.manyflowers.particle.FlowerParticles;
 import net.valion.manyflowers.setup.Flowers;
 import net.valion.manyflowers.setup.OreFlowers;
@@ -24,5 +26,9 @@ public class ManyFlowers implements ModInitializer {
         ModConfiguredFeatures.registerConfiguredFeatures();
 
         ModWorldGen.generateModWorldGen();
+
+        ServerLifecycleEvents.SERVER_STARTED.register(server ->
+                server.getWorlds().forEach(WorldsHelper::putWorld)
+        );
     }
 }

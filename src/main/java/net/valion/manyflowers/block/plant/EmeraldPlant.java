@@ -1,4 +1,4 @@
-package net.valion.manyflowers.block;
+package net.valion.manyflowers.block.plant;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -11,15 +11,15 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-import static net.valion.manyflowers.setup.ItemsReg.COAL_SEEDS;
+import static net.valion.manyflowers.setup.ItemsReg.EMERALD_SEEDS;
 
-public class CoalPlant extends CropBlock {
-    public CoalPlant(Settings settings) {
+public class EmeraldPlant extends CropBlock {
+    public EmeraldPlant(Settings settings) {
         super(settings);
     }
 
     public ItemConvertible getSeedsItem() {
-        return COAL_SEEDS;
+        return EMERALD_SEEDS;
     }
 
     @Override

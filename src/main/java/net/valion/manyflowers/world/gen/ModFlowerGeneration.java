@@ -32,6 +32,10 @@ public class ModFlowerGeneration {
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS, Biome.Category.MOUNTAIN),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.POPPY_PLACED.getKey().get());
 
+        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS, Biome.Category.MOUNTAIN, Biome.Category.EXTREME_HILLS, Biome.Category.TAIGA,
+                        Biome.Category.JUNGLE, Biome.Category.SAVANNA, Biome.Category.THEEND, Biome.Category.FOREST, Biome.Category.RIVER, Biome.Category.SWAMP, Biome.Category.NETHER),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WORLDS_ROOT.getKey().get());
+
         //Ore FLowers//
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DIAMOND_PLACED.getKey().get());

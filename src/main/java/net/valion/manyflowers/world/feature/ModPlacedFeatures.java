@@ -9,19 +9,19 @@ import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
 public class ModPlacedFeatures {
     public static final RegistryEntry<PlacedFeature> ALSTROEMERIA_FLOWER = PlacedFeatures.register("alstroemeria_placed",
-            ModConfiguredFeatures.ALSTROEMERIA_FLOWER, RarityFilterPlacementModifier.of(5), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.ALSTROEMERIA_FLOWER, RarityFilterPlacementModifier.of(27), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> HYDRANGEA_PLACED = PlacedFeatures.register("hydrangea_placed",
-            ModConfiguredFeatures.HYDRANGEA_FLOWER, RarityFilterPlacementModifier.of(36), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.HYDRANGEA_FLOWER, RarityFilterPlacementModifier.of(22), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> MARIGOLD_PLACED = PlacedFeatures.register("marigold_placed",
-            ModConfiguredFeatures.MARIGOLD_FLOWER, RarityFilterPlacementModifier.of(3), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.MARIGOLD_FLOWER, RarityFilterPlacementModifier.of(23), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> ALYSSUM_PLACED = PlacedFeatures.register("alyssum_placed",
-            ModConfiguredFeatures.SWEET_ALYSSUM, RarityFilterPlacementModifier.of(16), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.SWEET_ALYSSUM, RarityFilterPlacementModifier.of(34), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> HEMLOCK_PLACED = PlacedFeatures.register("hemlock_placed",
@@ -29,39 +29,43 @@ public class ModPlacedFeatures {
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> OENOTHERA_PLACED = PlacedFeatures.register("oenothera_placed",
-            ModConfiguredFeatures.OENOTHERA, RarityFilterPlacementModifier.of(27), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.OENOTHERA, RarityFilterPlacementModifier.of(44), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> GAILLARDIA_PLACED = PlacedFeatures.register("gaillardia_placed",
-            ModConfiguredFeatures.GAILLARDIA, RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.GAILLARDIA, RarityFilterPlacementModifier.of(77), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> POPPY_PLACED = PlacedFeatures.register("poppy_placed",
-            ModConfiguredFeatures.ORIENTAL_POPPY, RarityFilterPlacementModifier.of(13), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.ORIENTAL_POPPY, RarityFilterPlacementModifier.of(99), SquarePlacementModifier.of(),
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+
+    public static final RegistryEntry<PlacedFeature> WORLDS_ROOT = PlacedFeatures.register("worlds_root_placed",
+            ModConfiguredFeatures.WORLDS_ROOT, RarityFilterPlacementModifier.of(99), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     //Ore FLowers//
     public static final RegistryEntry<PlacedFeature> DIAMOND_PLACED = PlacedFeatures.register("diamond_placed",
-            ModConfiguredFeatures.DIAMOND_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.DIAMOND_FLOWER, RarityFilterPlacementModifier.of(99), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> COAL_PLACED = PlacedFeatures.register("coal_placed",
-            ModConfiguredFeatures.COAL_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.COAL_FLOWER, RarityFilterPlacementModifier.of(99), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> IRON_PLACED = PlacedFeatures.register("iron_placed",
-            ModConfiguredFeatures.IRON_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.IRON_FLOWER, RarityFilterPlacementModifier.of(99), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> GOLD_PLACED = PlacedFeatures.register("gold_placed",
-            ModConfiguredFeatures.GOLD_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.GOLD_FLOWER, RarityFilterPlacementModifier.of(99), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> EMERALD_PLACED = PlacedFeatures.register("emerald_placed",
-            ModConfiguredFeatures.EMERALD_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.EMERALD_FLOWER, RarityFilterPlacementModifier.of(99), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> COPPER_PLACED = PlacedFeatures.register("copper_placed",
-            ModConfiguredFeatures.COPPER_FLOWER, RarityFilterPlacementModifier.of(35), SquarePlacementModifier.of(),
+            ModConfiguredFeatures.COPPER_FLOWER, RarityFilterPlacementModifier.of(99), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 }

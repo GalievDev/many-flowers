@@ -1,4 +1,4 @@
-package net.valion.manyflowers.block;
+package net.valion.manyflowers.block.plant;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -11,15 +11,15 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-import static net.valion.manyflowers.setup.ItemsReg.COPPER_SEEDS;
+import static net.valion.manyflowers.setup.ItemsReg.COAL_SEEDS;
 
-public class CopperPlant extends CropBlock {
-    public CopperPlant(Settings settings) {
+public class CoalPlant extends CropBlock {
+    public CoalPlant(Settings settings) {
         super(settings);
     }
 
     public ItemConvertible getSeedsItem() {
-        return COPPER_SEEDS;
+        return COAL_SEEDS;
     }
 
     @Override

@@ -1,6 +1,8 @@
-package net.valion.manyflowers.block;
+package net.valion.manyflowers.block.plant;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.CropBlock;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
@@ -9,16 +11,15 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
+import static net.valion.manyflowers.setup.ItemsReg.COPPER_SEEDS;
 
-import static net.valion.manyflowers.setup.ItemsReg.DIAMOND_SEEDS;
-
-public class DiamondPlant extends CropBlock {
-    public DiamondPlant(AbstractBlock.Settings settings) {
+public class CopperPlant extends CropBlock {
+    public CopperPlant(Settings settings) {
         super(settings);
     }
 
     public ItemConvertible getSeedsItem() {
-        return DIAMOND_SEEDS;
+        return COPPER_SEEDS;
     }
 
     @Override

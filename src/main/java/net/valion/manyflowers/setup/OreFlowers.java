@@ -19,7 +19,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
-import net.valion.manyflowers.block.*;
+import net.valion.manyflowers.block.plant.*;
 
 import javax.annotation.Nullable;
 import java.util.List;

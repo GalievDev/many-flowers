@@ -43,6 +43,6 @@ public class Gaillardia extends FlowerBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return super.canPlantOnTop(floor, world, pos) || floor.isOf(Blocks.CRIMSON_NYLIUM) || floor.isOf(Blocks.SOUL_SAND) || floor.isOf(Blocks.SOUL_SOIL);
+        return floor.isOf(Blocks.CRIMSON_NYLIUM) || floor.isOf(Blocks.SOUL_SAND) || floor.isOf(Blocks.SOUL_SOIL) || super.canPlantOnTop(floor, world, pos);
     }
 }
