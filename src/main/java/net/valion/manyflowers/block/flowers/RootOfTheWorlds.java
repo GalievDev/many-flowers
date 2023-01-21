@@ -10,11 +10,10 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
-
-import java.util.Random;
 
 import static net.valion.manyflowers.helpers.WorldsHelper.*;
 

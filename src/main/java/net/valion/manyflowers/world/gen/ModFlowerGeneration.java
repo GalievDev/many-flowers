@@ -29,11 +29,11 @@ public class ModFlowerGeneration {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.NETHER_WASTES, BiomeKeys.SAVANNA),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.GAILLARDIA_PLACED.getKey().get());
 
-        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS, Biome.Category.MOUNTAIN),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.WINDSWEPT_HILLS),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.POPPY_PLACED.getKey().get());
 
-        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS, Biome.Category.MOUNTAIN, Biome.Category.EXTREME_HILLS, Biome.Category.TAIGA,
-                        Biome.Category.JUNGLE, Biome.Category.SAVANNA, Biome.Category.THEEND, Biome.Category.FOREST, Biome.Category.RIVER, Biome.Category.SWAMP, Biome.Category.NETHER),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.WINDSWEPT_HILLS, BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.TAIGA,
+                        BiomeKeys.JUNGLE, BiomeKeys.SAVANNA, BiomeKeys.THE_END, BiomeKeys.FOREST, BiomeKeys.RIVER, BiomeKeys.SWAMP, BiomeKeys.NETHER_WASTES),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WORLDS_ROOT.getKey().get());
 
         //Ore FLowers//
