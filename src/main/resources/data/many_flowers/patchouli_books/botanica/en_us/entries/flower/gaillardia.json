@@ -1,0 +1,17 @@
+{
+  "name": "Gaillardia",
+  "icon": "many_flowers:gaillardia",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:gaillardia",
+      "title": "Gaillardia",
+      "text": "Some info about flower. As example spawn area"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:gaillardia"
+    }
+  ]
+}

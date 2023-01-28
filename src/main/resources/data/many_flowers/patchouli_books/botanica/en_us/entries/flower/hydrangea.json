@@ -1,0 +1,17 @@
+{
+  "name": "Hydrangea",
+  "icon": "many_flowers:hydrangea_flower",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:hydrangea_flower",
+      "title": "Hydrangea",
+      "text": "Some info about flower. As example spawn area"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:hydrangea_flower_flower"
+    }
+  ]
+}
