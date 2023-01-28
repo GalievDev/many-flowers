@@ -1,0 +1,17 @@
+{
+  "name": "Water Hemlock",
+  "icon": "many_flowers:water_hemlock",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:water_hemlock",
+      "title": "Water Hemlock",
+      "text": "Some info about flower. As example spawn area"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:water_hemlock"
+    }
+  ]
+}

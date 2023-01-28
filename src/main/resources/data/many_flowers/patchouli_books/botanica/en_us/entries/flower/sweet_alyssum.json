@@ -1,0 +1,17 @@
+{
+  "name": "Sweet Alyssum",
+  "icon": "many_flowers:sweet_alyssum",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:sweet_alyssum",
+      "title": "Sweet Alyssum",
+      "text": "Some info about flower. As example spawn area"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:sweet_alyssum"
+    }
+  ]
+}

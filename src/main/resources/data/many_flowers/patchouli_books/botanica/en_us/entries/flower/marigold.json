@@ -1,0 +1,17 @@
+{
+  "name": "Marigold",
+  "icon": "many_flowers:marigold_flower",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:marigold_flower",
+      "title": "Marigold",
+      "text": "Some info about flower. As example spawn area"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:marigold_flower"
+    }
+  ]
+}

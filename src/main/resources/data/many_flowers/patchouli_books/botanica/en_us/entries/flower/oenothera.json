@@ -1,0 +1,17 @@
+{
+  "name": "Oenothera",
+  "icon": "many_flowers:oenothera",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:oenothera",
+      "title": "Oenothera",
+      "text": "Some info about flower. As example spawn area"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:oenothera"
+    }
+  ]
+}

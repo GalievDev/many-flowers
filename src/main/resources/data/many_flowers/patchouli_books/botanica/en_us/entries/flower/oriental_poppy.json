@@ -1,0 +1,17 @@
+{
+  "name": "Oriental Poppy",
+  "icon": "many_flowers:oriental_poppy",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:oriental_poppy",
+      "title": "Oriental Poppy",
+      "text": "Some info about flower. As example spawn area"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:oriental_poppy"
+    }
+  ]
+}
