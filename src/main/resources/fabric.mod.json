@@ -31,8 +31,8 @@
     "fabricloader": ">=0.14.9",
     "fabric": "*",
     "minecraft": "1.19.2",
-    "patchouli": "*",
-    "modmenu": "*",
-    "cloth-config": "*"
+    "patchouli": "${patchouli_version}",
+    "modmenu": "${clothconfig}",
+    "cloth-config": "${modmenu}"
   }
 }
