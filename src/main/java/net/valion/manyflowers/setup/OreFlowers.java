@@ -9,7 +9,6 @@ import net.minecraft.block.Material;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -21,27 +20,27 @@ import static net.valion.manyflowers.ManyFlowers.MOD_ID;
 public class OreFlowers {
     public static final Block DIAMOND_FLOWER = registerBlock("diamond_flower",
             new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 3,
-                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroup.DECORATIONS);
+                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()));
 
     public static final Block COAL_FLOWER = registerBlock("coal_flower",
             new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 3,
-                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroup.DECORATIONS);
+                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()));
 
     public static final Block IRON_FLOWER = registerBlock("iron_flower",
             new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 3,
-                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroup.DECORATIONS);
+                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()));
 
     public static final Block GOLD_FLOWER = registerBlock("gold_flower",
             new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 3,
-                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroup.DECORATIONS);
+                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()));
 
     public static final Block EMERALD_FLOWER = registerBlock("emerald_flower",
             new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 3,
-                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroup.DECORATIONS);
+                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()));
 
     public static final Block COPPER_FLOWER = registerBlock("copper_flower",
             new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 3,
-                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroup.DECORATIONS);
+                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()));
 
     //Plants//
     public static final Block DIAMOND_PLANT = registerBlockWithoutBlockItem("diamond_plant",
@@ -64,31 +63,31 @@ public class OreFlowers {
 
     //Petal Blocks//
     public static final Block DIAMOND_PETAL_BLOCK = registerBlock("diamond_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.AMETHYST_BLOCK)), ItemGroup.DECORATIONS);
+            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     public static final Block COAL_PETAL_BLOCK = registerBlock("coal_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.STONE)), ItemGroup.DECORATIONS);
+            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.STONE)));
 
     public static final Block IRON_PETAL_BLOCK = registerBlock("iron_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.METAL)), ItemGroup.DECORATIONS);
+            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.METAL)));
 
     public static final Block GOLD_PETAL_BLOCK = registerBlock("gold_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.METAL)), ItemGroup.DECORATIONS);
+            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.METAL)));
 
     public static final Block EMERALD_PETAL_BLOCK = registerBlock("emerald_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.AMETHYST_BLOCK)), ItemGroup.DECORATIONS);
+            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     public static final Block COPPER_PETAL_BLOCK = registerBlock("copper_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.METAL)), ItemGroup.DECORATIONS);
+            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.METAL)));
 
-    private static Block registerBlock(String name, Block block, ItemGroup group) {
-        registerBlockItem(name, block, group);
+    private static Block registerBlock(String name, Block block) {
+        registerBlockItem(name, block);
         return Registry.register(Registry.BLOCK, new Identifier(MOD_ID, name), block);
     }
 
-    private static Item registerBlockItem(String name, Block block, ItemGroup group) {
+    private static Item registerBlockItem(String name, Block block) {
         return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(group)));
+                new BlockItem(block, new FabricItemSettings().group(ItemGroupSetup.MANY_FLOWERS)));
     }
 
     private static Block registerBlockWithoutBlockItem(String name, Block block){
