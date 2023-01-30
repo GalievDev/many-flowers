@@ -1,0 +1,17 @@
+{
+  "name": "Гортензия",
+  "icon": "many_flowers:hydrangea_flower",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:hydrangea_flower",
+      "title": "Гортензия",
+      "text": "Гортензия - это цветущий вид растений. Они могут быть листопадными или вечнозелеными, хотя все широко культивируемые виды в умеренном климате - листопадные. Произрастает в §9холодных и горных биомах."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:hydrangea_flower_flower"
+    }
+  ]
+}

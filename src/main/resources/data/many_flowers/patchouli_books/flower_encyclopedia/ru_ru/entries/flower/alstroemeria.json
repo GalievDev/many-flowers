@@ -1,0 +1,17 @@
+{
+  "name": "Альстромерия",
+  "icon": "many_flowers:alstroemeria_flower",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:alstroemeria_flower",
+      "title": "Альстромерия",
+      "text": "Альстромерия, обычно называемая перуанской лилией или лилией инков, - это род цветковых растений семейства Альстромерии (Alstroemeriaceae). Произрастает в §аЛесах, §Равнинах и §аДжунглях, способностей не имеет."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:alstroemeria_flower"
+    }
+  ]
+}

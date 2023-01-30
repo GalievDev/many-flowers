@@ -1,0 +1,17 @@
+{
+  "name": "Бархатцы",
+  "icon": "many_flowers:marigold_flower",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:marigold_flower",
+      "title": "Бархатцы",
+      "text": "Бархатцы - род однолетних или многолетних, преимущественно травянистых растений семейства Астровые (Asteraceae). Произрастает в §аРавнинах, §аЛесах и §аХолмах"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:marigold_flower"
+    }
+  ]
+}

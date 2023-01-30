@@ -1,0 +1,17 @@
+{
+  "name": "Корень Миров",
+  "icon": "many_flowers:root_of_the_worlds",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:root_of_the_worlds",
+      "title": "Корень Миров",
+      "text": "Корень Миров - легендарный цветок, произрастает в любом биоме. Глядя на его внешний вид, можно подумать, что он телепортирует вас, так и есть он телепортирует вас в §dРАНДОМНОЕ §dИЗМЕРЕНИЕ!"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:root_of_the_worlds"
+    }
+  ]
+}

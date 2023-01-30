@@ -1,0 +1,17 @@
+{
+  "name": "Сладкий Алиссум",
+  "icon": "many_flowers:sweet_alyssum",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:sweet_alyssum",
+      "title": "Сладкий Алиссум",
+      "text": "Сладкий Алиссум - первый специальный цветок, который не вредит игроку. Он произрастает на берегах реки и в темноте создает приятное для глаз свечение."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:sweet_alyssum"
+    }
+  ]
+}

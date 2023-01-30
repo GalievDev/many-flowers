@@ -1,0 +1,17 @@
+{
+  "name": "Восточный Мак",
+  "icon": "many_flowers:oriental_poppy",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:oriental_poppy",
+      "title": "Восточный Мак",
+      "text": "Восточный мак - это небольшое травянистое растение из семейства Маковые. Несмотря на свою красоту, восточный мак очень взрывоопасен, поэтому 100 раз подумайте, прежде чем скармливать его животным. Произрастает в §cРавнинах и §cХолмах."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:oriental_poppy"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Энотера",
+  "icon": "many_flowers:oenothera",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:oenothera",
+      "title": "Энотера",
+      "text": "Энотера - род травянистых цветущих растений. В его основе лежат шипы, которые могут ранить игрока. Энотера произрастает в §aЛесах и §aРавнинах."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:oenothera"
+    }
+  ]
+}

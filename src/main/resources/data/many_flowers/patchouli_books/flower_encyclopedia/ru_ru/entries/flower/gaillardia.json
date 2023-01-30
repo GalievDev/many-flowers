@@ -1,0 +1,17 @@
+{
+  "name": "Гайллардия",
+  "icon": "many_flowers:gaillardia",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:gaillardia",
+      "title": "Гайллардия",
+      "text": "Гайллардия (общее название цветка) - род цветковых растений семейства Asteraceae. Будьте осторожны! Из-за горячей среды обитания гайллардия может поджечь вас! Произрастает в §cНезере и §cСаванне."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:gaillardia"
+    }
+  ]
+}

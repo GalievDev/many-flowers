@@ -1,0 +1,18 @@
+{
+  "name": "Железный Цветок",
+  "icon": "many_flowers:iron_flower",
+  "category": "many_flowers:plant",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:iron_flower",
+      "title": "Железный Цветок",
+      "text": "Можно найти в Тайге. С них выпадает семена железа который можно вырастить и получить лепестки железа."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:iron_petal_block",
+      "recipe2": "many_flowers:iron_ingot"
+    }
+  ]
+}

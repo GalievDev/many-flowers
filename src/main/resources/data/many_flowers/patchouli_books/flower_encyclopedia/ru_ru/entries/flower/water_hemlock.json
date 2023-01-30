@@ -1,0 +1,17 @@
+{
+  "name": "Водяной Болиголов",
+  "icon": "many_flowers:water_hemlock",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:water_hemlock",
+      "title": "Водяной Болиголов",
+      "text": "Cicuta, широко известный как Водяной Болиголов, является родом высокотоксичных растений семейства Apiaceae. Произрастает в §2Болотах"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:water_hemlock"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Изумрудный Цветок",
+  "icon": "many_flowers:emerald_flower",
+  "category": "many_flowers:plant",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:emerald_flower",
+      "title": "Изумрудный Цветок",
+      "text": "Можно найти в Горах. С них выпадает семена изумруда который можно вырастить и получить лепестки изумруда."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:emerald_petal_block",
+      "recipe2": "many_flowers:emerald"
+    }
+  ]
+}

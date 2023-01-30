@@ -1,0 +1,18 @@
+{
+  "name": "Медный Цветок",
+  "icon": "many_flowers:copper_flower",
+  "category": "many_flowers:plant",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:copper_flower",
+      "title": "Медный Цветок",
+      "text": "Можно найти в Болотах. С них выпадает семена меди который можно вырастить и получить лепестки меди."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:copper_petal_block",
+      "recipe2": "many_flowers:copper_ingot"
+    }
+  ]
+}
