@@ -7,7 +7,7 @@
       "type": "patchouli:spotlight",
       "item": "many_flowers:iron_flower",
       "title": "Iron Flower",
-      "text": "Some info about flower. As example spawn area"
+      "text": "Can be found in Taiga. Seeds that can be planted fall out."
     },
     {
       "type" : "patchouli:crafting",

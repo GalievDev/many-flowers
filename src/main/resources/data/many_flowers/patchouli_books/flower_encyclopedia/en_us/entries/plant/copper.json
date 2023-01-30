@@ -7,7 +7,7 @@
       "type": "patchouli:spotlight",
       "item": "many_flowers:copper_flower",
       "title": "Copper Flower",
-      "text": "Some info about flower. As example spawn area"
+      "text": "Can be found in Swamp. Seeds that can be planted fall out."
     },
     {
       "type" : "patchouli:crafting",

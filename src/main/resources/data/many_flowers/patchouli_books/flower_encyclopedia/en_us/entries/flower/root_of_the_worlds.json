@@ -1,0 +1,17 @@
+{
+  "name": "Root Of The Worlds",
+  "icon": "many_flowers:root_of_the_worlds",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:root_of_the_worlds",
+      "title": "Root Of The Worlds",
+      "text": "Root Of The Worlds the legendary flower that generating all over the world. Looking at his appearance, you’d think he’s teleporting you, and that’s how he’s teleporting you into a §dRANDOM §dDIMENSION!"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:root_of_the_worlds"
+    }
+  ]
+}

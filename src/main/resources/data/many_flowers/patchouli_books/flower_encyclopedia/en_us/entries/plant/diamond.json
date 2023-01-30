@@ -7,7 +7,7 @@
       "type": "patchouli:spotlight",
       "item": "many_flowers:diamond_flower",
       "title": "Diamond Flower",
-      "text": "Some info about flower. As example spawn area"
+      "text": "Can be found in Forest. Seeds that can be planted fall out."
     },
     {
       "type" : "patchouli:crafting",

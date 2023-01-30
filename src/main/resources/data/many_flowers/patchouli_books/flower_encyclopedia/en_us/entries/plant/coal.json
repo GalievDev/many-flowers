@@ -7,7 +7,7 @@
       "type": "patchouli:spotlight",
       "item": "many_flowers:coal_flower",
       "title": "Coal Flower",
-      "text": "Some info about flower. As example spawn area"
+      "text": "Can be found in Plains. Seeds that can be planted fall out."
     },
     {
       "type" : "patchouli:crafting",

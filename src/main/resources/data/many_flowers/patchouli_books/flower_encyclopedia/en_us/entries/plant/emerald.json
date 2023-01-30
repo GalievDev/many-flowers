@@ -7,7 +7,7 @@
       "type": "patchouli:spotlight",
       "item": "many_flowers:emerald_flower",
       "title": "Emerald Flower",
-      "text": "Some info about flower. As example spawn area"
+      "text": "Can be found in Mountains. Seeds that can be planted fall out. "
     },
     {
       "type" : "patchouli:crafting",

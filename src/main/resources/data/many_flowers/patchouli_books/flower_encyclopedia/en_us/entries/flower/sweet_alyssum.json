@@ -7,7 +7,7 @@
       "type": "patchouli:spotlight",
       "item": "many_flowers:sweet_alyssum",
       "title": "Sweet Alyssum",
-      "text": "Some info about flower. As example spawn area"
+      "text": "Sweet Alyssum is the first special flower that does not harm the player. It is generated on the riverbanks and in the dark produces a pleasant glow for the eyes."
     },
     {
       "type" : "patchouli:crafting",

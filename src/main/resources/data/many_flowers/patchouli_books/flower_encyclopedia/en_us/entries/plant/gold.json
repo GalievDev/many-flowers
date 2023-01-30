@@ -7,7 +7,7 @@
       "type": "patchouli:spotlight",
       "item": "many_flowers:gold_flower",
       "title": "Gold Flower",
-      "text": "Some info about flower. As example spawn area"
+      "text": "Can be found in Savanna and Badlands. Seeds that can be planted fall out. "
     },
     {
       "type" : "patchouli:crafting",
