@@ -33,6 +33,6 @@
     "minecraft": "1.19.2",
     "patchouli": "*",
     "modmenu": "*",
-    "clothconfig": "*"
+    "cloth-config": "*"
   }
 }
