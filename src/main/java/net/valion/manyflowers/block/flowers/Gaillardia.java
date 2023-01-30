@@ -10,11 +10,12 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.valion.manyflowers.config.MFConfig;
+
+import java.util.Random;
 
 public class Gaillardia extends FlowerBlock {
     public Gaillardia(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {

@@ -13,6 +13,8 @@ import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.valion.manyflowers.config.MFConfig;
 
+import java.util.Random;
+
 public class Oenothera extends TallPlantBlock implements Fertilizable {
     public Oenothera(Settings settings) {
         super(settings);
@@ -37,12 +39,12 @@ public class Oenothera extends TallPlantBlock implements Fertilizable {
     }
 
     @Override
-    public boolean canGrow(World world, net.minecraft.util.math.random.Random random, BlockPos pos, BlockState state) {
+    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
         return false;
     }
 
     @Override
-    public void grow(ServerWorld world, net.minecraft.util.math.random.Random random, BlockPos pos, BlockState state) {
+    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
 
     }
 }

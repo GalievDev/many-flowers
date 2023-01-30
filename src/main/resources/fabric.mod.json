@@ -28,9 +28,9 @@
     "ManyFlowers.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.9",
+    "fabricloader": ">=0.14.8",
     "fabric": "*",
-    "minecraft": "1.19.2",
+    "minecraft": "1.18.2",
     "patchouli": "*",
     "modmenu": "*",
     "cloth-config": "*"
