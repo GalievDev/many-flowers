@@ -14,6 +14,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.config.MFConfig;
 
 import static net.valion.manyflowers.helpers.WorldsHelper.*;
 
@@ -24,7 +25,7 @@ public class RootOfTheWorlds extends FlowerBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (world instanceof ServerWorld && !entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals() && entity.isPlayer()) {
+        if (world instanceof ServerWorld && !entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals() && entity.isPlayer() && !MFConfig.turn_off_teleport_ROTW) {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity) entity;
             ServerWorld serverWorld = getRandomWorld();
             int x = getRandInt(100000);

@@ -14,6 +14,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
+import net.valion.manyflowers.config.MFConfig;
 
 public class Gaillardia extends FlowerBlock {
     public Gaillardia(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
@@ -22,7 +23,7 @@ public class Gaillardia extends FlowerBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && !MFConfig.turn_off_damage_gaillardia) {
             if (!entity.isFireImmune() && entity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity)entity)) {
                 entity.damage(DamageSource.IN_FIRE, 1.0f);
             }

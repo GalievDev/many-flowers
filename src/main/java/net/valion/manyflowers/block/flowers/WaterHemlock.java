@@ -19,6 +19,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.valion.manyflowers.config.MFConfig;
 import org.jetbrains.annotations.Nullable;
 
 public class WaterHemlock extends PlantBlock implements Fertilizable, FluidFillable{
@@ -28,7 +29,7 @@ public class WaterHemlock extends PlantBlock implements Fertilizable, FluidFilla
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && !MFConfig.turn_off_damage_hemlock) {
             if (entity instanceof LivingEntity) {
                 LivingEntity livingEntity = (LivingEntity)entity;
                 if (!livingEntity.isInvulnerableTo(DamageSource.MAGIC)) {
