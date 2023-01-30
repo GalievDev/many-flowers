@@ -44,5 +44,11 @@
   "block.many_flowers.iron_petal_block": "Железный Блок Лепестков",
   "block.many_flowers.gold_petal_block": "Золотой Блок Лепестков",
   "block.many_flowers.emerald_petal_block": "Емеральдовый Блок Лепестков",
-  "block.many_flowers.copper_petal_block": "Медный Блок Лепестков"
+  "block.many_flowers.copper_petal_block": "Медный Блок Лепестков",
+
+  "text.autoconfig.many_flowers.option.turn_off_damage_gaillardia": "Урон от Гайлардии",
+  "text.autoconfig.many_flowers.option.turn_off_damage_hemlock": "Урон от Водянного Болиголова",
+  "text.autoconfig.many_flowers.option.turn_off_damage_oenothera": "Урон от Энотеры",
+  "text.autoconfig.many_flowers.option.turn_off_teleport_ROTW": "Телепортация Корня Миров",
+  "text.autoconfig.many_flowers.option.turn_off_explosion_oriental_poppy": "Взрыв Восточного Мака"
 }

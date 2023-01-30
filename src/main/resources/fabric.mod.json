@@ -3,12 +3,15 @@
   "id": "many_flowers",
   "version": "${version}",
   "name": "ManyFlowers",
-  "description": "",
+  "description": "Decorate your world with new, colorful Flowers!",
   "authors": [
     "GalievDev before _VaLiOn_"
   ],
-  "contact": {},
+  "contact": {
+    "homepage": "https://modrinth.com/mod/many-flowers"
+  },
   "license": "MIT",
+  "icon": "assets/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
@@ -16,6 +19,9 @@
     ],
     "main": [
       "net.valion.manyflowers.ManyFlowers"
+    ],
+    "modmenu": [
+      "net.valion.manyflowers.client.ModMenuIntegration"
     ]
   },
   "mixins": [

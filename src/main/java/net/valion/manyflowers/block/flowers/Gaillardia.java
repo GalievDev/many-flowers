@@ -23,7 +23,7 @@ public class Gaillardia extends FlowerBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && !MFConfig.turn_off_damage_gaillardia) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.turn_off_damage_gaillardia) {
             if (!entity.isFireImmune() && entity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity)entity)) {
                 entity.damage(DamageSource.IN_FIRE, 1.0f);
             }

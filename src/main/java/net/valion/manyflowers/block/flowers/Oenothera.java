@@ -20,7 +20,7 @@ public class Oenothera extends TallPlantBlock implements Fertilizable {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && !MFConfig.turn_off_damage_oenothera) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.turn_off_damage_oenothera) {
             if (entity instanceof LivingEntity) {
                 LivingEntity livingEntity = (LivingEntity)entity;
                 if (!livingEntity.isInvulnerableTo(DamageSource.MAGIC)) {

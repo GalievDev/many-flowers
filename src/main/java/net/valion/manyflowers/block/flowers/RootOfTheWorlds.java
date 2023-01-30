@@ -25,7 +25,7 @@ public class RootOfTheWorlds extends FlowerBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (world instanceof ServerWorld && !entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals() && entity.isPlayer() && !MFConfig.turn_off_teleport_ROTW) {
+        if (world instanceof ServerWorld && !entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals() && entity.isPlayer() && MFConfig.turn_off_teleport_ROTW) {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity) entity;
             ServerWorld serverWorld = getRandomWorld();
             int x = getRandInt(100000);

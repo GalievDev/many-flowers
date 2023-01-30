@@ -1,5 +1,7 @@
 package net.valion.manyflowers;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.valion.manyflowers.config.MFConfig;
@@ -24,7 +26,7 @@ public class ManyFlowers implements ModInitializer {
         OreFlowers.registerModBlocks();
         FlowerParticles.registerParticles();
 
-        MFConfig.registerConfigs();
+        AutoConfig.register(MFConfig.class, GsonConfigSerializer::new);
 
         ModConfiguredFeatures.registerConfiguredFeatures();
 
