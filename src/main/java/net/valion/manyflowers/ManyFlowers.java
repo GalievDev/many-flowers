@@ -8,6 +8,7 @@ import net.valion.manyflowers.config.MFConfig;
 import net.valion.manyflowers.helpers.WorldsHelper;
 import net.valion.manyflowers.particle.FlowerParticles;
 import net.valion.manyflowers.setup.Flowers;
+import net.valion.manyflowers.setup.ItemGroupSetup;
 import net.valion.manyflowers.setup.ItemsReg;
 import net.valion.manyflowers.setup.OreFlowers;
 import net.valion.manyflowers.world.feature.ModConfiguredFeatures;
@@ -25,6 +26,7 @@ public class ManyFlowers implements ModInitializer {
         Flowers.registerModBlocks();
         OreFlowers.registerModBlocks();
         FlowerParticles.registerParticles();
+        ItemGroupSetup.registerItemGroups();
 
         AutoConfig.register(MFConfig.class, GsonConfigSerializer::new);
 

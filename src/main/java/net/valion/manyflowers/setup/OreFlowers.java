@@ -1,6 +1,7 @@
 package net.valion.manyflowers.setup;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -9,9 +10,10 @@ import net.minecraft.block.Material;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.plant.*;
 
@@ -82,16 +84,18 @@ public class OreFlowers {
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
-        return Registry.register(Registry.BLOCK, new Identifier(MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, new Identifier(MOD_ID, name), block);
     }
 
     private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(ItemGroupSetup.MANY_FLOWERS)));
+        Item item = Registry.register(Registries.ITEM, new Identifier(MOD_ID, name),
+                new BlockItem(block, new FabricItemSettings()));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroupSetup.MANY_FLOWERS).register(entries -> entries.add(item));
+        return item;
     }
 
     private static Block registerBlockWithoutBlockItem(String name, Block block){
-        return Registry.register(Registry.BLOCK, new Identifier(MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, new Identifier(MOD_ID, name), block);
     }
 
     public static void registerModBlocks() {

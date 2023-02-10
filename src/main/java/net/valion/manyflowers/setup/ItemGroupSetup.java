@@ -1,12 +1,19 @@
 package net.valion.manyflowers.setup;
 
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.valion.manyflowers.ManyFlowers;
+
+import static net.valion.manyflowers.ManyFlowers.MOD_ID;
 
 public class ItemGroupSetup {
-    public static final ItemGroup MANY_FLOWERS = FabricItemGroupBuilder.build(new Identifier(ManyFlowers.MOD_ID, "flowers"),
-            () -> new ItemStack(Flowers.ALSTROEMERIA_FLOWER));
+    public static ItemGroup MANY_FLOWERS;
+
+    public static void registerItemGroups() {
+        MANY_FLOWERS = FabricItemGroup.builder(new Identifier(MOD_ID, "flowers"))
+                .displayName(Text.translatable("itemgroup.citrine"))
+                .icon(() -> new ItemStack(Flowers.ALSTROEMERIA_FLOWER)).build();
+    }
 }
