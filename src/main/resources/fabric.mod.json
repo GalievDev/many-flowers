@@ -28,11 +28,12 @@
     "ManyFlowers.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.9",
+    "fabricloader": "*",
     "fabric": "*",
     "minecraft": "1.19.2",
     "patchouli": "*",
     "modmenu": "*",
-    "cloth-config": "*"
+    "cloth-config": "*",
+    "ducky-updater": "*"
   }
 }
