@@ -16,8 +16,7 @@ public class WorldsHelper {
     }
 
     public static ServerWorld getRandomWorld(){
-        Random random = new Random();
-        return dims.get(random.nextInt(dims.size()));
+        return dims.get(getRandInt(dims.size()));
     }
 
     public static void clearWorlds(){
@@ -25,13 +24,11 @@ public class WorldsHelper {
     }
 
     public static int getRandInt(int bound){
-        Random random = new Random();
-        return random.nextInt(bound);
+        return new Random().nextInt(bound);
     }
 
     public static int getRandInt(){
-        Random random = new Random();
-        return random.nextInt();
+        return new Random().nextInt();
     }
 
     public static void safeCheck(ServerWorld serverWorld, BlockPos.Mutable blockPos, int y){
@@ -54,11 +51,8 @@ public class WorldsHelper {
     }
 
     public static boolean isDangerBlocks(ServerWorld world, BlockPos mutableBlockPos) {
-        if(isDangerBlock(world, mutableBlockPos) && isDangerBlock(world, mutableBlockPos.add(0, 1, 0)) &&
-                isDangerBlock(world, mutableBlockPos.add(0, -1, 0))) {
-            return true;
-        }
-        return world.getBlockState(mutableBlockPos.add(0, -1, 0)).getBlock() == Blocks.AIR;
+        return isDangerBlock(world, mutableBlockPos) && isDangerBlock(world, mutableBlockPos.add(0, 1, 0)) &&
+                isDangerBlock(world, mutableBlockPos.add(0, -1, 0)) || world.getBlockState(mutableBlockPos.add(0, -1, 0)).getBlock() == Blocks.AIR;
     }
 
     public static boolean isDangerBlock(ServerWorld world, BlockPos mutableBlockPos) {
