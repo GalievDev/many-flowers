@@ -41,8 +41,7 @@ public class RootOfTheWorlds extends FlowerBlock {
                     serverPlayer.teleport(serverWorld, blockPos.getX(), blockPos.getY(), blockPos.getZ(), serverPlayer.bodyYaw, serverPlayer.prevPitch);
                     ManyFlowers.LOGGER.info("World: " + serverWorld + " x: " + x + " y: " + y + " z: " + z);
                 }
-            }
-            if (!entity.isPlayer()) {
+            } else {
                 entity.kill();
             }
         }
