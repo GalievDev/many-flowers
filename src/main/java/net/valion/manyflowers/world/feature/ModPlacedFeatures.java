@@ -8,8 +8,8 @@ import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
 public class ModPlacedFeatures {
-    public static final RegistryEntry<PlacedFeature> ALSTROEMERIA_FLOWER = PlacedFeatures.register("alstroemeria_placed",
-            ModConfiguredFeatures.ALSTROEMERIA_FLOWER, RarityFilterPlacementModifier.of(27), SquarePlacementModifier.of(),
+    public static final RegistryEntry<PlacedFeature> ALSTROEMERIA_FLOWER = PlacedFeatures.register(ModConfiguredFeatures.ALSTROEMERIA_FLOWER,
+            "alstroemeria_placed", RarityFilterPlacementModifier.of(27), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> HYDRANGEA_PLACED = PlacedFeatures.register("hydrangea_placed",
