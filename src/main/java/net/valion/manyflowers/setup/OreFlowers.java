@@ -87,11 +87,10 @@ public class OreFlowers {
         return Registry.register(Registries.BLOCK, new Identifier(MOD_ID, name), block);
     }
 
-    private static Item registerBlockItem(String name, Block block) {
+    private static void registerBlockItem(String name, Block block) {
         Item item = Registry.register(Registries.ITEM, new Identifier(MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
         ItemGroupEvents.modifyEntriesEvent(ItemGroupSetup.MANY_FLOWERS).register(entries -> entries.add(item));
-        return item;
     }
 
     private static Block registerBlockWithoutBlockItem(String name, Block block){
