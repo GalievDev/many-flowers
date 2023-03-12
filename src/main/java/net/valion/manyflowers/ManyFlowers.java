@@ -12,7 +12,6 @@ import net.valion.manyflowers.setup.Flowers;
 import net.valion.manyflowers.setup.ItemGroupSetup;
 import net.valion.manyflowers.setup.ItemsReg;
 import net.valion.manyflowers.setup.OreFlowers;
-import net.valion.manyflowers.world.feature.ModConfiguredFeatures;
 import net.valion.manyflowers.world.gen.ModWorldGen;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,8 +29,6 @@ public class ManyFlowers implements ModInitializer {
         ItemGroupSetup.registerItemGroups();
 
         AutoConfig.register(MFConfig.class, GsonConfigSerializer::new);
-
-        ModConfiguredFeatures.registerConfiguredFeatures();
 
         ModWorldGen.generateModWorldGen();
 
