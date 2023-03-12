@@ -1,5 +1,6 @@
 package net.valion.manyflowers;
 
+import dev.syoritohatsuki.duckyupdater.DuckyUpdater;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -37,5 +38,7 @@ public class ManyFlowers implements ModInitializer {
         ServerLifecycleEvents.SERVER_STARTED.register(server ->
                 server.getWorlds().forEach(WorldsHelper::putWorld)
         );
+
+        DuckyUpdater.checkForUpdate("QUH6A4xu", MOD_ID);
     }
 }

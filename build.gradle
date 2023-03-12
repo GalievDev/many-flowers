@@ -15,6 +15,7 @@ repositories {
     maven { url 'https://maven.blamejared.com' }
     maven { url "https://maven.shedaniel.me/" }
     maven { url "https://maven.terraformersmc.com/releases/" }
+    maven { url "https://api.modrinth.com/maven" }
 }
 
 dependencies {
@@ -31,6 +32,8 @@ dependencies {
         exclude(group: "net.fabricmc.fabric-api")
     }
     modApi("com.terraformersmc:modmenu:${project.modmenu}")
+
+    include(modImplementation("maven.modrinth:ducky-updater:2023.2.3"))
 }
 
 processResources {

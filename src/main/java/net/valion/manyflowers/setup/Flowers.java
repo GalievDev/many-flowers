@@ -40,7 +40,7 @@ public class Flowers {
 
     public static final Block HEMLOCK = registerBlock("hemlock",
             new Hemlock(StatusEffects.FIRE_RESISTANCE, 3,
-                    (AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))), ItemGroup.MISC);
+                    (AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))), null);
 
     public static final Block OENOTHERA = registerBlock("oenothera",
             new Oenothera(FabricBlockSettings.copy(Blocks.ROSE_BUSH).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);

@@ -9,7 +9,6 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
 import net.valion.manyflowers.config.MFConfig;
 
 public class OrientalPoppy extends FlowerBlock {
@@ -21,7 +20,7 @@ public class OrientalPoppy extends FlowerBlock {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.turn_off_explosion_oriental_poppy) {
             if (entity instanceof LivingEntity) {
-                world.createExplosion(entity, pos.getX(), pos.getY(), pos.getZ(), 1F, false, Explosion.DestructionType.DESTROY);
+                world.createExplosion(entity, pos.getX(), pos.getY(), pos.getZ(), 1F, World.ExplosionSourceType.TNT);
                 entity.damage(DamageSource.GENERIC, 3);
             }
         }
