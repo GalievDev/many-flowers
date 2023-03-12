@@ -79,5 +79,6 @@ public class ItemsReg {
 
     public static void registerModItems() {
         ManyFlowers.LOGGER.info("Registering Mod Items for " + MOD_ID);
+        addItemsToItemGroup();
     }
 }
