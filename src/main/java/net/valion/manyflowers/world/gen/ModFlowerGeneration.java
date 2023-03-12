@@ -9,6 +9,6 @@ import net.valion.manyflowers.world.feature.ModPlacedFeatures;
 public class ModFlowerGeneration {
     public static void generateFlower(){
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST, BiomeKeys.JUNGLE),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ALSTROEMERIA_FLOWER);
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ALSTROEMERIA_FLOWER_PLACED);
     }
 }

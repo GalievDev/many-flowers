@@ -13,12 +13,12 @@ import net.valion.manyflowers.setup.Flowers;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final RegistryKey<PlacedFeature> ALSTROEMERIA_FLOWER = registerKey("alstroemeria_placed");
+    public static final RegistryKey<PlacedFeature> ALSTROEMERIA_FLOWER_PLACED = registerKey("alstroemeria_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
-        register(context, ALSTROEMERIA_FLOWER, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ALSTROEMERIA_FLOWER),
+        register(context, ALSTROEMERIA_FLOWER_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ALSTROEMERIA_FLOWER),
                 VegetationPlacedFeatures.modifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), Flowers.ALSTROEMERIA_FLOWER));
     }
 
