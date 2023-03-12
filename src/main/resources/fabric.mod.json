@@ -22,6 +22,9 @@
     ],
     "modmenu": [
       "net.valion.manyflowers.client.ModMenuIntegration"
+    ],
+    "fabric-datagen": [
+      "net.valion.manyflowers.ManyFlowersDataGen"
     ]
   },
   "mixins": [
