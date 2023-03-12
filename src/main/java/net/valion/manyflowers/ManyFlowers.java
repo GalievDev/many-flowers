@@ -22,11 +22,11 @@ public class ManyFlowers implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        ItemGroupSetup.registerItemGroups();
         ItemsReg.registerModItems();
         Flowers.registerModBlocks();
         OreFlowers.registerModBlocks();
         FlowerParticles.registerParticles();
-        ItemGroupSetup.registerItemGroups();
 
         AutoConfig.register(MFConfig.class, GsonConfigSerializer::new);
 

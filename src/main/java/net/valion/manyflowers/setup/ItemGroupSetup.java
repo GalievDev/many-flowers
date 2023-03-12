@@ -13,7 +13,7 @@ public class ItemGroupSetup {
 
     public static void registerItemGroups() {
         MANY_FLOWERS = FabricItemGroup.builder(new Identifier(MOD_ID, "flowers"))
-                .displayName(Text.translatable("itemgroup.citrine"))
+                .displayName(Text.literal("Many Flowers"))
                 .icon(() -> new ItemStack(Flowers.ALSTROEMERIA_FLOWER)).build();
     }
 }
