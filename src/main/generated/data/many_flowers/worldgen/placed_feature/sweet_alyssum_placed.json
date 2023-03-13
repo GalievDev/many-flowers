@@ -1,9 +1,9 @@
 {
-  "feature": "many_flowers:alstroemeria_flower",
+  "feature": "many_flowers:sweet_alyssum",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 47
+      "chance": 44
     },
     {
       "type": "minecraft:in_square"
@@ -24,7 +24,7 @@
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "many_flowers:alstroemeria_flower"
+          "Name": "many_flowers:sweet_alyssum"
         }
       }
     }
