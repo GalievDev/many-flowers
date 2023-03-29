@@ -5,7 +5,6 @@ import net.minecraft.block.Fertilizable;
 import net.minecraft.block.TallPlantBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -23,8 +22,8 @@ public class Oenothera extends TallPlantBlock implements Fertilizable {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.turn_off_damage_oenothera) {
             if (entity instanceof LivingEntity) {
                 LivingEntity livingEntity = (LivingEntity)entity;
-                if (!livingEntity.isInvulnerableTo(DamageSource.MAGIC)) {
-                    entity.damage(DamageSource.MAGIC, 1.0f);
+                if (!livingEntity.isInvulnerableTo(world.getDamageSources().magic())) {
+                    entity.damage(world.getDamageSources().magic(), 1.0f);
                 }
             }
 

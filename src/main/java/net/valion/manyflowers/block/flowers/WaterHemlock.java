@@ -3,7 +3,6 @@ package net.valion.manyflowers.block.flowers;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.Fluid;
@@ -28,7 +27,7 @@ public class WaterHemlock extends PlantBlock implements Fertilizable, FluidFilla
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.turn_off_damage_hemlock) {
             if (entity instanceof LivingEntity livingEntity) {
-                if (!livingEntity.isInvulnerableTo(DamageSource.MAGIC)) {
+                if (!livingEntity.isInvulnerableTo(world.getDamageSources().magic())) {
                     livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 50, 3));
                 }
             }

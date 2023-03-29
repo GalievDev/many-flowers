@@ -4,7 +4,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -21,7 +20,7 @@ public class OrientalPoppy extends FlowerBlock {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.turn_off_explosion_oriental_poppy) {
             if (entity instanceof LivingEntity) {
                 world.createExplosion(entity, pos.getX(), pos.getY(), pos.getZ(), 1F, World.ExplosionSourceType.TNT);
-                entity.damage(DamageSource.GENERIC, 3);
+                entity.damage(world.getDamageSources().generic(), 3);
             }
         }
     }

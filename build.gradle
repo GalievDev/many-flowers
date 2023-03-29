@@ -27,13 +27,12 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"
     modApi("me.shedaniel.cloth:cloth-config-fabric:${project.clothconfig}") {
         exclude(group: "net.fabricmc.fabric-api")
     }
     modApi("com.terraformersmc:modmenu:${project.modmenu}")
 
-    include(modImplementation("maven.modrinth:ducky-updater:2023.2.3"))
+    include(modImplementation("maven.modrinth:ducky-updater:2023.3.2"))
 }
 
 processResources {
