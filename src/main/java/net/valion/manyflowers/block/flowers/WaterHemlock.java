@@ -11,6 +11,7 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -31,8 +32,7 @@ public class WaterHemlock extends PlantBlock implements Fertilizable, FluidFilla
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.turn_off_damage_hemlock) {
-            if (entity instanceof LivingEntity) {
-                LivingEntity livingEntity = (LivingEntity)entity;
+            if (entity instanceof LivingEntity livingEntity) {
                 if (!livingEntity.isInvulnerableTo(DamageSource.MAGIC)) {
                     livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 50, 3));
                 }
@@ -48,7 +48,7 @@ public class WaterHemlock extends PlantBlock implements Fertilizable, FluidFilla
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isSideSolidFullSquare(world, pos, Direction.UP) && !floor.isOf(Blocks.MAGMA_BLOCK);
+        return floor.isSideSolidFullSquare(world, pos, Direction.UP) && floor.isIn(BlockTags.DIRT);
     }
 
     @Override
