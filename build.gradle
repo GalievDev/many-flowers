@@ -32,7 +32,7 @@ dependencies {
     }
     modApi("com.terraformersmc:modmenu:${project.modmenu}")
 
-    include(modImplementation("maven.modrinth:ducky-updater:2023.3.2"))
+    include(modImplementation("maven.modrinth:ducky-updater-legacy:2023.5.1"))
 }
 
 processResources {
