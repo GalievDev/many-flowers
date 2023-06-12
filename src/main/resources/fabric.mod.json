@@ -31,10 +31,11 @@
     "ManyFlowers.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.17",
+    "fabricloader": ">=0.14.19",
     "fabric": "*",
     "minecraft": "1.19.4",
     "modmenu": "*",
-    "cloth-config": "*"
+    "cloth-config": "*",
+    "patchouli": "*"
   }
 }
