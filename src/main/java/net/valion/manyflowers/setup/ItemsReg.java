@@ -8,6 +8,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.valion.manyflowers.ManyFlowers;
 
@@ -73,7 +74,7 @@ public class ItemsReg {
         addToItemGroup(ItemGroupSetup.MANY_FLOWERS, IRON_PETAL);
     }
 
-    private static void addToItemGroup(ItemGroup group, Item item) {
+    private static void addToItemGroup(RegistryKey<ItemGroup> group, Item item) {
         ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
     }
 

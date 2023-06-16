@@ -11,6 +11,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.valion.manyflowers.ManyFlowers;
@@ -34,14 +35,14 @@ public class Flowers {
 
     public static final Block SWEET_ALYSSUM = registerBlock("sweet_alyssum",
             new SweetAlyssum(StatusEffects.ABSORPTION, 3,
-                    FabricBlockSettings.of(Material.PLANT).nonOpaque().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(5)), ItemGroupSetup.MANY_FLOWERS);
+                    FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).nonOpaque().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(5)), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block WATER_HEMLOCK = registerBlock("water_hemlock",
-            new WaterHemlock(AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS)), ItemGroupSetup.MANY_FLOWERS);
+            new WaterHemlock(FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS)), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block HEMLOCK = registerBlock("hemlock",
             new Hemlock(StatusEffects.FIRE_RESISTANCE, 3,
-                    (AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))), ItemGroups.FUNCTIONAL);
+                    (FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))), ItemGroups.FUNCTIONAL);
 
     public static final Block OENOTHERA = registerBlock("oenothera",
             new Oenothera(FabricBlockSettings.copy(Blocks.ROSE_BUSH).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
@@ -58,12 +59,12 @@ public class Flowers {
             new RootOfTheWorlds(StatusEffects.FIRE_RESISTANCE, 3,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
-    private static Block registerBlock(String name, Block block, ItemGroup group) {
+    private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registries.BLOCK, new Identifier(ManyFlowers.MOD_ID, name), block);
     }
 
-    private static Item registerBlockItem(String name, Block block, ItemGroup group) {
+    private static Item registerBlockItem(String name, Block block, RegistryKey<ItemGroup> group) {
         Item item = Registry.register(Registries.ITEM, new Identifier(ManyFlowers.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
         ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));

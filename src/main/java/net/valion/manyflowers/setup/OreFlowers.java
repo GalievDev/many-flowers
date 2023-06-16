@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
-import net.minecraft.block.Material;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -65,22 +64,22 @@ public class OreFlowers {
 
     //Petal Blocks//
     public static final Block DIAMOND_PETAL_BLOCK = registerBlock("diamond_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+            new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     public static final Block COAL_PETAL_BLOCK = registerBlock("coal_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.STONE)));
+            new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.STONE)));
 
     public static final Block IRON_PETAL_BLOCK = registerBlock("iron_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.METAL)));
+            new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.METAL)));
 
     public static final Block GOLD_PETAL_BLOCK = registerBlock("gold_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.METAL)));
+            new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.METAL)));
 
     public static final Block EMERALD_PETAL_BLOCK = registerBlock("emerald_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+            new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     public static final Block COPPER_PETAL_BLOCK = registerBlock("copper_petal_block",
-            new Block(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.METAL)));
+            new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.METAL)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
