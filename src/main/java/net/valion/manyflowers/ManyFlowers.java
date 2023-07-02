@@ -8,10 +8,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.valion.manyflowers.config.MFConfig;
 import net.valion.manyflowers.helpers.WorldsHelper;
 import net.valion.manyflowers.particle.FlowerParticles;
-import net.valion.manyflowers.setup.Flowers;
-import net.valion.manyflowers.setup.ItemGroupSetup;
-import net.valion.manyflowers.setup.ItemsReg;
-import net.valion.manyflowers.setup.OreFlowers;
+import net.valion.manyflowers.setup.*;
 import net.valion.manyflowers.world.gen.ModWorldGen;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,7 +32,6 @@ public class ManyFlowers implements ModInitializer {
         ServerLifecycleEvents.SERVER_STARTED.register(server ->
                 server.getWorlds().forEach(WorldsHelper::putWorld)
         );
-
         DuckyUpdater.checkForUpdate("QUH6A4xu", MOD_ID);
     }
 }

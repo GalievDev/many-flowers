@@ -11,6 +11,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.item.Encyclopedia;
 
 import static net.valion.manyflowers.ManyFlowers.MOD_ID;
 import static net.valion.manyflowers.setup.OreFlowers.*;
@@ -54,6 +55,8 @@ public class ItemsReg {
     public static final Item COPPER_PETAL = registerItem("copper_petal",
             new Item(new FabricItemSettings()));
 
+    public static final Item ENCYCLOPEDIA = registerItem("encyclopedia", new Encyclopedia());
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(MOD_ID, name), item);
     }
@@ -67,6 +70,7 @@ public class ItemsReg {
         addToItemGroup(ItemGroups.INGREDIENTS, IRON_SEEDS);
 
         addToItemGroup(ItemGroupSetup.MANY_FLOWERS, COAL_PETAL);
+        addToItemGroup(ItemGroupSetup.MANY_FLOWERS, ENCYCLOPEDIA);
         addToItemGroup(ItemGroupSetup.MANY_FLOWERS, COPPER_PETAL);
         addToItemGroup(ItemGroupSetup.MANY_FLOWERS, DIAMOND_PETAL);
         addToItemGroup(ItemGroupSetup.MANY_FLOWERS, EMERALD_PETAL);
