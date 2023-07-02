@@ -29,11 +29,6 @@ public class WorldsHelper {
         return random.nextInt(bound);
     }
 
-    public static int getRandInt(){
-        Random random = new Random();
-        return random.nextInt();
-    }
-
     public static void safeCheck(ServerWorld serverWorld, BlockPos.Mutable blockPos, int y){
         while (!isSafe(serverWorld, blockPos)) {
             y++;
