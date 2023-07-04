@@ -15,7 +15,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.valion.manyflowers.config.MFConfig;
 
-import static net.valion.manyflowers.helpers.WorldsHelper.*;
+import static net.valion.manyflowers.helpers.WorldsHelper.teleportToSafeZone;
 
 public class RootOfTheWorlds extends FlowerBlock {
     public RootOfTheWorlds(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
@@ -23,23 +23,10 @@ public class RootOfTheWorlds extends FlowerBlock {
     }
 
     @Override
-    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (world instanceof ServerWorld && !entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals() && entity.isPlayer() && MFConfig.turn_off_teleport_ROTW) {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity) entity;
-            ServerWorld serverWorld = getRandomWorld();
-            int x = getRandInt(1000);
-            int y = 50;
-            int z = getRandInt(1000);
-
-            BlockPos.Mutable blockPos = new BlockPos.Mutable(x, y, z);
-
-            if (serverPlayer.isPlayer() && entity.isPlayer()) {
-                safeCheck(serverWorld, blockPos);
-                tpSafeZone(serverPlayer, serverWorld, blockPos);
-            }
-            if (!entity.isPlayer()) {
-                entity.kill();
-            }
+            teleportToSafeZone(serverPlayer);
         }
     }
 
