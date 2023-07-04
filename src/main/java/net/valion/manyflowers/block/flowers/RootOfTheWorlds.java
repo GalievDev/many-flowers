@@ -13,7 +13,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.config.MFConfig;
 
 import static net.valion.manyflowers.helpers.WorldsHelper.*;
@@ -28,18 +27,15 @@ public class RootOfTheWorlds extends FlowerBlock {
         if (world instanceof ServerWorld && !entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals() && entity.isPlayer() && MFConfig.turn_off_teleport_ROTW) {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity) entity;
             ServerWorld serverWorld = getRandomWorld();
-            int x = getRandInt(100000);
+            int x = getRandInt(1000);
             int y = 50;
-            int z = getRandInt(100000);
+            int z = getRandInt(1000);
 
             BlockPos.Mutable blockPos = new BlockPos.Mutable(x, y, z);
 
             if (serverPlayer.isPlayer() && entity.isPlayer()) {
-                safeCheck(serverWorld, blockPos, y);
-                if (isSafe(serverWorld, blockPos)) {
-                    serverPlayer.teleport(serverWorld, blockPos.getX(), blockPos.getY(), blockPos.getZ(), serverPlayer.bodyYaw, serverPlayer.prevPitch);
-                    ManyFlowers.LOGGER.info("World: " + serverWorld + " x: " + x + " y: " + y + " z: " + z);
-                }
+                safeCheck(serverWorld, blockPos);
+                tpSafeZone(serverPlayer, serverWorld, blockPos);
             }
             if (!entity.isPlayer()) {
                 entity.kill();

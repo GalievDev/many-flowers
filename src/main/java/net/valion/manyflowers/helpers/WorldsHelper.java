@@ -2,8 +2,10 @@ package net.valion.manyflowers.helpers;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FluidBlock;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -29,13 +31,33 @@ public class WorldsHelper {
         return random.nextInt(bound);
     }
 
-    public static void safeCheck(ServerWorld serverWorld, BlockPos.Mutable blockPos, int y){
+    public static void tpSafeZone(ServerPlayerEntity player, ServerWorld serverWorld, BlockPos.Mutable blockPos) {
+        if (isSafe(serverWorld, blockPos)) {
+            player.setSpawnPoint(serverWorld.getRegistryKey(), blockPos, player.getSpawnAngle(), true, false);
+            player.teleport(serverWorld, blockPos.getX() + 0.5, blockPos.getY(), blockPos.getZ() + 0.5, player.bodyYaw, player.prevPitch);
+        } else {
+            blockPos.setX(getRandInt(1000));
+            blockPos.setZ(getRandInt(1500));
+            safeCheck(serverWorld, blockPos);
+            tpSafeZone(player, serverWorld, blockPos);
+        }
+    }
+
+    public static void safeCheck(ServerWorld serverWorld, BlockPos.Mutable blockPos) {
+        int y = blockPos.getY();
         while (!isSafe(serverWorld, blockPos)) {
             y++;
             blockPos.setY(y);
-            if (blockPos.getY() >= 200) {
-                blockPos.setY(50);
-                safeCheck(serverWorld, blockPos, y);
+            if (blockPos.getY() >= 120 && serverWorld.getRegistryKey() == World.NETHER) {
+                blockPos.setY(70);
+                blockPos.setX(getRandInt(1000));
+                blockPos.setZ(getRandInt(1000));
+                safeCheck(serverWorld, blockPos);
+            } else if (blockPos.getY() >= 200) {
+                blockPos.setY(70);
+                blockPos.setX(getRandInt(2000));
+                blockPos.setZ(getRandInt(2000));
+                safeCheck(serverWorld, blockPos);
             }
         }
     }
