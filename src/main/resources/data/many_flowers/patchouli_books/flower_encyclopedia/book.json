@@ -3,5 +3,7 @@
   "landing_text": "The encyclopedia contains information about colors. Here you can find basic information about the generation and features of some colors.",
   "version": 1,
   "book_texture": "patchouli:textures/gui/book_green.png",
-  "model": "many_flowers:flower_encyclopedia"
+  "model": "many_flowers:flower_encyclopedia",
+  "creative_tab": "many_flowers",
+  "use_resource_pack": true
 }
