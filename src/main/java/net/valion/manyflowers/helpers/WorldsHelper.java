@@ -25,10 +25,6 @@ public class WorldsHelper {
         dims.clear();
     }
 
-    public static int getRandInt(int bound){
-        return random.nextInt(bound);
-    }
-
     public static void teleportToSafeZone(ServerPlayerEntity player) {
         ServerWorld serverWorld = getRandomWorld();
         BlockPos.Mutable blockPos = new BlockPos.Mutable();

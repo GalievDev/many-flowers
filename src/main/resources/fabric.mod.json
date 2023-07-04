@@ -32,7 +32,7 @@
   "depends": {
     "fabricloader": ">=0.14.21",
     "fabric": ">=0.83.0+1.20.1",
-    "minecraft": "1.20.1",
+    "minecraft": ">=1.20",
     "modmenu": ">=7.0.1",
     "cloth-config": ">=11.0.99"
   }
