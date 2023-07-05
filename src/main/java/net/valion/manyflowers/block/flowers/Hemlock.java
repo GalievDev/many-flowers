@@ -10,7 +10,8 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
-import net.valion.manyflowers.config.MFConfig;
+
+import static net.valion.manyflowers.ManyFlowers.CONFIG;
 
 public class Hemlock extends FlowerBlock {
     public Hemlock(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
@@ -19,7 +20,7 @@ public class Hemlock extends FlowerBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.turn_off_damage_hemlock) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && CONFIG.damage_hemlock) {
             if (entity instanceof LivingEntity livingEntity) {
                 if (!livingEntity.isInvulnerableTo(world.getDamageSources().magic())) {
                     livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 50, 3));

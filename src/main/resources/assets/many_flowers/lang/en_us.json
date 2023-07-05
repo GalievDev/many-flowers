@@ -46,9 +46,9 @@
   "block.many_flowers.emerald_petal_block": "Emerald Petal Block",
   "block.many_flowers.copper_petal_block": "Copper Petal Block",
 
-  "text.autoconfig.many_flowers.option.turn_off_damage_gaillardia": "Damage From Gaillardia",
-  "text.autoconfig.many_flowers.option.turn_off_damage_hemlock": "Damage From Water Hemlock",
-  "text.autoconfig.many_flowers.option.turn_off_damage_oenothera": "Damage From Oenothera",
-  "text.autoconfig.many_flowers.option.turn_off_teleport_ROTW": "Teleportation Root Of The Worlds",
-  "text.autoconfig.many_flowers.option.turn_off_explosion_oriental_poppy": "Explosion from Oriental Poppy"
+  "text.autoconfig.many_flowers.option.damage_gaillardia": "Damage From Gaillardia",
+  "text.autoconfig.many_flowers.option.damage_hemlock": "Damage From Water Hemlock",
+  "text.autoconfig.many_flowers.option.damage_oenothera": "Damage From Oenothera",
+  "text.autoconfig.many_flowers.option.teleport_ROTW": "Teleportation Root Of The Worlds",
+  "text.autoconfig.many_flowers.option.explosion_oriental_poppy": "Explosion from Oriental Poppy"
 }
