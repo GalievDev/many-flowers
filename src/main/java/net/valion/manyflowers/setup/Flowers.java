@@ -59,6 +59,14 @@ public class Flowers {
             new RootOfTheWorlds(StatusEffects.FIRE_RESISTANCE, 3,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
+    public static final Block CHRYSANTHEMUM = registerBlock("chrysanthemum",
+            new Chrysanthemum(StatusEffects.REGENERATION, 3,
+                    (FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))), ItemGroupSetup.MANY_FLOWERS);
+
+    public static final Block DAISES = registerBlock("daises",
+            new FlowerBlock(StatusEffects.ABSORPTION, 3,
+                    FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
+
     private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registries.BLOCK, new Identifier(ManyFlowers.MOD_ID, name), block);

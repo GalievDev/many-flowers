@@ -10,4 +10,6 @@ public class MFConfig implements ConfigData {
     public boolean damage_oenothera = true;
     public boolean teleport_ROTW = true;
     public boolean explosion_oriental_poppy = true;
+
+    public boolean damage_chrysanthemum = true;
 }
