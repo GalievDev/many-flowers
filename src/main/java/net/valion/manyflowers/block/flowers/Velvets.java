@@ -10,6 +10,7 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.valion.manyflowers.ManyFlowers;
 import org.jetbrains.annotations.Nullable;
 
 public class Velvets extends FlowerBlock {
@@ -19,26 +20,27 @@ public class Velvets extends FlowerBlock {
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
+        ManyFlowers.LOGGER.info(world.getTickOrder());
         if (world.getRegistryKey() == World.OVERWORLD) {
             for (BlockPos gPos : BlockPos.iterate(pos.add(-2, -1, -2), pos.add(2, 1, 2))) {
                 for (BlockPos xPos : BlockPos.iterate(pos.add(-4, -1, -1), pos.add(4, 1, 2))) {
                     for (BlockPos zPos : BlockPos.iterate(pos.add(-1, -1, -4), pos.add(1, 1, 4))) {
                         var gBlocks = world.getBlockState(gPos).getBlock();
                         var xBlocks = world.getBlockState(xPos).getBlock();
-                        var zBLocks = world.getBlockState(zPos).getBlock();
+                        var zBlocks = world.getBlockState(zPos).getBlock();
 
-                        if (gBlocks == Blocks.GRASS_BLOCK) {
+                        if (gBlocks == Blocks.GRASS_BLOCK && xBlocks == Blocks.GRASS_BLOCK && zBlocks == Blocks.GRASS_BLOCK) {
                             world.setBlockState(gPos, Blocks.CRIMSON_NYLIUM.getDefaultState());
-                            world.setBlockState(xPos, Blocks.CRIMSON_PLANKS.getDefaultState());
-                            world.setBlockState(zPos, Blocks.ACACIA_PLANKS.getDefaultState());
-                        } else if (gBlocks == Blocks.DIRT) {
+                            world.setBlockState(xPos, Blocks.CRIMSON_NYLIUM.getDefaultState());
+                            world.setBlockState(zPos, Blocks.CRIMSON_NYLIUM.getDefaultState());
+                        } else if (gBlocks == Blocks.DIRT && xBlocks == Blocks.DIRT && zBlocks == Blocks.DIRT) {
                             world.setBlockState(gPos, Blocks.NETHERRACK.getDefaultState());
-                            world.setBlockState(xPos, Blocks.CHERRY_PLANKS.getDefaultState());
-                            world.setBlockState(zPos, Blocks.JUNGLE_PLANKS.getDefaultState());
-                        } else if (gBlocks == Blocks.STONE) {
+                            world.setBlockState(xPos, Blocks.NETHERRACK.getDefaultState());
+                            world.setBlockState(zPos, Blocks.NETHERRACK.getDefaultState());
+                        } else if (gBlocks == Blocks.STONE && xBlocks == Blocks.STONE && zBlocks == Blocks.STONE) {
                             world.setBlockState(gPos, Blocks.BASALT.getDefaultState());
-                            world.setBlockState(xPos, Blocks.COBBLESTONE.getDefaultState());
-                            world.setBlockState(zPos, Blocks.BOOKSHELF.getDefaultState());
+                            world.setBlockState(xPos, Blocks.BASALT.getDefaultState());
+                            world.setBlockState(zPos, Blocks.BASALT.getDefaultState());
                         }
                     }
                 }
