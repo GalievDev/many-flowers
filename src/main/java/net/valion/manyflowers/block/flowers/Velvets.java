@@ -1,5 +1,6 @@
 package net.valion.manyflowers.block.flowers;
 
+import blue.endless.jankson.annotation.Nullable;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
@@ -11,7 +12,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
-import org.jetbrains.annotations.Nullable;
 
 public class Velvets extends FlowerBlock {
     public Velvets(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
@@ -23,7 +23,7 @@ public class Velvets extends FlowerBlock {
         ManyFlowers.LOGGER.info(world.getTickOrder());
         if (world.getRegistryKey() == World.OVERWORLD) {
             for (BlockPos gPos : BlockPos.iterate(pos.add(-2, -1, -2), pos.add(2, 1, 2))) {
-                for (BlockPos xPos : BlockPos.iterate(pos.add(-4, -1, -1), pos.add(4, 1, 2))) {
+                for (BlockPos xPos : BlockPos.iterate(pos.add(-4, -2, -1), pos.add(4, 1, 2))) {
                     for (BlockPos zPos : BlockPos.iterate(pos.add(-1, -1, -4), pos.add(1, 1, 4))) {
                         var gBlocks = world.getBlockState(gPos).getBlock();
                         var xBlocks = world.getBlockState(xPos).getBlock();
