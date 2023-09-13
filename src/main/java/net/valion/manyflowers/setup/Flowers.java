@@ -67,7 +67,7 @@ public class Flowers {
             new FlowerBlock(StatusEffects.ABSORPTION, 3,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
-    public static final Block VELVETS = registerBlock("velvents",
+    public static final Block VELVETS = registerBlock("velvets",
             new Velvets(FabricBlockSettings.create().mapColor(MapColor.ORANGE).noCollision().breakInstantly().sounds(BlockSoundGroup.WEEPING_VINES)), ItemGroupSetup.MANY_FLOWERS);
 
     private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group) {

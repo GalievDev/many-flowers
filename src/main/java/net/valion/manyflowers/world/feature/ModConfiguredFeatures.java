@@ -20,6 +20,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> GAILLARDIA = registerKey("gaillardia");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORIENTAL_POPPY = registerKey("oriental_poppy");
     public static final RegistryKey<ConfiguredFeature<?, ?>> WORLDS_ROOT = registerKey("worlds_root");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> VELVETS = registerKey("velvets");
     public static final RegistryKey<ConfiguredFeature<?, ?>> DIAMOND_FLOWER = registerKey("diamond_flower");
     public static final RegistryKey<ConfiguredFeature<?, ?>> GOLD_FLOWER = registerKey("gold_flower");
     public static final RegistryKey<ConfiguredFeature<?, ?>> IRON_FLOWER = registerKey("iron_flower");
@@ -62,6 +63,10 @@ public class ModConfiguredFeatures {
 
         register(context, WORLDS_ROOT, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.ROOT_OF_THE_WORLDS)))
+        ));
+
+        register(context, VELVETS, Feature.FLOWER, new RandomPatchFeatureConfig(
+                52, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.VELVETS)))
         ));
 
         register(context, DIAMOND_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(

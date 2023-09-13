@@ -37,6 +37,9 @@ public class ModFlowerGeneration {
                         BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS, BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.BAMBOO_JUNGLE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WORLDS_ROOT_PLACED);
 
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.CRIMSON_FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.VELVETS_PLACED);
+
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DIAMOND_FLOWER_PLACED);
 
