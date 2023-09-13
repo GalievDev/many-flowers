@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class VelvetsBlockEntity extends BlockEntity {
     public static ArrayList<BlockPos> poses = new ArrayList<>();
-    private final int delay = 20;
+    private final int delay = 3600;
     private int counter = 0;
 
     public VelvetsBlockEntity(BlockPos pos, BlockState state) {
