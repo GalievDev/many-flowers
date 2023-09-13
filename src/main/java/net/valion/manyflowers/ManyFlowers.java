@@ -9,10 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.valion.manyflowers.config.MFConfig;
 import net.valion.manyflowers.helpers.WorldsHelper;
 import net.valion.manyflowers.particle.FlowerParticles;
-import net.valion.manyflowers.setup.Flowers;
-import net.valion.manyflowers.setup.ItemGroupSetup;
-import net.valion.manyflowers.setup.ItemsReg;
-import net.valion.manyflowers.setup.OreFlowers;
+import net.valion.manyflowers.setup.*;
 import net.valion.manyflowers.world.gen.ModWorldGen;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,6 +30,7 @@ public class ManyFlowers implements ModInitializer {
         Flowers.registerModBlocks();
         OreFlowers.registerModBlocks();
         FlowerParticles.registerParticles();
+        BlockEntitiesReg.register();
 
         AutoConfig.register(MFConfig.class, JanksonConfigSerializer::new);
         CONFIG = AutoConfig.getConfigHolder(MFConfig.class).getConfig();
