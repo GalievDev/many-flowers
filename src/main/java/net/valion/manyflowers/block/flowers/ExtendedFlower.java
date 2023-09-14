@@ -1,21 +1,23 @@
 package net.valion.manyflowers.block.flowers;
 
-import net.minecraft.block.BlockRenderType;
+import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import net.valion.manyflowers.block.flowers.entity.VelvetsBlockEntity;
-import net.valion.manyflowers.setup.BlockEntitiesReg;
+import org.jetbrains.annotations.Nullable;
 
-public class Velvets extends ExtendedFlower {
-    public Velvets(Settings settings) {
+public abstract class ExtendedFlower extends BlockWithEntity implements BlockEntityProvider {
+    protected ExtendedFlower(Settings settings) {
         super(settings);
     }
 
@@ -24,27 +26,25 @@ public class Velvets extends ExtendedFlower {
         return !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
+    public boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
+        return floor.isIn(BlockTags.DIRT) || floor.isIn(BlockTags.BASE_STONE_OVERWORLD) || floor.isIn(BlockTags.BASE_STONE_NETHER);
+    }
+
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.down();
         return this.canPlantOnTop(world.getBlockState(blockPos), world, blockPos);
     }
 
-    //Block entity
-    @org.jetbrains.annotations.Nullable
+    @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new VelvetsBlockEntity(pos, state);
+        return null;
     }
 
-    @org.jetbrains.annotations.Nullable
+    @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, BlockEntitiesReg.VELVETS_ENTITY, VelvetsBlockEntity::tick);
-    }
-
-    @Override
-    public BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
+        return null;
     }
 }
