@@ -7,7 +7,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
@@ -16,7 +15,7 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class ExtendedFlower extends BlockWithEntity implements BlockEntityProvider {
+public class ExtendedFlower extends BlockWithEntity implements BlockEntityProvider {
     protected ExtendedFlower(Settings settings) {
         super(settings);
     }
@@ -27,7 +26,7 @@ public abstract class ExtendedFlower extends BlockWithEntity implements BlockEnt
     }
 
     public boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isIn(BlockTags.DIRT) || floor.isIn(BlockTags.BASE_STONE_OVERWORLD) || floor.isIn(BlockTags.BASE_STONE_NETHER);
+        return false;
     }
 
     @Override

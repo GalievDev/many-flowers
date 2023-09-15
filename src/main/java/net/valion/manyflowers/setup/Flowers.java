@@ -63,12 +63,19 @@ public class Flowers {
             new Chrysanthemum(StatusEffects.REGENERATION, 3,
                     (FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))), ItemGroupSetup.MANY_FLOWERS);
 
-    public static final Block DAISES = registerBlock("daises",
+    public static final Block DAISIES = registerBlock("daisies",
             new FlowerBlock(StatusEffects.ABSORPTION, 3,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block VELVETS = registerBlock("velvets",
             new Velvets(FabricBlockSettings.copy(Blocks.DANDELION).sounds(BlockSoundGroup.WEEPING_VINES)), ItemGroupSetup.MANY_FLOWERS);
+
+    public static final Block AUTUMN_ASTERS = registerBlock("autumn_asters",
+            new AutumnAsters(FabricBlockSettings.copy(Blocks.DANDELION)), ItemGroupSetup.MANY_FLOWERS);
+
+    public static final Block ZINNIA = registerBlock("zinnia",
+            new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 3,
+                    FabricBlockSettings.copy(Blocks.DANDELION)), ItemGroupSetup.MANY_FLOWERS);
 
     private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group) {
         registerBlockItem(name, block, group);
