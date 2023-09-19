@@ -6,6 +6,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.BlockTags;
@@ -31,10 +32,10 @@ public class AutumnAsters extends ExtendedFlower {
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof PlayerEntity) {
-            if (items.size() < 10) {
-                var stack = ((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand());
+            if (items.size() < 10 && ((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()) != null) {
+                var stack = new ItemStack(((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()).getItem(), new Random().nextInt(3));
                 items.put(stack, stack.getCount());
-                ((PlayerEntity) entity).getInventory().removeStack(((PlayerEntity) entity).getInventory().selectedSlot, new Random().nextInt(3));
+                ((PlayerEntity) entity).getInventory().removeStack(((PlayerEntity) entity).getInventory().selectedSlot, stack.getCount());
             }
         }
     }
@@ -44,9 +45,10 @@ public class AutumnAsters extends ExtendedFlower {
         if (!world.isClient && !items.isEmpty()) {
             items.forEach((itemStack, count) -> {
                 var stack = new ItemStack(itemStack.getItem(), count);
-                player.getInventory().insertStack(player.getInventory().getEmptySlot(), stack);
-                items.remove(itemStack);
+                var entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack);
+                world.spawnEntity(entity);
             });
+            items.clear();
         }
         return ActionResult.PASS;
     }
