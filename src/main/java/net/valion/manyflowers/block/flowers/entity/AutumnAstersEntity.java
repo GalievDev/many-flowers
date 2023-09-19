@@ -27,7 +27,7 @@ public class AutumnAstersEntity extends BlockEntity {
         if (entity.counter == entity.delay) {
             if (AutumnAsters.items.size() < 10) {
                 for (var item : items) {
-                    AutumnAsters.items.put(item.getStack(), item.getStack().getCount());
+                    AutumnAsters.items.put(item.getStack().getItem().getTranslationKey(), item.getStack().getCount());
                     item.remove(Entity.RemovalReason.KILLED);
                 }
             }

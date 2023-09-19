@@ -9,9 +9,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
@@ -21,10 +23,11 @@ import net.valion.manyflowers.setup.BlockEntitiesReg;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class AutumnAsters extends ExtendedFlower {
-    public static HashMap<ItemStack, Integer> items = new HashMap<>();
+    public static Map<String, Integer> items = new HashMap<>();
     public AutumnAsters(Settings settings) {
         super(settings);
     }
@@ -34,7 +37,7 @@ public class AutumnAsters extends ExtendedFlower {
         if (entity instanceof PlayerEntity) {
             if (items.size() < 10 && ((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()) != null) {
                 var stack = new ItemStack(((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()).getItem(), new Random().nextInt(3));
-                items.put(stack, stack.getCount());
+                items.put(stack.getItem().getTranslationKey(), stack.getCount());
                 ((PlayerEntity) entity).getInventory().removeStack(((PlayerEntity) entity).getInventory().selectedSlot, stack.getCount());
             }
         }
@@ -43,8 +46,8 @@ public class AutumnAsters extends ExtendedFlower {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient && !items.isEmpty()) {
-            items.forEach((itemStack, count) -> {
-                var stack = new ItemStack(itemStack.getItem(), count);
+            items.forEach((id, count) -> {
+                var stack = new ItemStack(Registries.ITEM.get(new Identifier(id)), count);
                 var entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack);
                 world.spawnEntity(entity);
             });
