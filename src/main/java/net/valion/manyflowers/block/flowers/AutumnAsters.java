@@ -9,6 +9,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -16,12 +19,11 @@ import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity;
 import net.valion.manyflowers.setup.BlockEntitiesReg;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Random;
 
 public class AutumnAsters extends ExtendedFlower {
-    public static ArrayList<ItemStack> items = new ArrayList<>();
+    public static HashMap<ItemStack, Integer> items = new HashMap<>();
     public AutumnAsters(Settings settings) {
         super(settings);
     }
@@ -29,15 +31,24 @@ public class AutumnAsters extends ExtendedFlower {
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof PlayerEntity) {
-            Random random = new Random(System.currentTimeMillis());
-            List<ItemStack> inv = ((PlayerEntity) entity).getInventory().main;
-            if (!inv.isEmpty()) {
-                var rand = random.nextInt(inv.size());
-                var stack = inv.get(rand);
-                items.add(stack);
-                inv.remove(rand);
+            if (items.size() < 10) {
+                var stack = ((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand());
+                items.put(stack, stack.getCount());
+                ((PlayerEntity) entity).getInventory().removeStack(((PlayerEntity) entity).getInventory().selectedSlot, new Random().nextInt(3));
             }
         }
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (!world.isClient && !items.isEmpty()) {
+            items.forEach((itemStack, count) -> {
+                var stack = new ItemStack(itemStack.getItem(), count);
+                player.getInventory().insertStack(player.getInventory().getEmptySlot(), stack);
+                items.remove(itemStack);
+            });
+        }
+        return ActionResult.PASS;
     }
 
     @Override

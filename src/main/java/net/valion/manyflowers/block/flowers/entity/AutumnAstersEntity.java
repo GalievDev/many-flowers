@@ -13,17 +13,25 @@ import net.valion.manyflowers.setup.BlockEntitiesReg;
 import java.util.List;
 
 public class AutumnAstersEntity extends BlockEntity {
+    int delay = 100;
+    int counter = 0;
     public AutumnAstersEntity(BlockPos pos, BlockState state) {
         super(BlockEntitiesReg.AUTUMN_ASTERS_ENTITY, pos, state);
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState state, AutumnAstersEntity entity) {
         if (world.isClient) return;
+        if (entity.counter < 0) entity.counter = 0;
         List<ItemEntity> items = world.getEntitiesByClass(ItemEntity.class, new Box(blockPos).expand(5), item -> item instanceof ItemEntity);
 
-        for (var item: items) {
-            AutumnAsters.items.add(item.getStack());
-            item.remove(Entity.RemovalReason.KILLED);
-        }
+        if (entity.counter == entity.delay) {
+            if (AutumnAsters.items.size() < 10) {
+                for (var item : items) {
+                    AutumnAsters.items.put(item.getStack(), item.getStack().getCount());
+                    item.remove(Entity.RemovalReason.KILLED);
+                }
+            }
+            entity.counter = 0;
+        } else entity.counter++;
     }
 }
