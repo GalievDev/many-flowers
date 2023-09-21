@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "many_flowers:velvets"
+    }
+  },
+  "result": {
+    "item": "minecraft:orange_dye",
+    "count": 1
+  }
+}
