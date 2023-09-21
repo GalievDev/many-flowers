@@ -27,8 +27,6 @@ public class ManyFlowers implements ModInitializer {
     public void onInitialize() {
         ItemGroupSetup.registerItemGroups();
         ItemsReg.registerModItems();
-        Flowers.registerModBlocks();
-        OreFlowers.registerModBlocks();
         FlowerParticles.registerParticles();
         BlockEntitiesReg.register();
 

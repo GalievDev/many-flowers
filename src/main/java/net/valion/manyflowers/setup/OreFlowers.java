@@ -13,7 +13,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.plant.*;
 
 import static net.valion.manyflowers.ManyFlowers.MOD_ID;
@@ -94,9 +93,5 @@ public class OreFlowers {
 
     private static Block registerBlockWithoutBlockItem(String name, Block block){
         return Registry.register(Registries.BLOCK, new Identifier(MOD_ID, name), block);
-    }
-
-    public static void registerModBlocks() {
-        ManyFlowers.LOGGER.info("Registering ModBlocks for " + MOD_ID);
     }
 }

@@ -17,8 +17,6 @@ import net.minecraft.util.Identifier;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.flowers.*;
 
-import static net.valion.manyflowers.ManyFlowers.MOD_ID;
-
 public class Flowers {
 
     public static final Block ALSTROEMERIA_FLOWER = registerBlock("alstroemeria_flower",
@@ -94,9 +92,5 @@ public class Flowers {
                 new BlockItem(block, new FabricItemSettings()));
         ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
         return item;
-    }
-
-    public static void registerModBlocks() {
-        ManyFlowers.LOGGER.info("Registering ModBlocks for " + MOD_ID);
     }
 }
