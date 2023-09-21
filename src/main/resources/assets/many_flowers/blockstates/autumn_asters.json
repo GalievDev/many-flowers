@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "many_flowers:block/asters_bottom"
+    },
+    "half=upper": {
+      "model": "many_flowers:block/asters_top"
+    }
+  }
+}
