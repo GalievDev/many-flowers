@@ -22,33 +22,33 @@ import static net.valion.manyflowers.ManyFlowers.MOD_ID;
 public class Flowers {
 
     public static final Block ALSTROEMERIA_FLOWER = registerBlock("alstroemeria_flower",
-            new FlowerBlock(StatusEffects.SATURATION, 3,
+            new FlowerBlock(StatusEffects.SATURATION, 0,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block HYDRANGEA_FLOWER = registerBlock("hydrangea_flower",
-            new FlowerBlock(StatusEffects.WATER_BREATHING, 3,
+            new FlowerBlock(StatusEffects.WATER_BREATHING, 0,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block MARIGOLD_FLOWER = registerBlock("marigold_flower",
-            new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 3,
+            new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 0,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block SWEET_ALYSSUM = registerBlock("sweet_alyssum",
-            new SweetAlyssum(StatusEffects.ABSORPTION, 3,
+            new SweetAlyssum(StatusEffects.ABSORPTION, 0,
                     FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).nonOpaque().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(5)), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block WATER_HEMLOCK = registerBlock("water_hemlock",
             new WaterHemlock(FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS)), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block HEMLOCK = registerBlock("hemlock",
-            new Hemlock(StatusEffects.FIRE_RESISTANCE, 3,
+            new Hemlock(StatusEffects.FIRE_RESISTANCE, 0,
                     (FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))), ItemGroups.FUNCTIONAL);
 
     public static final Block OENOTHERA = registerBlock("oenothera",
             new Oenothera(FabricBlockSettings.copy(Blocks.ROSE_BUSH).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block GAILLARDIA = registerBlock("gaillardia",
-            new Gaillardia(StatusEffects.FIRE_RESISTANCE, 3,
+            new Gaillardia(StatusEffects.FIRE_RESISTANCE, 0,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block ORIENTAL_POPPY = registerBlock("oriental_poppy",
@@ -56,25 +56,32 @@ public class Flowers {
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block ROOT_OF_THE_WORLDS = registerBlock("root_of_the_worlds",
-            new RootOfTheWorlds(StatusEffects.FIRE_RESISTANCE, 3,
+            new RootOfTheWorlds(StatusEffects.FIRE_RESISTANCE, 0,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block CHRYSANTHEMUM = registerBlock("chrysanthemum",
-            new Chrysanthemum(StatusEffects.REGENERATION, 3,
+            new Chrysanthemum(StatusEffects.REGENERATION, 0,
                     (FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block DAISIES = registerBlock("daisies",
-            new FlowerBlock(StatusEffects.ABSORPTION, 3,
+            new FlowerBlock(StatusEffects.ABSORPTION, 0,
                     FabricBlockSettings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block VELVETS = registerBlock("velvets",
             new Velvets(FabricBlockSettings.copy(Blocks.DANDELION).sounds(BlockSoundGroup.WEEPING_VINES)), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block AUTUMN_ASTERS = registerBlock("autumn_asters",
-            new AutumnAsters(FabricBlockSettings.copy(Blocks.DANDELION)), ItemGroupSetup.MANY_FLOWERS);
+            new AutumnAsters(FabricBlockSettings.copy(Blocks.ROSE_BUSH)), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block ZINNIA = registerBlock("zinnia",
-            new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 3,
+            new TallFlowerBlock(FabricBlockSettings.copy(Blocks.ROSE_BUSH)), ItemGroupSetup.MANY_FLOWERS);
+
+    public static final Block AUTUMN_CROCUS = registerBlock("autumn_crocus",
+            new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 0,
+                    FabricBlockSettings.copy(Blocks.DANDELION)), ItemGroupSetup.MANY_FLOWERS);
+
+    public static final Block JACK_FLOWER = registerBlock("jack_flower",
+            new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 0,
                     FabricBlockSettings.copy(Blocks.DANDELION)), ItemGroupSetup.MANY_FLOWERS);
 
     private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group) {
