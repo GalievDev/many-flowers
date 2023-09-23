@@ -16,26 +16,26 @@ import java.util.Map;
 
 public class AutumnAstersEntity extends BlockEntity {
     public static Map<String, Integer> ids = new HashMap<>();
-    private final int delay = 100;
-    private int counter = 0;
+    private final int delay = 300;
+    public static int counter = 0;
     public AutumnAstersEntity(BlockPos pos, BlockState state) {
         super(BlockEntitiesReg.AUTUMN_ASTERS_ENTITY, pos, state);
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState state, AutumnAstersEntity entity) {
         if (world.isClient) return;
-        if (entity.counter < 0) entity.counter = 0;
+        if (counter < 0) counter = 0;
         List<ItemEntity> items = world.getEntitiesByClass(ItemEntity.class, new Box(blockPos).expand(5), item -> item instanceof ItemEntity);
 
-        if (entity.counter == entity.delay) {
+        if (counter == entity.delay) {
             if (ids.size() < 10) {
                 for (var item : items) {
                     ids.put(item.getStack().getItem().toString(), item.getStack().getCount());
                     item.remove(Entity.RemovalReason.KILLED);
                 }
             }
-            entity.counter = 0;
-        } else entity.counter++;
+            counter = 0;
+        } else counter++;
     }
 
     @Override

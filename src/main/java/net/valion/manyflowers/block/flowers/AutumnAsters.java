@@ -50,7 +50,7 @@ public class AutumnAsters extends ExtendedFlower {
         if (entity instanceof PlayerEntity) {
             if (ids.size() < 10 && ((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()).getItem() != Items.AIR) {
                 var stack = new ItemStack(((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()).getItem(), new Random().nextInt(3));
-                ids.put(stack.getItem().toString(), stack.getCount());
+                ids.put(Registries.ITEM.getId(stack.getItem()).toString(), stack.getCount());
                 ((PlayerEntity) entity).getInventory().removeStack(((PlayerEntity) entity).getInventory().selectedSlot, stack.getCount());
             }
         }
@@ -69,6 +69,7 @@ public class AutumnAsters extends ExtendedFlower {
                 world.spawnEntity(entity);
             }
             ids.clear();
+            AutumnAstersEntity.counter = 0;
         }
         return ActionResult.PASS;
     }
@@ -105,6 +106,7 @@ public class AutumnAsters extends ExtendedFlower {
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!world.isClient) {
+            ids.clear();
             if (player.isCreative()) {
                 onBreakInCreative(world, pos, state, player);
             } else {
