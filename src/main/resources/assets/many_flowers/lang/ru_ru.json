@@ -57,5 +57,6 @@
   "text.autoconfig.many_flowers.option.damage_hemlock": "Урон от Водянного Болиголова",
   "text.autoconfig.many_flowers.option.damage_oenothera": "Урон от Энотеры",
   "text.autoconfig.many_flowers.option.teleport_ROTW": "Телепортация Корня Миров",
-  "text.autoconfig.many_flowers.option.explosion_oriental_poppy": "Взрыв Восточного Мака"
+  "text.autoconfig.many_flowers.option.explosion_oriental_poppy": "Взрыв Восточного Мака",
+  "text.autoconfig.many_flowers.option.regen_chrysanthemum": "Регенерация Хризантемы"
 }

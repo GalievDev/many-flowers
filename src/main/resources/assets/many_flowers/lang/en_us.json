@@ -57,5 +57,6 @@
   "text.autoconfig.many_flowers.option.damage_hemlock": "Damage From Water Hemlock",
   "text.autoconfig.many_flowers.option.damage_oenothera": "Damage From Oenothera",
   "text.autoconfig.many_flowers.option.teleport_ROTW": "Teleportation Root Of The Worlds",
-  "text.autoconfig.many_flowers.option.explosion_oriental_poppy": "Explosion from Oriental Poppy"
+  "text.autoconfig.many_flowers.option.explosion_oriental_poppy": "Explosion from Oriental Poppy",
+  "text.autoconfig.many_flowers.option.regen_chrysanthemum": "Regeneration from Chrysanthemum"
 }

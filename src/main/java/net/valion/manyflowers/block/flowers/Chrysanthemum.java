@@ -20,7 +20,7 @@ public class Chrysanthemum extends FlowerBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && CONFIG.damage_chrysanthemum) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && CONFIG.regen_chrysanthemum) {
             if (entity instanceof LivingEntity livingEntity) {
                 if (!livingEntity.isInvulnerableTo(world.getDamageSources().magic())) {
                     livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 20, 1));
