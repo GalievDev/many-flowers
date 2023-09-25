@@ -62,8 +62,10 @@ public class ModPlacedFeatures {
         register(context, WORLDS_ROOT_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WORLDS_ROOT),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), Flowers.ROOT_OF_THE_WORLDS));
 
+/*
         register(context, VELVETS_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.VELVETS),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(33), Flowers.VELVETS));
+*/
 
         register(context, DIAMOND_FLOWER_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DIAMOND_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), OreFlowers.DIAMOND_FLOWER));

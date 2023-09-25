@@ -1,11 +1,14 @@
 package net.valion.manyflowers.world.feature;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DataPool;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.setup.Flowers;
 import net.valion.manyflowers.setup.OreFlowers;
@@ -64,10 +67,17 @@ public class ModConfiguredFeatures {
         register(context, WORLDS_ROOT, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.ROOT_OF_THE_WORLDS)))
         ));
-
-        register(context, VELVETS, Feature.FLOWER, new RandomPatchFeatureConfig(
+/*
+        register(context, VELVETS, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
                 52, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.VELVETS)))
         ));
+        */
+        WeightedBlockStateProvider provider = new WeightedBlockStateProvider(DataPool.<BlockState>builder()
+                .add(Flowers.VELVETS.getDefaultState(), 87)
+                .add(Flowers.ROOT_OF_THE_WORLDS.getDefaultState(), 87)
+                .add(Flowers.GAILLARDIA.getDefaultState(), 87).build());
+
+        register(context, NetherConfiguredFeatures.CRIMSON_FOREST_VEGETATION, Feature.NETHER_FOREST_VEGETATION, new NetherForestVegetationFeatureConfig(provider, 3, 1));
 
         register(context, DIAMOND_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(OreFlowers.DIAMOND_FLOWER)))
