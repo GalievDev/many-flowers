@@ -79,8 +79,7 @@ public class Flowers {
                     FabricBlockSettings.copy(Blocks.DANDELION)), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block JACK_FLOWER = registerBlock("jack_flower",
-            new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 0,
-                    FabricBlockSettings.copy(Blocks.DANDELION)), ItemGroupSetup.MANY_FLOWERS);
+            new JackFlower(), ItemGroupSetup.MANY_FLOWERS);
 
     private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group) {
         registerBlockItem(name, block, group);
