@@ -10,6 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity;
+import net.valion.manyflowers.block.flowers.entity.AutumnCrocusEntity;
 import net.valion.manyflowers.setup.BlockEntitiesReg;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,7 +32,7 @@ public class AutumnCrocus extends ExtendedFlower {
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, BlockEntitiesReg.AUTUMN_ASTERS_ENTITY, AutumnAstersEntity::tick);
+        return checkType(type, BlockEntitiesReg.AUTUMN_CROCUS_ENTITY, AutumnCrocusEntity::tick);
     }
 
     @Override
