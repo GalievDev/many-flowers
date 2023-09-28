@@ -12,9 +12,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
@@ -34,12 +34,11 @@ import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity;
 import net.valion.manyflowers.setup.BlockEntitiesReg;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Random;
-
 import static net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity.ids;
 
 public class AutumnAsters extends ExtendedFlower {
     public static final EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
+    public static boolean canStill = true;
     public AutumnAsters(Settings settings) {
         super(settings);
         this.setDefaultState(this.getStateManager().getDefaultState().with(HALF, DoubleBlockHalf.LOWER));
@@ -48,10 +47,13 @@ public class AutumnAsters extends ExtendedFlower {
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof PlayerEntity) {
-            if (ids.size() < 10 && ((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()).getItem() != Items.AIR) {
-                var stack = new ItemStack(((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()).getItem(), new Random().nextInt(3));
-                ids.put(Registries.ITEM.getId(stack.getItem()).toString(), stack.getCount());
-                ((PlayerEntity) entity).getInventory().removeStack(((PlayerEntity) entity).getInventory().selectedSlot, stack.getCount());
+            if (ids.size() < 10) {
+                if (canStill) {
+                    var stack = new ItemStack(((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()).getItem(), 1);
+                    ids.put(Registries.ITEM.getId(stack.getItem()).toString(), stack.getCount());
+                    ((PlayerEntity) entity).getInventory().removeStack(((PlayerEntity) entity).getInventory().selectedSlot, stack.getCount());
+                    canStill = false;
+                }
             }
         }
     }
@@ -60,16 +62,19 @@ public class AutumnAsters extends ExtendedFlower {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient && !ids.isEmpty()) {
             for (int i = 0; i < ids.size(); i++) {
-                var id = ids.keySet().stream().toList().get(i);
-                var count = ids.values().stream().toList().get(i);
+                if (player.getMainHandStack().isIn(ItemTags.SHOVELS)) {
+                    var id = ids.keySet().stream().toList().get(i);
+                    var count = ids.values().stream().toList().get(i);
 
-                var stack = new ItemStack(Registries.ITEM.get(new Identifier(id)), count);
-                ManyFlowers.LOGGER.info("stack: " + id);
-                var entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack);
-                world.spawnEntity(entity);
+                    var stack = new ItemStack(Registries.ITEM.get(new Identifier(id)), count);
+                    ManyFlowers.LOGGER.info("stack: " + id);
+                    var entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack);
+                    world.spawnEntity(entity);
+                }
             }
             ids.clear();
             AutumnAstersEntity.counter = 0;
+            canStill = false;
         }
         return ActionResult.PASS;
     }

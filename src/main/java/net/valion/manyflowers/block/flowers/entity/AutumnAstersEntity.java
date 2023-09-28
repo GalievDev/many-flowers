@@ -8,6 +8,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
+import net.valion.manyflowers.block.flowers.AutumnAsters;
 import net.valion.manyflowers.setup.BlockEntitiesReg;
 
 import java.util.HashMap;
@@ -16,7 +17,7 @@ import java.util.Map;
 
 public class AutumnAstersEntity extends BlockEntity {
     public static Map<String, Integer> ids = new HashMap<>();
-    private final int delay = 300;
+    public static final int delay = 300;
     public static int counter = 0;
     public AutumnAstersEntity(BlockPos pos, BlockState state) {
         super(BlockEntitiesReg.AUTUMN_ASTERS_ENTITY, pos, state);
@@ -27,13 +28,14 @@ public class AutumnAstersEntity extends BlockEntity {
         if (counter < 0) counter = 0;
         List<ItemEntity> items = world.getEntitiesByClass(ItemEntity.class, new Box(blockPos).expand(5), item -> item instanceof ItemEntity);
 
-        if (counter == entity.delay) {
+        if (counter == delay) {
             if (ids.size() < 10) {
                 for (var item : items) {
                     ids.put(item.getStack().getItem().toString(), item.getStack().getCount());
                     item.remove(Entity.RemovalReason.KILLED);
                 }
             }
+            AutumnAsters.canStill = true;
             counter = 0;
         } else counter++;
     }
