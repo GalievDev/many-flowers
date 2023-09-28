@@ -9,7 +9,6 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity;
 import net.valion.manyflowers.block.flowers.entity.AutumnCrocusEntity;
 import net.valion.manyflowers.setup.BlockEntitiesReg;
 import org.jetbrains.annotations.Nullable;
@@ -27,7 +26,7 @@ public class AutumnCrocus extends ExtendedFlower {
     //Block entity
     @Override
     public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new AutumnAstersEntity(pos, state);
+        return new AutumnCrocusEntity(pos, state);
     }
 
     @Override
