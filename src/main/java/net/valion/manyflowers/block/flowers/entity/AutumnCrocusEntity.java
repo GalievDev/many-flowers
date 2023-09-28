@@ -8,11 +8,7 @@ import net.minecraft.world.World;
 import net.valion.manyflowers.helpers.SoundsHelper;
 import net.valion.manyflowers.setup.BlockEntitiesReg;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class AutumnCrocusEntity extends BlockEntity {
-    public static Map<String, Integer> ids = new HashMap<>();
     public static final int delay = 1000;
     public static int counter = 0;
     public AutumnCrocusEntity(BlockPos pos, BlockState state) {
