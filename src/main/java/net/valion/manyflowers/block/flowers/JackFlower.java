@@ -1,26 +1,27 @@
 package net.valion.manyflowers.block.flowers;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityTicker;
-import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.*;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.valion.manyflowers.block.flowers.entity.JackFlowerEntity;
-import net.valion.manyflowers.setup.BlockEntitiesReg;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.biome.Biome;
 
-public class JackFlower extends ExtendedFlower {
-    public static int lightness = 0;
+import java.util.function.ToIntFunction;
+
+public class JackFlower extends FlowerBlock {
+    public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
     public JackFlower() {
-        super(FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).nonOpaque().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(lightness));
+        super(StatusEffects.FIRE_RESISTANCE, 0, FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).nonOpaque()
+                .noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(createLightLevelFromLitBlockState(8)));
+        this.setDefaultState(this.getDefaultState().with(LIT, false));
     }
 
     @Override
@@ -28,26 +29,23 @@ public class JackFlower extends ExtendedFlower {
         return floor.isIn(BlockTags.DIRT);
     }
 
-    public static void changeTexture(Block block) {
-    }
-
-    public static void changeLightness() {
-        lightness = 9;
-    }
-
-    //Block entity
     @Override
-    public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new JackFlowerEntity(pos, state);
+    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
     }
 
     @Override
-    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, BlockEntitiesReg.JACK_FLOWER_ENTITY, JackFlowerEntity::tick);
+    public void precipitationTick(BlockState state, World world, BlockPos pos, Biome.Precipitation precipitation) {
+        if (world.getLightLevel(pos) <= 7 && state.get(LIT).booleanValue()) {
+            world.setBlockState(pos, state.cycle(LIT), Block.NOTIFY_LISTENERS);
+        }
     }
 
     @Override
-    public BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(LIT);
+    }
+
+    private static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel) {
+        return state -> state.get(Properties.LIT) != false ? litLevel : 0;
     }
 }

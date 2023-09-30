@@ -1,5 +1,10 @@
 {
   "variants": {
-    "": { "model": "many_flowers:block/jack_flower" }
+    "lit=false": {
+      "model": "many_flowers:block/jack_flower"
+    },
+    "lit=true": {
+      "model": "many_flowers:block/jack_flower_light"
+    }
   }
 }
