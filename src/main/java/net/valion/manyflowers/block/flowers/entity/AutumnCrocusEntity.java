@@ -9,17 +9,16 @@ import net.valion.manyflowers.helpers.SoundsHelper;
 import net.valion.manyflowers.setup.BlockEntitiesReg;
 
 public class AutumnCrocusEntity extends BlockEntity {
-    public static final int delay = 1000;
+    public static final int delay = 1500;
     public static int counter = 0;
     public AutumnCrocusEntity(BlockPos pos, BlockState state) {
         super(BlockEntitiesReg.AUTUMN_CROCUS_ENTITY, pos, state);
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState state, AutumnCrocusEntity entity) {
-        if (world.isClient) return;
         if (counter < 0) counter = 0;
-
         if (counter == delay) {
+            SoundsHelper.putSounds();
             if (!SoundsHelper.sounds.isEmpty()) {
                 world.playSound(blockPos.getX(), blockPos.getY(), blockPos.getZ(), SoundsHelper.getRandSound(), SoundCategory.HOSTILE, 2F, 0F, true);
             }

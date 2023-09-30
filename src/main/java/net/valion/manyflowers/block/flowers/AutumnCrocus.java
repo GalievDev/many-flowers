@@ -1,7 +1,9 @@
 package net.valion.manyflowers.block.flowers;
 
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
@@ -14,8 +16,8 @@ import net.valion.manyflowers.setup.BlockEntitiesReg;
 import org.jetbrains.annotations.Nullable;
 
 public class AutumnCrocus extends ExtendedFlower {
-    protected AutumnCrocus(Settings settings) {
-        super(settings);
+    public AutumnCrocus() {
+        super(FabricBlockSettings.copy(Blocks.DANDELION));
     }
 
     @Override

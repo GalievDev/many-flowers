@@ -75,8 +75,7 @@ public class Flowers {
             new TallFlowerBlock(FabricBlockSettings.copy(Blocks.ROSE_BUSH)), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block AUTUMN_CROCUS = registerBlock("autumn_crocus",
-            new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 0,
-                    FabricBlockSettings.copy(Blocks.DANDELION)), ItemGroupSetup.MANY_FLOWERS);
+            new AutumnCrocus(), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block JACK_FLOWER = registerBlock("jack_flower",
             new JackFlower(), ItemGroupSetup.MANY_FLOWERS);
