@@ -12,7 +12,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
 
 import java.util.function.ToIntFunction;
 
@@ -29,13 +28,19 @@ public class JackFlower extends FlowerBlock {
         return floor.isIn(BlockTags.DIRT);
     }
 
+    private void updateState(BlockState state, World world, BlockPos pos) {
+        world.setBlockState(pos, state.cycle(LIT), Block.NOTIFY_LISTENERS);
+    }
+
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if (state.get(LIT).booleanValue()) {
-            ManyFlowers.LOGGER.info("tick2");
-            world.setBlockState(pos, state.cycle(LIT), Block.NOTIFY_LISTENERS);
+        if (world.getTimeOfDay() >= 10000) {
+            if (!state.get(LIT)) {
+                updateState(state, world, pos);
+            }
+        } else if (state.get(LIT)) {
+            updateState(state, world, pos);
         }
-        ManyFlowers.LOGGER.info("tick1");
     }
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
