@@ -1,14 +1,11 @@
 package net.valion.manyflowers.world.feature;
 
-import net.minecraft.block.BlockState;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.DataPool;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
-import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.setup.Flowers;
 import net.valion.manyflowers.setup.OreFlowers;
@@ -24,6 +21,12 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORIENTAL_POPPY = registerKey("oriental_poppy");
     public static final RegistryKey<ConfiguredFeature<?, ?>> WORLDS_ROOT = registerKey("worlds_root");
     public static final RegistryKey<ConfiguredFeature<?, ?>> VELVETS = registerKey("velvets");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> CHRYSANTHEMUM = registerKey("chrysanthemum");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> DAISIES = registerKey("daisies");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> AUTUMN_ASTERS = registerKey("autumn_asters");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ZINNIA = registerKey("zinnia");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> AUTUMN_CROCUS = registerKey("autumn_crocus");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> JACK_FLOWER = registerKey("jack_flower");
     public static final RegistryKey<ConfiguredFeature<?, ?>> DIAMOND_FLOWER = registerKey("diamond_flower");
     public static final RegistryKey<ConfiguredFeature<?, ?>> GOLD_FLOWER = registerKey("gold_flower");
     public static final RegistryKey<ConfiguredFeature<?, ?>> IRON_FLOWER = registerKey("iron_flower");
@@ -67,17 +70,32 @@ public class ModConfiguredFeatures {
         register(context, WORLDS_ROOT, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.ROOT_OF_THE_WORLDS)))
         ));
-/*
-        register(context, VELVETS, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
-                52, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.VELVETS)))
-        ));
-        */
-        WeightedBlockStateProvider provider = new WeightedBlockStateProvider(DataPool.<BlockState>builder()
-                .add(Flowers.VELVETS.getDefaultState(), 87)
-                .add(Flowers.ROOT_OF_THE_WORLDS.getDefaultState(), 87)
-                .add(Flowers.GAILLARDIA.getDefaultState(), 87).build());
 
-        register(context, NetherConfiguredFeatures.CRIMSON_FOREST_VEGETATION, Feature.NETHER_FOREST_VEGETATION, new NetherForestVegetationFeatureConfig(provider, 3, 1));
+        register(context, VELVETS, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.VELVETS)));
+
+        register(context, CHRYSANTHEMUM, Feature.FLOWER, new RandomPatchFeatureConfig(
+                52, 3, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.CHRYSANTHEMUM)))
+        ));
+
+        register(context, DAISIES, Feature.FLOWER, new RandomPatchFeatureConfig(
+                64, 7, 9, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.DAISIES)))
+        ));
+
+        register(context, AUTUMN_ASTERS, Feature.FLOWER, new RandomPatchFeatureConfig(
+                1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.AUTUMN_ASTERS)))
+        ));
+
+        register(context, ZINNIA, Feature.FLOWER, new RandomPatchFeatureConfig(
+                34, 7, 9, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.ZINNIA)))
+        ));
+
+        register(context, AUTUMN_CROCUS, Feature.FLOWER, new RandomPatchFeatureConfig(
+                1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.AUTUMN_CROCUS)))
+        ));
+
+        register(context, JACK_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
+                1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.JACK_FLOWER)))
+        ));
 
         register(context, DIAMOND_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(OreFlowers.DIAMOND_FLOWER)))

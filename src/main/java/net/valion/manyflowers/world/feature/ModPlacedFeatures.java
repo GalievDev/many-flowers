@@ -25,6 +25,12 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> POPPY_PLACED = registerKey("poppy_placed");
     public static final RegistryKey<PlacedFeature> WORLDS_ROOT_PLACED = registerKey("worlds_root_placed");
     public static final RegistryKey<PlacedFeature> VELVETS_PLACED = registerKey("velvets_placed");
+    public static final RegistryKey<PlacedFeature> CHRYSANTHEMUM_PLACED = registerKey("chrysanthemum_placed");
+    public static final RegistryKey<PlacedFeature> DAISIES_PLACED = registerKey("daisies_placed");
+    public static final RegistryKey<PlacedFeature> AUTUMN_ASTERS = registerKey("autumn_asters_placed");
+    public static final RegistryKey<PlacedFeature> ZINNIA = registerKey("zinnia_placed");
+    public static final RegistryKey<PlacedFeature> AUTUMN_CROCUS = registerKey("autumn_crocus_placed");
+    public static final RegistryKey<PlacedFeature> JACK_FLOWER = registerKey("jack_placed");
     public static final RegistryKey<PlacedFeature> DIAMOND_FLOWER_PLACED = registerKey("diamond_flower_placed");
     public static final RegistryKey<PlacedFeature> GOLD_FLOWER_PLACED = registerKey("gold_flower_placed");
     public static final RegistryKey<PlacedFeature> IRON_FLOWER_PLACED = registerKey("iron_flower_placed");
@@ -57,33 +63,49 @@ public class ModPlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(25), Flowers.GAILLARDIA));
 
         register(context, POPPY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ORIENTAL_POPPY),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), Flowers.ORIENTAL_POPPY));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(256), Flowers.ORIENTAL_POPPY));
 
         register(context, WORLDS_ROOT_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WORLDS_ROOT),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), Flowers.ROOT_OF_THE_WORLDS));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(500), Flowers.ROOT_OF_THE_WORLDS));
 
-/*
         register(context, VELVETS_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.VELVETS),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(33), Flowers.VELVETS));
-*/
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(180), Flowers.VELVETS));
+
+        register(context, CHRYSANTHEMUM_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CHRYSANTHEMUM),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), Flowers.CHRYSANTHEMUM));
+
+        register(context, DAISIES_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DAISIES),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(40), Flowers.DAISIES));
+
+        register(context, AUTUMN_ASTERS, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AUTUMN_ASTERS),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(200), Flowers.AUTUMN_ASTERS));
+
+        register(context, ZINNIA, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ZINNIA),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(54), Flowers.ZINNIA));
+
+        register(context, AUTUMN_CROCUS, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AUTUMN_CROCUS),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(256), Flowers.AUTUMN_CROCUS));
+
+        register(context, JACK_FLOWER, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.JACK_FLOWER),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), Flowers.JACK_FLOWER));
 
         register(context, DIAMOND_FLOWER_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DIAMOND_FLOWER),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), OreFlowers.DIAMOND_FLOWER));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(500), OreFlowers.DIAMOND_FLOWER));
 
         register(context, GOLD_FLOWER_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GOLD_FLOWER),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), OreFlowers.GOLD_FLOWER));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(500), OreFlowers.GOLD_FLOWER));
 
         register(context, IRON_FLOWER_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.IRON_FLOWER),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), OreFlowers.IRON_FLOWER));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(500), OreFlowers.IRON_FLOWER));
 
         register(context, EMERALD_FLOWER_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.EMERALD_FLOWER),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), OreFlowers.EMERALD_FLOWER));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(500), OreFlowers.EMERALD_FLOWER));
 
         register(context, COPPER_FLOWER_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COPPER_FLOWER),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), OreFlowers.COPPER_FLOWER));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(500), OreFlowers.COPPER_FLOWER));
 
         register(context, COAL_FLOWER_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COAL_FLOWER),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), OreFlowers.COAL_FLOWER));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(500), OreFlowers.COAL_FLOWER));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
@@ -93,11 +115,5 @@ public class ModPlacedFeatures {
     private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configuration,
                                  List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
-    }
-
-    private static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key,
-                                                                                   RegistryEntry<ConfiguredFeature<?, ?>> configuration,
-                                                                                   PlacementModifier... modifiers) {
-        register(context, key, configuration, List.of(modifiers));
     }
 }

@@ -1,9 +1,9 @@
 {
-  "feature": "many_flowers:worlds_root",
+  "feature": "many_flowers:daisies",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 500
+      "chance": 40
     },
     {
       "type": "minecraft:in_square"
@@ -24,7 +24,7 @@
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "many_flowers:root_of_the_worlds"
+          "Name": "many_flowers:daisies"
         }
       }
     }
