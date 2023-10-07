@@ -1,8 +1,7 @@
 package net.valion.manyflowers.world.feature;
 
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.block.Block;
+import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
@@ -71,7 +70,7 @@ public class ModConfiguredFeatures {
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.ROOT_OF_THE_WORLDS)))
         ));
 
-        register(context, VELVETS, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.VELVETS)));
+        register(context, VELVETS, Feature.RANDOM_PATCH, createRandomPatchFeatureConfig(Flowers.VELVETS, 120));
 
         register(context, CHRYSANTHEMUM, Feature.FLOWER, new RandomPatchFeatureConfig(
                 52, 3, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.CHRYSANTHEMUM)))
@@ -94,7 +93,7 @@ public class ModConfiguredFeatures {
         ));
 
         register(context, JACK_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
-                1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.JACK_FLOWER)))
+                90, 20, 15, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Flowers.JACK_FLOWER)))
         ));
 
         register(context, DIAMOND_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
@@ -120,6 +119,10 @@ public class ModConfiguredFeatures {
         register(context, COAL_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(OreFlowers.COAL_FLOWER)))
         ));
+    }
+
+    private static RandomPatchFeatureConfig createRandomPatchFeatureConfig(Block block, int tries) {
+        return ConfiguredFeatures.createRandomPatchFeatureConfig(tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(block))));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

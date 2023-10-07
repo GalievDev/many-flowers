@@ -19,7 +19,7 @@ public class JackFlower extends FlowerBlock {
     public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
     public JackFlower() {
         super(StatusEffects.FIRE_RESISTANCE, 0, FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).nonOpaque()
-                .noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(createLightLevelFromLitBlockState(8)));
+                .noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(createLightLevelFromLitBlockState(15)));
         this.setDefaultState(this.getDefaultState().with(LIT, false));
     }
 

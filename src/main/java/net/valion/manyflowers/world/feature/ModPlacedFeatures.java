@@ -5,9 +5,12 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.placementmodifier.PlacementModifier;
-import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.PlacedFeature;
+import net.minecraft.world.gen.feature.PlacedFeatures;
+import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
+import net.minecraft.world.gen.placementmodifier.*;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.setup.Flowers;
 import net.valion.manyflowers.setup.OreFlowers;
@@ -68,8 +71,13 @@ public class ModPlacedFeatures {
         register(context, WORLDS_ROOT_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WORLDS_ROOT),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(500), Flowers.ROOT_OF_THE_WORLDS));
 
-        register(context, VELVETS_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.VELVETS),
+   /*     register(context, VELVETS_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.VELVETS),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(180), Flowers.VELVETS));
+*/
+        RegistryEntry.Reference<ConfiguredFeature<?, ?>> velvet = configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.VELVETS);
+
+        PlacedFeatures.register(context, VELVETS_PLACED, velvet, makePatchPlacements(CountPlacementModifier.of(UniformIntProvider.create(0, 4))));
+
 
         register(context, CHRYSANTHEMUM_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CHRYSANTHEMUM),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), Flowers.CHRYSANTHEMUM));
@@ -84,7 +92,7 @@ public class ModPlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(54), Flowers.ZINNIA));
 
         register(context, AUTUMN_CROCUS, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AUTUMN_CROCUS),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(256), Flowers.AUTUMN_CROCUS));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(150), Flowers.AUTUMN_CROCUS));
 
         register(context, JACK_FLOWER, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.JACK_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), Flowers.JACK_FLOWER));
@@ -106,6 +114,10 @@ public class ModPlacedFeatures {
 
         register(context, COAL_FLOWER_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COAL_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(500), OreFlowers.COAL_FLOWER));
+    }
+
+    public static List<PlacementModifier> makePatchPlacements(PlacementModifier countOrRarity) {
+        return List.of(countOrRarity, SquarePlacementModifier.of(), PlacedFeatures.FOUR_ABOVE_AND_BELOW_RANGE, BiomePlacementModifier.of());
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

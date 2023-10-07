@@ -2,6 +2,7 @@ package net.valion.manyflowers.world.gen;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.valion.manyflowers.world.feature.ModPlacedFeatures;
@@ -37,7 +38,7 @@ public class ModFlowerGeneration {
                         BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS, BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.BAMBOO_JUNGLE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WORLDS_ROOT_PLACED);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.CRIMSON_FOREST),
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_NETHER),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.VELVETS_PLACED);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST, BiomeKeys.TAIGA),
@@ -47,16 +48,16 @@ public class ModFlowerGeneration {
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DAISIES_PLACED);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DARK_FOREST),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.AUTUMN_ASTERS);
+                GenerationStep.Feature.UNDERGROUND_DECORATION, ModPlacedFeatures.AUTUMN_ASTERS);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST, BiomeKeys.TAIGA, BiomeKeys.CHERRY_GROVE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ZINNIA);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DEEP_DARK),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.AUTUMN_CROCUS);
+                GenerationStep.Feature.UNDERGROUND_DECORATION, ModPlacedFeatures.AUTUMN_CROCUS);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_PINE_TAIGA, BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.JACK_FLOWER);
+                GenerationStep.Feature.UNDERGROUND_DECORATION, ModPlacedFeatures.JACK_FLOWER);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DIAMOND_FLOWER_PLACED);
