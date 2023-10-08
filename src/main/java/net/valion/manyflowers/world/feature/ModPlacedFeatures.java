@@ -95,7 +95,7 @@ public class ModPlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(150), Flowers.AUTUMN_CROCUS));
 
         register(context, JACK_FLOWER, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.JACK_FLOWER),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(100), Flowers.JACK_FLOWER));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(50), Flowers.JACK_FLOWER));
 
         register(context, DIAMOND_FLOWER_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DIAMOND_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(500), OreFlowers.DIAMOND_FLOWER));

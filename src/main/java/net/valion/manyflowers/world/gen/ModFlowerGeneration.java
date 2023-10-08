@@ -53,8 +53,8 @@ public class ModFlowerGeneration {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST, BiomeKeys.TAIGA, BiomeKeys.CHERRY_GROVE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ZINNIA);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DEEP_DARK),
-                GenerationStep.Feature.UNDERGROUND_DECORATION, ModPlacedFeatures.AUTUMN_CROCUS);
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.MINESHAFT_BLOCKING),
+                GenerationStep.Feature.UNDERGROUND_STRUCTURES, ModPlacedFeatures.AUTUMN_CROCUS);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_PINE_TAIGA, BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA),
                 GenerationStep.Feature.UNDERGROUND_DECORATION, ModPlacedFeatures.JACK_FLOWER);

@@ -67,7 +67,6 @@ public class AutumnAsters extends ExtendedFlower {
                     var count = ids.values().stream().toList().get(i);
 
                     var stack = new ItemStack(Registries.ITEM.get(new Identifier(id)), count);
-                    ManyFlowers.LOGGER.info("stack: " + id);
                     var entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack);
                     world.spawnEntity(entity);
                 }
