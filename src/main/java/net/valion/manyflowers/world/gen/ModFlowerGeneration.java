@@ -54,7 +54,7 @@ public class ModFlowerGeneration {
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ZINNIA);
 
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.MINESHAFT_BLOCKING),
-                GenerationStep.Feature.UNDERGROUND_STRUCTURES, ModPlacedFeatures.AUTUMN_CROCUS);
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.AUTUMN_CROCUS);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_PINE_TAIGA, BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA),
                 GenerationStep.Feature.UNDERGROUND_DECORATION, ModPlacedFeatures.JACK_FLOWER);

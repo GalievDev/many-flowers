@@ -91,8 +91,8 @@ public class ModPlacedFeatures {
         register(context, ZINNIA, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ZINNIA),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(54), Flowers.ZINNIA));
 
-        register(context, AUTUMN_CROCUS, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AUTUMN_CROCUS),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(150), Flowers.AUTUMN_CROCUS));
+        PlacedFeatures.register(context, AUTUMN_CROCUS, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AUTUMN_CROCUS),
+                RarityFilterPlacementModifier.of(150), PlacedFeatures.BOTTOM_TO_120_RANGE, SquarePlacementModifier.of(), BiomePlacementModifier.of());
 
         register(context, JACK_FLOWER, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.JACK_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(RarityFilterPlacementModifier.of(50), Flowers.JACK_FLOWER));
