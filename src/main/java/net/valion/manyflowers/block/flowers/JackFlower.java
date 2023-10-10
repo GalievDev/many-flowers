@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import java.util.function.ToIntFunction;
 
 public class JackFlower extends FlowerBlock {
-    public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
+    public static final BooleanProperty LIT = Properties.LIT;
     public JackFlower() {
         super(StatusEffects.FIRE_RESISTANCE, 0, FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).nonOpaque()
                 .noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(createLightLevelFromLitBlockState(15)));
