@@ -1,0 +1,17 @@
+{
+  "name": "Autumn Crocus",
+  "icon": "many_flowers:autumn_crocus",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:autumn_crocus",
+      "title": "Autumn Crocus",
+      "text": "The Autumn crocus is a rare species of flower discovered in the mines near Warden. Caution is advised as the flower can emit sounds that may cause fright."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:autumn_crocus"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Chrysanthemum",
+  "icon": "many_flowers:chrysanthemum",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:chrysanthemum",
+      "title": "Chrysanthemum",
+      "text": "Chrysanthemums are commonly found in autumn growing in glades and forests. They are known to possess healing properties."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:chrysanthemum"
+    }
+  ]
+}

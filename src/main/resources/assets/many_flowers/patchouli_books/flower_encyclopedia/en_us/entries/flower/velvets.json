@@ -1,0 +1,17 @@
+{
+  "name": "Velvets",
+  "icon": "many_flowers:velvets",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:velvets",
+      "title": "Velvets",
+      "text": "Velvets found in the Nether will cause the surrounding area to gradually transform into the Nether if they are brought into the normal world."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:velvets"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Zinnia",
+  "icon": "many_flowers:zinnia",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:zinnia",
+      "title": "Zinnia",
+      "text": "Zinnia are common flowers that grow predominantly in woodland and open grassy areas. They lack any distinctive features or abilities."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:zinnia"
+    }
+  ]
+}

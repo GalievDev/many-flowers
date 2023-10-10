@@ -1,0 +1,17 @@
+{
+  "name": "Jack-O' Flower",
+  "icon": "many_flowers:jack_flower",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:jack_flower",
+      "title": "Jack-O' Flower",
+      "text": "Happy halloween! This flower grows in the taiga and at night turns on its lights and glows!!!!"
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:jack_flower"
+    }
+  ]
+}

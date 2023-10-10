@@ -1,0 +1,17 @@
+{
+  "name": "Daisies",
+  "icon": "many_flowers:daisies",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:daisies",
+      "title": "Daisies",
+      "text": "Daisies are common flowers that grow predominantly in woodland and open grassy areas. They lack any distinctive features or abilities."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:daisies"
+    }
+  ]
+}

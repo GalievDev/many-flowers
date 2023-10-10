@@ -1,0 +1,17 @@
+{
+  "name": "Autumn Asters",
+  "icon": "many_flowers:autumn_asters",
+  "category": "many_flowers:flower",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "many_flowers:autumn_asters",
+      "title": "Autumn Asters",
+      "text": "Autumn asters are attractive flowers commonly found in the Dark Forest. They possess a unique trait of eating objects, including those held in your hands or left scattered. One can retrieve the lost items by using a shovel."
+    },
+    {
+      "type" : "patchouli:crafting",
+      "recipe": "many_flowers:autumn_asters"
+    }
+  ]
+}
