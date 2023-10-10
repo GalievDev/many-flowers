@@ -30,13 +30,10 @@ public class AutumnCrocus extends FlowerBlock {
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (counter < 0) counter = 0;
         if (counter == delay) {
-            ManyFlowers.LOGGER.info("2");
             if (!SoundsHelper.sounds.isEmpty()) {
-                ManyFlowers.LOGGER.info("3");
                 world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundsHelper.getRandSound(), SoundCategory.HOSTILE, 2F, 0F, true);
             } else {
                 SoundsHelper.putSounds();
-                ManyFlowers.LOGGER.info("4");
             }
             counter = 0;
         } else counter++;

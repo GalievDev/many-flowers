@@ -7,6 +7,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.util.math.BlockPos;
 import net.valion.manyflowers.config.MFConfig;
+import net.valion.manyflowers.helpers.SoundsHelper;
 import net.valion.manyflowers.helpers.WorldsHelper;
 import net.valion.manyflowers.particle.FlowerParticles;
 import net.valion.manyflowers.setup.*;
@@ -35,7 +36,10 @@ public class ManyFlowers implements ModInitializer {
 
         ModWorldGen.generateModWorldGen();
 
-        ServerLifecycleEvents.SERVER_STARTED.register(server -> server.getWorlds().forEach(WorldsHelper::putWorld));
+        ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+            SoundsHelper.putSounds();
+            server.getWorlds().forEach(WorldsHelper::putWorld);
+        });
         DuckyUpdater.checkForUpdate("QUH6A4xu", MOD_ID);
     }
 }
