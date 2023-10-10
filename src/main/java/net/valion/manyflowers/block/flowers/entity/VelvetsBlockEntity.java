@@ -54,30 +54,28 @@ public class VelvetsBlockEntity extends BlockEntity {
     }
 
     private static void setBlock(@NotNull World world, @NotNull List<BlockPos> poses) {
-        Random random = new Random(System.currentTimeMillis());
-        var pos = poses.get(random.nextInt(poses.size()));
-        ManyFlowers.LOGGER.info("Rand pos: " + pos);
-        var block = world.getBlockState(pos).getBlock();
-        var state = world.getBlockState(pos);
-        ManyFlowers.LOGGER.info("Block: " + block);
-
-        if (state.isOf(Blocks.GRASS_BLOCK)) {
-            world.setBlockState(pos, Blocks.CRIMSON_NYLIUM.getDefaultState());
-        } else if (state.isIn(BlockTags.DIRT)) {
-            world.setBlockState(pos, Blocks.NETHERRACK.getDefaultState());
-        } else if (state.isIn(BlockTags.BASE_STONE_OVERWORLD)) {
-            world.setBlockState(pos, Blocks.BASALT.getDefaultState());
-        } else if (state.isIn(BlockTags.SAND)) {
-            world.setBlockState(pos, Blocks.SOUL_SAND.getDefaultState());
-        } else if (state.isOf(Blocks.WATER)) {
-            world.setBlockState(pos, Blocks.LAVA.getDefaultState());
-        } else if (state.isIn(BlockTags.TERRACOTTA)) {
-            world.setBlockState(pos, Blocks.SMOOTH_BASALT.getDefaultState());
-        } else if (state.isIn(BlockTags.LOGS)) {
-            world.setBlockState(pos, Blocks.CRIMSON_STEM.getDefaultState());
-        } else if (state.isIn(BlockTags.LEAVES)) {
-            world.setBlockState(pos, Blocks.NETHER_WART.getDefaultState());
+        if (ManyFlowers.CONFIG.nether_velvets) {
+            Random random = new Random(System.currentTimeMillis());
+            var pos = poses.get(random.nextInt(poses.size()));
+            var state = world.getBlockState(pos);
+            if (state.isOf(Blocks.GRASS_BLOCK)) {
+                world.setBlockState(pos, Blocks.CRIMSON_NYLIUM.getDefaultState());
+            } else if (state.isIn(BlockTags.DIRT)) {
+                world.setBlockState(pos, Blocks.NETHERRACK.getDefaultState());
+            } else if (state.isIn(BlockTags.BASE_STONE_OVERWORLD)) {
+                world.setBlockState(pos, Blocks.BASALT.getDefaultState());
+            } else if (state.isIn(BlockTags.SAND)) {
+                world.setBlockState(pos, Blocks.SOUL_SAND.getDefaultState());
+            } else if (state.isOf(Blocks.WATER)) {
+                world.setBlockState(pos, Blocks.LAVA.getDefaultState());
+            } else if (state.isIn(BlockTags.TERRACOTTA)) {
+                world.setBlockState(pos, Blocks.SMOOTH_BASALT.getDefaultState());
+            } else if (state.isIn(BlockTags.LOGS)) {
+                world.setBlockState(pos, Blocks.CRIMSON_STEM.getDefaultState());
+            } else if (state.isIn(BlockTags.LEAVES)) {
+                world.setBlockState(pos, Blocks.NETHER_WART.getDefaultState());
+            }
+            poses.clear();
         }
-        poses.clear();
     }
 }

@@ -58,5 +58,8 @@
   "text.autoconfig.many_flowers.option.damage_oenothera": "Урон от Энотеры",
   "text.autoconfig.many_flowers.option.teleport_ROTW": "Телепортация Корня Миров",
   "text.autoconfig.many_flowers.option.explosion_oriental_poppy": "Взрыв Восточного Мака",
-  "text.autoconfig.many_flowers.option.regen_chrysanthemum": "Регенерация Хризантемы"
+  "text.autoconfig.many_flowers.option.regen_chrysanthemum": "Регенерация Хризантемы",
+  "text.autoconfig.many_flowers.option.still_asters": "Осенние астры могут красть предметы",
+  "text.autoconfig.many_flowers.option.sound_crocus": "Осенний крокус может издавать звук",
+  "text.autoconfig.many_flowers.option.nether_velvets": "Бархатцы могут изменять мир"
 }

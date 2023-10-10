@@ -11,6 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.helpers.SoundsHelper;
 
 public class AutumnCrocus extends FlowerBlock {
@@ -29,7 +30,7 @@ public class AutumnCrocus extends FlowerBlock {
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (counter < 0) counter = 0;
         if (counter == delay) {
-            if (!SoundsHelper.sounds.isEmpty()) {
+            if (!SoundsHelper.sounds.isEmpty() && ManyFlowers.CONFIG.sound_crocus) {
                 world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundsHelper.getRandSound(), SoundCategory.HOSTILE, 2F, 0F, true);
             } else {
                 SoundsHelper.putSounds();

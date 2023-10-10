@@ -8,6 +8,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
+import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.flowers.AutumnAsters;
 import net.valion.manyflowers.setup.BlockEntitiesReg;
 
@@ -29,7 +30,7 @@ public class AutumnAstersEntity extends BlockEntity {
         List<ItemEntity> items = world.getEntitiesByClass(ItemEntity.class, new Box(blockPos).expand(5), item -> item instanceof ItemEntity);
 
         if (counter == delay) {
-            if (ids.size() < 10) {
+            if (ids.size() < 10 && ManyFlowers.CONFIG.still_asters) {
                 for (var item : items) {
                     ids.put(item.getStack().getItem().toString(), item.getStack().getCount());
                     item.remove(Entity.RemovalReason.KILLED);

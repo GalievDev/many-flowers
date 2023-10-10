@@ -58,5 +58,8 @@
   "text.autoconfig.many_flowers.option.damage_oenothera": "Damage From Oenothera",
   "text.autoconfig.many_flowers.option.teleport_ROTW": "Teleportation Root Of The Worlds",
   "text.autoconfig.many_flowers.option.explosion_oriental_poppy": "Explosion from Oriental Poppy",
-  "text.autoconfig.many_flowers.option.regen_chrysanthemum": "Regeneration from Chrysanthemum"
+  "text.autoconfig.many_flowers.option.regen_chrysanthemum": "Regeneration from Chrysanthemum",
+  "text.autoconfig.many_flowers.option.still_asters": "Autumn asters can still items",
+  "text.autoconfig.many_flowers.option.sound_crocus": "Autumn crocus can make sounds",
+  "text.autoconfig.many_flowers.option.nether_velvets": "Velvets can make changes in the world"
 }
