@@ -41,22 +41,22 @@ public class ModFlowerGeneration {
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_NETHER),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.VELVETS_PLACED);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST, BiomeKeys.TAIGA),
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CHRYSANTHEMUM_PLACED);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST, BiomeKeys.TAIGA),
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DAISIES_PLACED);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DARK_FOREST),
                 GenerationStep.Feature.UNDERGROUND_DECORATION, ModPlacedFeatures.AUTUMN_ASTERS);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST, BiomeKeys.TAIGA, BiomeKeys.CHERRY_GROVE),
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_MOUNTAIN),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ZINNIA);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DEEP_DARK),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.AUTUMN_CROCUS);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_PINE_TAIGA, BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA),
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_TAIGA),
                 GenerationStep.Feature.UNDERGROUND_DECORATION, ModPlacedFeatures.JACK_FLOWER);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST),
