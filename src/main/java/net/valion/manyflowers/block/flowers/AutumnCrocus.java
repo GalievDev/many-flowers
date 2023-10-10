@@ -11,7 +11,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.helpers.SoundsHelper;
 
 public class AutumnCrocus extends FlowerBlock {
