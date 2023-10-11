@@ -1,6 +1,5 @@
 package net.valion.manyflowers;
 
-import dev.syoritohatsuki.duckyupdater.DuckyUpdater;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -10,7 +9,9 @@ import net.valion.manyflowers.config.MFConfig;
 import net.valion.manyflowers.helpers.SoundsHelper;
 import net.valion.manyflowers.helpers.WorldsHelper;
 import net.valion.manyflowers.particle.FlowerParticles;
-import net.valion.manyflowers.setup.*;
+import net.valion.manyflowers.setup.BlockEntitiesReg;
+import net.valion.manyflowers.setup.ItemGroupSetup;
+import net.valion.manyflowers.setup.ItemsReg;
 import net.valion.manyflowers.world.gen.ModWorldGen;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -40,6 +41,5 @@ public class ManyFlowers implements ModInitializer {
             SoundsHelper.putSounds();
             server.getWorlds().forEach(WorldsHelper::putWorld);
         });
-        DuckyUpdater.checkForUpdate("QUH6A4xu", MOD_ID);
     }
 }
