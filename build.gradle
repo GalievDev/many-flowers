@@ -19,14 +19,14 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modImplementation "vazkii.patchouli:Patchouli:${minecraft_version}-81-FABRIC"
+    modImplementation "vazkii.patchouli:Patchouli:1.20.1-81-FABRIC"
 
     modApi("me.shedaniel.cloth:cloth-config-fabric:${project.clothconfig}") {
         exclude(group: "net.fabricmc.fabric-api")
     }
     modApi("com.terraformersmc:modmenu:${project.modmenu}")
 
-    include(modImplementation("maven.modrinth:ducky-updater-lib:2023.6.1"))
+    include(modImplementation("maven.modrinth:ducky-updater-lib:2023.7.2"))
 }
 
 processResources {

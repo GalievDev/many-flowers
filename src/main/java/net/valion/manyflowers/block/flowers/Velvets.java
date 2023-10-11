@@ -43,7 +43,7 @@ public class Velvets extends ExtendedFlower {
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, BlockEntitiesReg.VELVETS_ENTITY, VelvetsBlockEntity::tick);
+        return validateTicker(type, BlockEntitiesReg.VELVETS_ENTITY, VelvetsBlockEntity::tick);
     }
 
     @Override
