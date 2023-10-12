@@ -11,6 +11,7 @@
     "homepage": "https://modrinth.com/mod/many-flowers"
   },
   "license": "MIT",
+  "icon": "assets/many_flowers/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
