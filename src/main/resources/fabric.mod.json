@@ -40,8 +40,7 @@
   "depends": {
     "fabricloader": ">=0.14.23",
     "fabric": ">=0.89.1+1.20.2",
-    "minecraft": ">=1.20.2",
-    "fabric-language-kotlin": "*"
+    "minecraft": ">=1.20.2"
   },
   "recommends": {
     "modmenu": ">=7.0.1",
