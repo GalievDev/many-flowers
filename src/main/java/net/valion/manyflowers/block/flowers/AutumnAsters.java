@@ -29,6 +29,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldEvents;
+import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity;
 import net.valion.manyflowers.setup.BlockEntitiesReg;
 import org.jetbrains.annotations.Nullable;
@@ -45,6 +46,7 @@ public class AutumnAsters extends ExtendedFlower {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+        if (!ManyFlowers.CONFIG.still_asters) return;
         if (entity instanceof PlayerEntity) {
             if (ids.size() < 10) {
                 if (canStill) {

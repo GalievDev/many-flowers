@@ -26,11 +26,12 @@ public class AutumnAstersEntity extends BlockEntity {
 
     public static void tick(World world, BlockPos blockPos, BlockState state, AutumnAstersEntity entity) {
         if (world.isClient) return;
+        if (!ManyFlowers.CONFIG.still_asters) return;
         if (counter < 0) counter = 0;
         List<ItemEntity> items = world.getEntitiesByClass(ItemEntity.class, new Box(blockPos).expand(5), item -> item instanceof ItemEntity);
 
         if (counter == delay) {
-            if (ids.size() < 10 && ManyFlowers.CONFIG.still_asters) {
+            if (ids.size() < 10) {
                 for (var item : items) {
                     ids.put(item.getStack().getItem().toString(), item.getStack().getCount());
                     item.remove(Entity.RemovalReason.KILLED);
