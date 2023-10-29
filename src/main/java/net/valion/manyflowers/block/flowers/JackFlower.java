@@ -44,15 +44,15 @@ public class JackFlower extends FlowerBlock implements Fertilizable {
             updateState(state, world, pos);
         }
     }
+
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(LIT);
+        super.appendProperties(builder);
     }
 
-
-
     private static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel) {
-        return state -> state.get(Properties.LIT) != false ? litLevel : 0;
+        return state -> state.get(Properties.LIT) ? litLevel : 0;
     }
 
     @Override
