@@ -45,6 +45,6 @@
   },
   "recommends": {
     "modmenu": ">=7.0.1",
-    "cloth-config": ">=11.0.99",
+    "cloth-config": ">=11.0.99"
   }
 }
