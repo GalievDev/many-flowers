@@ -29,8 +29,9 @@ public class AutumnCrocus extends FlowerBlock {
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (counter < 0) counter = 0;
+        if (!ManyFlowers.CONFIG.sound_crocus) return;
         if (counter == delay) {
-            if (!SoundsHelper.sounds.isEmpty() && ManyFlowers.CONFIG.sound_crocus) {
+            if (!SoundsHelper.sounds.isEmpty()) {
                 world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundsHelper.getRandSound(), SoundCategory.HOSTILE, 2F, 0F, true);
             } else {
                 SoundsHelper.putSounds();

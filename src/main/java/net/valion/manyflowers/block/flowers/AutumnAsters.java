@@ -46,6 +46,7 @@ public class AutumnAsters extends ExtendedFlower {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+        if (!ManyFlowers.CONFIG.still_asters) return;
         if (entity instanceof PlayerEntity) {
             if (ids.size() < 10) {
                 if (canStill) {
