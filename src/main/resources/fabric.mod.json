@@ -11,7 +11,7 @@
     "homepage": "https://modrinth.com/mod/many-flowers"
   },
   "license": "MIT",
-  "icon": "assets/icon.png",
+  "icon": "assets/many_flowers/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
@@ -33,9 +33,11 @@
   "depends": {
     "fabricloader": ">=0.14.19",
     "fabric": "*",
-    "minecraft": "1.19.4",
-    "modmenu": "*",
-    "cloth-config": "*",
-    "patchouli": "*"
+    "minecraft": "1.19.4"
+  },
+  "recommends": {
+    "modmenu": ">=6.2.2",
+    "cloth-config": ">=10.0.96",
+    "patchouli": ">=1.19.4-79-FABRIC"
   }
 }
