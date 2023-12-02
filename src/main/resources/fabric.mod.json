@@ -32,7 +32,8 @@
       "modrinthId": "QUH6A4xu",
       "type": "release",
       "featured": false
-    }
+    },
+    "fstats": 36
   },
   "mixins": [
     "ManyFlowers.mixins.json"
