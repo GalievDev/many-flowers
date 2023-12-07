@@ -1,5 +1,6 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -38,10 +39,16 @@ import static net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity.ids
 
 public class AutumnAsters extends ExtendedFlower {
     public static final EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
+    public static final MapCodec<AutumnAsters> CODEC = createCodec(AutumnAsters::new);
     public static boolean canStill = true;
     public AutumnAsters(Settings settings) {
         super(settings);
         this.setDefaultState(this.getStateManager().getDefaultState().with(HALF, DoubleBlockHalf.LOWER));
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
     }
 
     @Override
@@ -109,7 +116,7 @@ public class AutumnAsters extends ExtendedFlower {
     }
 
     @Override
-    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+    public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!world.isClient) {
             ids.clear();
             if (player.isCreative()) {
@@ -118,7 +125,7 @@ public class AutumnAsters extends ExtendedFlower {
                 dropStacks(state, world, pos, null, player, player.getMainHandStack());
             }
         }
-        super.onBreak(world, pos, state, player);
+        return state;
     }
 
     protected static void onBreakInCreative(World world, BlockPos pos, BlockState state, PlayerEntity player) {

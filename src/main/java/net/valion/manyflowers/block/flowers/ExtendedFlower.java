@@ -1,5 +1,6 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
@@ -44,6 +45,11 @@ public class ExtendedFlower extends BlockWithEntity implements BlockEntityProvid
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        return null;
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
         return null;
     }
 }

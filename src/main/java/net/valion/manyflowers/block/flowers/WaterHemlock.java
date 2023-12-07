@@ -1,5 +1,6 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
 import net.minecraft.block.FluidFillable;
@@ -25,8 +26,14 @@ import org.jetbrains.annotations.Nullable;
 import static net.valion.manyflowers.ManyFlowers.CONFIG;
 
 public class WaterHemlock extends PlantBlock implements Fertilizable, FluidFillable{
+    public static final MapCodec<WaterHemlock> CODEC = createCodec(WaterHemlock::new);
     public WaterHemlock(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends PlantBlock> getCodec() {
+        return CODEC;
     }
 
     @Override

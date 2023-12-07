@@ -1,7 +1,9 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
@@ -15,6 +17,7 @@ import net.valion.manyflowers.setup.BlockEntitiesReg;
 import org.jetbrains.annotations.Nullable;
 
 public class Velvets extends ExtendedFlower {
+    public static final MapCodec<Velvets> CODEC = createCodec(Velvets::new);
     public Velvets(Settings settings) {
         super(settings);
     }
@@ -44,5 +47,10 @@ public class Velvets extends ExtendedFlower {
     @Override
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
     }
 }
