@@ -4,13 +4,14 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
 import java.util.ArrayList;
-import java.util.Random;
+
+import static net.valion.manyflowers.ManyFlowers.RANDOM;
 
 public class SoundsHelper {
     public static ArrayList<SoundEvent> sounds = new ArrayList<>();
 
     public static SoundEvent getRandSound() {
-        return sounds.get(new Random().nextInt(sounds.size()));
+        return sounds.get(RANDOM.nextInt(sounds.size()));
     }
 
     public static void putSounds() {

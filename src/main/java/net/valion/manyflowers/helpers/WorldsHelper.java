@@ -6,10 +6,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
-import java.util.Random;
+
+import static net.valion.manyflowers.ManyFlowers.RANDOM;
 
 public class WorldsHelper {
-    private static final Random random = new Random();
     private static final ArrayList<ServerWorld> dims = new ArrayList<>();
 
     public static void putWorld(ServerWorld serverWorld){
@@ -17,8 +17,7 @@ public class WorldsHelper {
     }
 
     public static ServerWorld getRandomWorld(){
-        Random random = new Random();
-        return dims.get(random.nextInt(dims.size()));
+        return dims.get(RANDOM.nextInt(dims.size()));
     }
 
     public static void clearWorlds(){
@@ -38,8 +37,8 @@ public class WorldsHelper {
         int rangeX = 10000;
         int rangeZ = 10000;
 
-        int x = random.nextInt(rangeX * 2 + 1) - rangeX;
-        int z = random.nextInt(rangeZ * 2 + 1) - rangeZ;
+        int x = RANDOM.nextInt(rangeX * 2 + 1) - rangeX;
+        int z = RANDOM.nextInt(rangeZ * 2 + 1) - rangeZ;
 
         blockPos.set(x, 70, z);
 
@@ -48,13 +47,13 @@ public class WorldsHelper {
 
             if (blockPos.getY() > 120 && world.getRegistryKey() == World.NETHER) {
                 blockPos.setY(70);
-                x = random.nextInt(rangeX * 2 + 1) - rangeX;
-                z = random.nextInt(rangeZ * 2 + 1) - rangeZ;
+                x = RANDOM.nextInt(rangeX * 2 + 1) - rangeX;
+                z = RANDOM.nextInt(rangeZ * 2 + 1) - rangeZ;
                 blockPos.set(x, 70, z);
             } else if (blockPos.getY() > 200) {
                 blockPos.setY(70);
-                x = random.nextInt(rangeX * 2 + 1) - rangeX;
-                z = random.nextInt(rangeZ * 2 + 1) - rangeZ;
+                x = RANDOM.nextInt(rangeX * 2 + 1) - rangeX;
+                z = RANDOM.nextInt(rangeZ * 2 + 1) - rangeZ;
                 blockPos.set(x, 70, z);
             }
         }

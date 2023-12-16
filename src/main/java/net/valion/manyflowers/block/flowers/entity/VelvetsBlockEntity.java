@@ -12,7 +12,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
+import static net.valion.manyflowers.ManyFlowers.RANDOM;
 
 public class VelvetsBlockEntity extends BlockEntity {
     public static ArrayList<BlockPos> poses = new ArrayList<>();
@@ -55,8 +56,7 @@ public class VelvetsBlockEntity extends BlockEntity {
     }
 
     private static void setBlock(@NotNull World world, @NotNull List<BlockPos> poses) {
-        Random random = new Random(System.currentTimeMillis());
-        var pos = poses.get(random.nextInt(poses.size()));
+        var pos = poses.get(RANDOM.nextInt(poses.size()));
         var state = world.getBlockState(pos);
         if (state.isOf(Blocks.GRASS_BLOCK)) {
             world.setBlockState(pos, Blocks.CRIMSON_NYLIUM.getDefaultState());

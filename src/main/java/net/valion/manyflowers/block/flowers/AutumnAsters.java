@@ -35,6 +35,7 @@ import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity;
 import net.valion.manyflowers.setup.BlockEntitiesReg;
 import org.jetbrains.annotations.Nullable;
 
+import static net.valion.manyflowers.ManyFlowers.RANDOM;
 import static net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity.ids;
 
 public class AutumnAsters extends ExtendedFlower {
@@ -57,8 +58,8 @@ public class AutumnAsters extends ExtendedFlower {
         if (entity instanceof PlayerEntity) {
             if (ids.size() < 10) {
                 if (canStill) {
-                    var stack = new ItemStack(((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()).getItem(), 1);
-                    ids.put(Registries.ITEM.getId(stack.getItem()).toString(), stack.getCount());
+                    var stack = new ItemStack(((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()).getItem(), RANDOM.nextInt(1,10));
+                    ids.put(Registries.ITEM.getId(stack.getItem()).toString(), (byte) stack.getCount());
                     ((PlayerEntity) entity).getInventory().removeStack(((PlayerEntity) entity).getInventory().selectedSlot, stack.getCount());
                     canStill = false;
                 }

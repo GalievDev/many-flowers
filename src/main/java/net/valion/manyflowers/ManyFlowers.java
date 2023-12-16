@@ -15,10 +15,13 @@ import net.valion.manyflowers.world.gen.ModWorldGen;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Random;
+
 public class ManyFlowers implements ModInitializer {
     public static MFConfig CONFIG;
     public static final String MOD_ID = "many_flowers";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+    public static final Random RANDOM = new Random(System.currentTimeMillis());
 
     @Override
     public void onInitialize() {
