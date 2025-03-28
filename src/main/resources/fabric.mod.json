@@ -20,9 +20,6 @@
     "main": [
       "net.valion.manyflowers.ManyFlowers"
     ],
-    "modmenu": [
-      "net.valion.manyflowers.client.ModMenuIntegration"
-    ],
     "fabric-datagen": [
       "net.valion.manyflowers.ManyFlowersDataGen"
     ]
@@ -38,13 +35,13 @@
     "ManyFlowers.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.21",
-    "fabric": ">=0.83.0+1.20.1",
-    "minecraft": ">=1.21",
-    "cloth-config": ">=15.0.127"
+    "fabricloader": ">=${fabric_loader}",
+    "fabric-api": ">=${fabric_api}",
+    "minecraft": ">=${minecraft_version}",
+    "java": ">=${java_version}"
   },
-  "recommends": {
-    "modmenu": ">=7.0.1",
-    "patchouli": ">=1.21.1-81-FABRIC"
+  "suggests": {
+    "fstats": ">=${fstats_version}",
+    "ducky-updater-lib": ">=${ducky_updater_version}"
   }
 }
