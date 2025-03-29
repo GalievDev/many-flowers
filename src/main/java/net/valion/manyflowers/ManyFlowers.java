@@ -1,7 +1,5 @@
 package net.valion.manyflowers;
 
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.util.math.BlockPos;
@@ -32,8 +30,8 @@ public class ManyFlowers implements ModInitializer {
         FlowerParticles.registerParticles();
         BlockEntitiesReg.register();
 
-        AutoConfig.register(MFConfig.class, JanksonConfigSerializer::new);
-        CONFIG = AutoConfig.getConfigHolder(MFConfig.class).getConfig();
+        MFConfig.HANDLER.save();
+        MFConfig.HANDLER.load();
 
         ModWorldGen.generateModWorldGen();
 
