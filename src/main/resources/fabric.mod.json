@@ -38,6 +38,7 @@
     "fabricloader": ">=${fabric_loader}",
     "fabric-api": ">=${fabric_api}",
     "minecraft": ">=${minecraft_version}",
+    "fabric-language-kotlin": ">=${kotlin_fabric}",
     "java": ">=${java_version}"
   },
   "suggests": {

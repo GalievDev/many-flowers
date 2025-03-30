@@ -20,12 +20,13 @@ fabricApi {
 }
 
 dependencies {
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    minecraft("com.mojang:minecraft:${project.minecraft_version}")
+    mappings("net.fabricmc:yarn:${project.yarn_mappings}:v2")
+    modImplementation("net.fabricmc:fabric-loader:${project.loader_version}")
 
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_version}"
+    modImplementation("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
+    modImplementation("dev.isxander:yet-another-config-lib:${project.yacl_version}")
+    modImplementation("net.fabricmc:fabric-language-kotlin:${project.kotlin_fabric}")
 
     include(modImplementation("maven.modrinth:ducky-updater-lib:${project.ducky_updater}"))
     include(modImplementation("maven.modrinth:fstats:${project.fstats}"))
@@ -34,21 +35,23 @@ dependencies {
 processResources {
     inputs.property "version", project.version
     inputs.property "fabricloader", project.loader_version
-    inputs.property "fabric_api", project.fabric_version
+    inputs.property "fabric-api", project.fabric_version
     inputs.property "minecraft", project.minecraft_version
     inputs.property "java", JavaVersion.VERSION_21
-    inputs.property "fstats_version", project.fstats
-    inputs.property "ducky_updater_version", project.ducky_updater
+    inputs.property "fstats", project.fstats
+    inputs.property "ducky-updater-lib", project.ducky_updater
+    inputs.property "fabric-language-kotlin", project.kotlin_fabric
 
 
     filesMatching("fabric.mod.json") {
         expand "version": project.version
         expand "fabricloader": project.loader_version
-        expand "fabric_api": project.fabric_version
+        expand "fabric-api": project.fabric_version
         expand "minecraft": project.minecraft_version
         expand "java": JavaVersion.VERSION_21
-        expand "fstats_version": project.fstats
-        expand "ducky_updater_version": project.ducky_updater
+        expand "fstats": project.fstats
+        expand "ducky-updater-lib": project.ducky_updater
+        expand "fabric-language-kotlin": project.kotlin_fabric
     }
 }
 
