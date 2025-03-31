@@ -1,4 +1,4 @@
-package net.valion.manyflowers.setup;
+package net.valion.manyflowers.registry;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
@@ -6,7 +6,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -17,28 +16,12 @@ import net.valion.manyflowers.block.flowers.*;
 
 public class Flowers {
 
-    public static final Block ALSTROEMERIA_FLOWER = registerBlock("alstroemeria_flower",
-            new FlowerBlock(StatusEffects.SATURATION, 0,
-                    AbstractBlock.Settings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
-
-    public static final Block HYDRANGEA_FLOWER = registerBlock("hydrangea_flower",
-            new FlowerBlock(StatusEffects.WATER_BREATHING, 0,
-                    AbstractBlock.Settings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
-
-    public static final Block MARIGOLD_FLOWER = registerBlock("marigold_flower",
-            new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 0,
-                    AbstractBlock.Settings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
-
     public static final Block SWEET_ALYSSUM = registerBlock("sweet_alyssum",
             new SweetAlyssum(StatusEffects.ABSORPTION, 0,
                     AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).nonOpaque().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance((s) -> 5)), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block WATER_HEMLOCK = registerBlock("water_hemlock",
             new WaterHemlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS)), ItemGroupSetup.MANY_FLOWERS);
-
-    public static final Block HEMLOCK = registerBlock("hemlock",
-            new Hemlock(StatusEffects.FIRE_RESISTANCE, 0,
-                    (AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))), ItemGroups.FUNCTIONAL);
 
     public static final Block OENOTHERA = registerBlock("oenothera",
             new Oenothera(AbstractBlock.Settings.copy(Blocks.ROSE_BUSH).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
@@ -59,18 +42,11 @@ public class Flowers {
             new Chrysanthemum(StatusEffects.REGENERATION, 0,
                     (AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS))), ItemGroupSetup.MANY_FLOWERS);
 
-    public static final Block DAISIES = registerBlock("daisies",
-            new FlowerBlock(StatusEffects.ABSORPTION, 0,
-                    AbstractBlock.Settings.copy(Blocks.DANDELION).nonOpaque()), ItemGroupSetup.MANY_FLOWERS);
-
     public static final Block VELVETS = registerBlock("velvets",
             new Velvets(AbstractBlock.Settings.copy(Blocks.DANDELION).sounds(BlockSoundGroup.WEEPING_VINES)), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block AUTUMN_ASTERS = registerBlock("autumn_asters",
             new AutumnAsters(AbstractBlock.Settings.copy(Blocks.ROSE_BUSH)), ItemGroupSetup.MANY_FLOWERS);
-
-    public static final Block ZINNIA = registerBlock("zinnia",
-            new TallFlowerBlock(AbstractBlock.Settings.copy(Blocks.ROSE_BUSH)), ItemGroupSetup.MANY_FLOWERS);
 
     public static final Block AUTUMN_CROCUS = registerBlock("autumn_crocus",
             new AutumnCrocus(), ItemGroupSetup.MANY_FLOWERS);
