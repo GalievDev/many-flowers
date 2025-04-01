@@ -1,16 +1,17 @@
 package net.valion.manyflowers.block.flowers;
 
+import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowerBlock;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
@@ -19,20 +20,30 @@ import net.minecraft.world.World;
 
 import static net.valion.manyflowers.ManyFlowers.CONFIG;
 
-public class Gaillardia extends FlowerBlock {
+public class Gaillardia extends BaseFlower {
 
-    public Gaillardia(RegistryEntry<StatusEffect> stewEffect, float effectLengthInSeconds, Settings settings) {
-        super(stewEffect, effectLengthInSeconds, settings);
+    public Gaillardia(Settings settings) {
+        super(settings);
     }
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && CONFIG.damage_gaillardia) {
-            if (!entity.isFireImmune() && entity instanceof LivingEntity &&
-                    !EnchantmentHelper.getEnchantments(((LivingEntity) entity)
-                            .getEquippedStack(EquipmentSlot.FEET))
-                            .getEnchantments().contains(Enchantments.FROST_WALKER)) {
-                entity.damage(world.getDamageSources().inFire(), 1.0F);
+            if (!entity.isFireImmune() && entity instanceof LivingEntity) {
+                boolean hasFrostWalker = false;
+                var registryEntries = EnchantmentHelper.getEnchantments(((LivingEntity) entity)
+                                .getEquippedStack(EquipmentSlot.FEET)).getEnchantmentEntries();
+
+                for (Object2IntMap.Entry<RegistryEntry<Enchantment>> entry : registryEntries) {
+                    var registryEntry = entry.getKey();
+                    if (registryEntry.getKey().isPresent()) {
+                        hasFrostWalker = registryEntry.getKey().get().isOf(Enchantments.FROST_WALKER.getRegistryRef());
+                    }
+                }
+
+                if (hasFrostWalker) {
+                    entity.damage((ServerWorld) world, world.getDamageSources().inFire(), 1.0F);
+                }
             }
         }
     }

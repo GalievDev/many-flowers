@@ -11,10 +11,11 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.valion.manyflowers.block.flowers.entity.VelvetsBlockEntity;
-import net.valion.manyflowers.setup.BlockEntitiesReg;
+import net.valion.manyflowers.registry.BlockEntitiesReg;
 import org.jetbrains.annotations.Nullable;
 
 public class Velvets extends ExtendedFlower {
+
     public Velvets(Settings settings) {
         super(settings);
     }

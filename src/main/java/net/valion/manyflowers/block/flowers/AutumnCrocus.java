@@ -1,10 +1,6 @@
 package net.valion.manyflowers.block.flowers;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowerBlock;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -14,11 +10,12 @@ import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.helpers.SoundsHelper;
 
-public class AutumnCrocus extends FlowerBlock {
+public class AutumnCrocus extends BaseFlower {
     public static final int delay = 700;
     public static int counter = 0;
-    public AutumnCrocus() {
-        super(StatusEffects.ABSORPTION, 0, FabricBlockSettings.copy(Blocks.DANDELION));
+
+    public AutumnCrocus(Settings settings) {
+        super(settings);
     }
 
     @Override
@@ -31,7 +28,7 @@ public class AutumnCrocus extends FlowerBlock {
         if (counter < 0) counter = 0;
         if (!ManyFlowers.CONFIG.sound_crocus) return;
         if (counter == delay) {
-            if (!SoundsHelper.sounds.isEmpty()) {
+            if (!SoundsHelper.sounds.isEmpty() && world.isClient) {
                 world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundsHelper.getRandSound(), SoundCategory.HOSTILE, 2F, 0F, true);
             } else {
                 SoundsHelper.putSounds();

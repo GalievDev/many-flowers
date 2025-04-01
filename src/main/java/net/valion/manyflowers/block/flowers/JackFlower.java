@@ -1,10 +1,10 @@
 package net.valion.manyflowers.block.flowers;
 
-import net.minecraft.block.*;
-import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Fertilizable;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
@@ -16,11 +16,11 @@ import net.minecraft.world.WorldView;
 
 import java.util.function.ToIntFunction;
 
-public class JackFlower extends FlowerBlock implements Fertilizable {
+public class JackFlower extends BaseFlower implements Fertilizable {
     public static final BooleanProperty LIT = Properties.LIT;
-    public JackFlower() {
-        super(StatusEffects.FIRE_RESISTANCE, 0, AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).nonOpaque()
-                .noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(createLightLevelFromLitBlockState(15)));
+
+    public JackFlower(Settings settings) {
+        super(settings.luminance(createLightLevelFromLitBlockState(15)));
         this.setDefaultState(this.getDefaultState().with(LIT, false));
     }
 

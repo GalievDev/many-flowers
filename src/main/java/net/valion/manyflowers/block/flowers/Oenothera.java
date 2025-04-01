@@ -14,6 +14,7 @@ import net.minecraft.world.WorldView;
 import static net.valion.manyflowers.ManyFlowers.CONFIG;
 
 public class Oenothera extends TallPlantBlock implements Fertilizable {
+
     public Oenothera(Settings settings) {
         super(settings);
     }
@@ -22,11 +23,10 @@ public class Oenothera extends TallPlantBlock implements Fertilizable {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && CONFIG.damage_oenothera) {
             if (entity instanceof LivingEntity livingEntity) {
-                if (!livingEntity.isInvulnerableTo(world.getDamageSources().magic())) {
-                    entity.damage(world.getDamageSources().magic(), 1.0f);
+                if (!livingEntity.isInvulnerableTo((ServerWorld) world, world.getDamageSources().magic())) {
+                    entity.damage((ServerWorld) world, world.getDamageSources().magic(), 1.0f);
                 }
             }
-
         }
     }
 

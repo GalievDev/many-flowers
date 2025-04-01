@@ -2,11 +2,8 @@ package net.valion.manyflowers.block.flowers;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowerBlock;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -18,10 +15,10 @@ import net.minecraft.world.World;
 import static net.valion.manyflowers.ManyFlowers.CONFIG;
 import static net.valion.manyflowers.helpers.WorldsHelper.teleportToSafeZone;
 
-public class RootOfTheWorlds extends FlowerBlock {
+public class RootOfTheWorlds extends BaseFlower {
 
-    public RootOfTheWorlds(RegistryEntry<StatusEffect> stewEffect, float effectLengthInSeconds, Settings settings) {
-        super(stewEffect, effectLengthInSeconds, settings);
+    public RootOfTheWorlds(Settings settings) {
+        super(settings);
     }
 
     @Override

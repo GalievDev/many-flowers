@@ -41,7 +41,7 @@ public class WaterHemlock extends PlantBlock implements Fertilizable, FluidFilla
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && CONFIG.damage_hemlock) {
             if (entity instanceof LivingEntity livingEntity) {
-                if (!livingEntity.isInvulnerableTo(world.getDamageSources().magic())) {
+                if (!livingEntity.isInvulnerableTo((ServerWorld) world, world.getDamageSources().magic())) {
                     livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 50, 3));
                 }
             }
