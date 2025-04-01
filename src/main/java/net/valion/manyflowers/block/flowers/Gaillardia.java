@@ -1,8 +1,10 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -21,9 +23,15 @@ import net.minecraft.world.World;
 import static net.valion.manyflowers.ManyFlowers.CONFIG;
 
 public class Gaillardia extends BaseFlower {
+    private final static MapCodec<Gaillardia> CODEC = createCodec(Gaillardia::new);
 
     public Gaillardia(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public MapCodec<? extends FlowerBlock> getCodec() {
+        return CODEC;
     }
 
     @Override

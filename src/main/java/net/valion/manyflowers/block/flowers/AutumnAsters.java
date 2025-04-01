@@ -1,5 +1,6 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -35,12 +36,18 @@ import org.jetbrains.annotations.Nullable;
 import static net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity.ids;
 
 public class AutumnAsters extends ExtendedFlower {
+    private final static MapCodec<AutumnAsters> CODEC = createCodec(AutumnAsters::new);
     public static final EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
     public static boolean canStill = true;
 
     public AutumnAsters(Settings settings) {
         super(settings);
         this.setDefaultState(this.getStateManager().getDefaultState().with(HALF, DoubleBlockHalf.LOWER));
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
     }
 
     @Override

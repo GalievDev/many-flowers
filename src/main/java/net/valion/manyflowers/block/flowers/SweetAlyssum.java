@@ -1,15 +1,23 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.valion.manyflowers.particle.FlowerParticles;
 
 public class SweetAlyssum extends BaseFlower {
+    private final static MapCodec<SweetAlyssum> CODEC = createCodec(SweetAlyssum::new);
 
     public SweetAlyssum(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public MapCodec<? extends FlowerBlock> getCodec() {
+        return CODEC;
     }
 
     @Override

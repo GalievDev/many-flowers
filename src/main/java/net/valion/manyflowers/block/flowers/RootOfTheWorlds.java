@@ -1,7 +1,9 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.tag.BlockTags;
@@ -16,9 +18,15 @@ import static net.valion.manyflowers.ManyFlowers.CONFIG;
 import static net.valion.manyflowers.helpers.WorldsHelper.teleportToSafeZone;
 
 public class RootOfTheWorlds extends BaseFlower {
+    private final static MapCodec<RootOfTheWorlds> CODEC = createCodec(RootOfTheWorlds::new);
 
     public RootOfTheWorlds(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public MapCodec<? extends FlowerBlock> getCodec() {
+        return CODEC;
     }
 
     @Override

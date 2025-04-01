@@ -1,6 +1,8 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -11,9 +13,15 @@ import net.minecraft.world.World;
 import static net.valion.manyflowers.ManyFlowers.CONFIG;
 
 public class OrientalPoppy extends BaseFlower {
+    private final static MapCodec<OrientalPoppy> CODEC = createCodec(OrientalPoppy::new);
 
     public OrientalPoppy(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public MapCodec<? extends FlowerBlock> getCodec() {
+        return CODEC;
     }
 
     @Override

@@ -1,8 +1,10 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
@@ -17,11 +19,17 @@ import net.minecraft.world.WorldView;
 import java.util.function.ToIntFunction;
 
 public class JackFlower extends BaseFlower implements Fertilizable {
+    private final static MapCodec<JackFlower> CODEC = createCodec(JackFlower::new);
     public static final BooleanProperty LIT = Properties.LIT;
 
     public JackFlower(Settings settings) {
         super(settings.luminance(createLightLevelFromLitBlockState(15)));
         this.setDefaultState(this.getDefaultState().with(LIT, false));
+    }
+
+    @Override
+    public MapCodec<? extends FlowerBlock> getCodec() {
+        return CODEC;
     }
 
     @Override

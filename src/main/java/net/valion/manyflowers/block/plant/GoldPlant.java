@@ -1,5 +1,6 @@
 package net.valion.manyflowers.block.plant;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
@@ -8,16 +9,22 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-
-import static net.valion.manyflowers.registry.ItemsReg.GOLD_SEEDS;
+import net.valion.manyflowers.registry.ItemRegistry;
 
 public class GoldPlant extends CropBlock {
+    private final static MapCodec<GoldPlant> CODEC = createCodec(GoldPlant::new);
+
     public GoldPlant(Settings settings) {
         super(settings);
     }
 
+    @Override
+    public MapCodec<? extends CropBlock> getCodec() {
+        return CODEC;
+    }
+
     public ItemConvertible getSeedsItem() {
-        return GOLD_SEEDS;
+        return ItemRegistry.INSTANCE.getGOLD_SEEDS();
     }
 
     @Override

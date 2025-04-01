@@ -1,5 +1,6 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
 import net.minecraft.block.TallPlantBlock;
@@ -14,9 +15,15 @@ import net.minecraft.world.WorldView;
 import static net.valion.manyflowers.ManyFlowers.CONFIG;
 
 public class Oenothera extends TallPlantBlock implements Fertilizable {
+    private final static MapCodec<Oenothera> CODEC = createCodec(Oenothera::new);
 
     public Oenothera(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public MapCodec<? extends TallPlantBlock> getCodec() {
+        return CODEC;
     }
 
     @Override

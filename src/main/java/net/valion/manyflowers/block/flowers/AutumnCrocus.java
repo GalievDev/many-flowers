@@ -1,6 +1,8 @@
 package net.valion.manyflowers.block.flowers;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -11,11 +13,17 @@ import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.helpers.SoundsHelper;
 
 public class AutumnCrocus extends BaseFlower {
+    private final static MapCodec<AutumnCrocus> CODEC = createCodec(AutumnCrocus::new);
     public static final int delay = 700;
     public static int counter = 0;
 
     public AutumnCrocus(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public MapCodec<? extends FlowerBlock> getCodec() {
+        return CODEC;
     }
 
     @Override

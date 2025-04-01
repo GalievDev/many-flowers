@@ -1,21 +1,28 @@
 package net.valion.manyflowers.block.plant;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldView;
-
-import static net.valion.manyflowers.registry.ItemsReg.IRON_SEEDS;
+import net.valion.manyflowers.registry.ItemRegistry;
 
 public class IronPlant extends CropBlock {
+    private final static MapCodec<IronPlant> CODEC = createCodec(IronPlant::new);
+
     public IronPlant(Settings settings) {
         super(settings);
     }
 
+    @Override
+    public MapCodec<? extends CropBlock> getCodec() {
+        return CODEC;
+    }
+
     public ItemConvertible getSeedsItem() {
-        return IRON_SEEDS;
+        return ItemRegistry.INSTANCE.getIRON_SEEDS();
     }
 
     @Override
