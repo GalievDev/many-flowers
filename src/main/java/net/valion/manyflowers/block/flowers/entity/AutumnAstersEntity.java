@@ -11,7 +11,7 @@ import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.flowers.AutumnAsters;
-import net.valion.manyflowers.setup.BlockEntitiesReg;
+import net.valion.manyflowers.registry.BlockEntityRegistry;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,7 +22,7 @@ public class AutumnAstersEntity extends BlockEntity {
     public static final int delay = 300;
     public static int counter = 0;
     public AutumnAstersEntity(BlockPos pos, BlockState state) {
-        super(BlockEntitiesReg.AUTUMN_ASTERS_ENTITY, pos, state);
+        super(BlockEntityRegistry.INSTANCE.getAUTUMN_ASTERS_ENTITY(), pos, state);
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState state, AutumnAstersEntity entity) {

@@ -29,7 +29,7 @@ import net.minecraft.world.*;
 import net.minecraft.world.tick.ScheduledTickView;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity;
-import net.valion.manyflowers.registry.BlockEntitiesReg;
+import net.valion.manyflowers.registry.BlockEntityRegistry;
 import org.jetbrains.annotations.Nullable;
 
 import static net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity.ids;
@@ -45,7 +45,7 @@ public class AutumnAsters extends ExtendedFlower {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!ManyFlowers.CONFIG.still_asters) return;
+        if (!ManyFlowers.CONFIG.still_asters || world.isClient) return;
         if (entity instanceof PlayerEntity) {
             if (ids.size() < 10) {
                 if (canStill) {
@@ -159,7 +159,7 @@ public class AutumnAsters extends ExtendedFlower {
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateTicker(type, BlockEntitiesReg.AUTUMN_ASTERS_ENTITY, AutumnAstersEntity::tick);
+        return validateTicker(type, BlockEntityRegistry.INSTANCE.getAUTUMN_ASTERS_ENTITY(), AutumnAstersEntity::tick);
     }
 
     @Override
