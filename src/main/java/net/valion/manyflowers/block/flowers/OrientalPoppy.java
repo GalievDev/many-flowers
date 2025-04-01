@@ -9,8 +9,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
-
-import static net.valion.manyflowers.ManyFlowers.CONFIG;
+import net.valion.manyflowers.ManyFlowers;
 
 public class OrientalPoppy extends BaseFlower {
     private final static MapCodec<OrientalPoppy> CODEC = createCodec(OrientalPoppy::new);
@@ -26,7 +25,7 @@ public class OrientalPoppy extends BaseFlower {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && CONFIG.explosion_oriental_poppy) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && ManyFlowers.INSTANCE.getCONFIG().explosion_oriental_poppy) {
             if (entity instanceof LivingEntity) {
                 world.createExplosion(entity, pos.getX(), pos.getY(), pos.getZ(), 1F, World.ExplosionSourceType.TNT);
                 entity.damage((ServerWorld) world, world.getDamageSources().generic(), 3);

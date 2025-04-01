@@ -21,9 +21,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.*;
+import net.valion.manyflowers.ManyFlowers;
 import org.jetbrains.annotations.Nullable;
-
-import static net.valion.manyflowers.ManyFlowers.CONFIG;
 
 public class WaterHemlock extends PlantBlock implements Fertilizable, FluidFillable {
     private final static MapCodec<WaterHemlock> CODEC = createCodec(WaterHemlock::new);
@@ -39,7 +38,7 @@ public class WaterHemlock extends PlantBlock implements Fertilizable, FluidFilla
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && CONFIG.damage_hemlock) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && ManyFlowers.INSTANCE.getCONFIG().damage_hemlock) {
             if (entity instanceof LivingEntity livingEntity) {
                 if (!livingEntity.isInvulnerableTo((ServerWorld) world, world.getDamageSources().magic())) {
                     livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 50, 3));

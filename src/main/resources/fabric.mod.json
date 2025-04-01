@@ -18,7 +18,10 @@
       "net.valion.manyflowers.client.ManyFlowersClient"
     ],
     "main": [
-      "net.valion.manyflowers.ManyFlowers"
+      {
+        "adapter": "kotlin",
+        "value": "net.valion.manyflowers.ManyFlowers"
+      }
     ],
     "fabric-datagen": [
       "net.valion.manyflowers.ManyFlowersDataGen"

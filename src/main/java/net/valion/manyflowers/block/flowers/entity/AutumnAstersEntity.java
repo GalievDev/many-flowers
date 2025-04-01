@@ -9,7 +9,6 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.flowers.AutumnAsters;
 import net.valion.manyflowers.registry.BlockEntityRegistry;
 

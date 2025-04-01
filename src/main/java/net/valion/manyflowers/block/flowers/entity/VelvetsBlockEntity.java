@@ -6,7 +6,6 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.registry.BlockEntityRegistry;
 import org.jetbrains.annotations.NotNull;
 
