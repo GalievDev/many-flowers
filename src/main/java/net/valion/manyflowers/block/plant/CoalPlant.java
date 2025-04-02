@@ -1,13 +1,16 @@
 package net.valion.manyflowers.block.plant;
 
 import com.mojang.serialization.MapCodec;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-import net.valion.manyflowers.registry.ItemRegistry;
+import net.valion.manyflowers.registry.ItemsRegistry;
 
 public class CoalPlant extends CropBlock {
     private final static MapCodec<CoalPlant> CODEC = createCodec(CoalPlant::new);
@@ -22,7 +25,7 @@ public class CoalPlant extends CropBlock {
     }
 
     public ItemConvertible getSeedsItem() {
-        return ItemRegistry.INSTANCE.getCOAL_SEEDS();
+        return ItemsRegistry.INSTANCE.getCOAL_SEEDS();
     }
 
     @Override

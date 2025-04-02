@@ -7,10 +7,11 @@ import net.minecraft.server.MinecraftServer
 import net.valion.manyflowers.config.MFConfig
 import net.valion.manyflowers.helpers.SoundsHelper
 import net.valion.manyflowers.helpers.WorldsHelper
-import net.valion.manyflowers.registry.BlockEntityRegistry
-import net.valion.manyflowers.registry.BlockRegistry
-import net.valion.manyflowers.registry.FlowerRegistry
-import net.valion.manyflowers.registry.ItemRegistry
+import net.valion.manyflowers.registry.BlocksEntitiesRegistry
+import net.valion.manyflowers.registry.BlocksRegistry
+import net.valion.manyflowers.registry.ItemsRegistry
+import net.valion.manyflowers.registry.ParticlesRegistry
+import net.valion.manyflowers.world.gen.ModWorldGeneration
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 
@@ -20,13 +21,15 @@ object ManyFlowers: ModInitializer {
     val LOGGER: Logger = LogManager.getLogger(MOD_ID)
 
     override fun onInitialize() {
-        ItemRegistry
-        FlowerRegistry
-        BlockRegistry
-        BlockEntityRegistry
+        ItemsRegistry
+        BlocksRegistry
+        BlocksEntitiesRegistry
+        ParticlesRegistry
 
         MFConfig.HANDLER.load()
         MFConfig.HANDLER.save()
+
+        ModWorldGeneration.generateModWorldGen()
 
         ServerLifecycleEvents.SERVER_STARTED.register(ServerStarted { server: MinecraftServer ->
             SoundsHelper.putSounds()

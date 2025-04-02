@@ -7,7 +7,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.valion.manyflowers.ManyFlowers;
-import net.valion.manyflowers.registry.FlowerRegistry;
+import net.valion.manyflowers.registry.BlocksRegistry;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> ALSTROEMERIA_FLOWER = registerKey("alstroemeria_flower");
@@ -36,111 +36,111 @@ public class ModConfiguredFeatures {
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, ALSTROEMERIA_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 36, 5, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getALSTROEMERIA())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getALSTROEMERIA())))
         ));
 
         register(context, HYDRANGEA_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 34, 3, 6, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getHYDRANGEA())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getHYDRANGEA())))
         ));
 
         register(context, MARIGOLD_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 37, 3, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getMARIGOLD())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getMARIGOLD())))
         ));
 
         register(context, DAISIES, Feature.FLOWER, new RandomPatchFeatureConfig(
                 64, 7, 9, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getDAISES())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getDAISES())))
         ));
 
         register(context, ZINNIA, Feature.FLOWER, new RandomPatchFeatureConfig(
                 34, 7, 9, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getZINNIA())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getZINNIA())))
         ));
 
         register(context, SWEET_ALYSSUM, Feature.FLOWER, new RandomPatchFeatureConfig(
                 12, 1, 1, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getSWEET_ALYSSUM())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getSWEET_ALYSSUM())))
         ));
 
         register(context, GAILLARDIA, Feature.FLOWER, new RandomPatchFeatureConfig(
                 52, 3, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getGAILLARDIA())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getGAILLARDIA())))
         ));
 
         register(context, ORIENTAL_POPPY, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getORIENTAL_POPPY())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getORIENTAL_POPPY())))
         ));
 
         register(context, HEMLOCK, Feature.FLOWER, new RandomPatchFeatureConfig(
                 42, 10, 10, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getWATER_HEMLOCK())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getWATER_HEMLOCK())))
         ));
 
         register(context, OENOTHERA, Feature.FLOWER, new RandomPatchFeatureConfig(
                 52, 4, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getOENOTHERA())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getOENOTHERA())))
         ));
 
         register(context, CHRYSANTHEMUM, Feature.FLOWER, new RandomPatchFeatureConfig(
                 52, 3, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getCHRYSANTHEMUM())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getCHRYSANTHEMUM())))
         ));
 
         register(context, AUTUMN_CROCUS, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getAUTUMN_CROCUS())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getAUTUMN_CROCUS())))
         ));
 
         register(context, VELVETS, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
                 120, 7, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getVELVETS())))));
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getVELVETS())))));
 
         register(context, AUTUMN_ASTERS, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getAUTUMN_ASTERS())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getAUTUMN_ASTERS())))
         ));
 
         register(context, COAL_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getCOAL_FLOWER())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getCOAL_FLOWER())))
         ));
 
         register(context, COPPER_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getCOPPER_FLOWER())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getCOPPER_FLOWER())))
         ));
 
         register(context, IRON_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getIRON_FLOWER())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getIRON_FLOWER())))
         ));
 
         register(context, GOLD_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getGOLD_FLOWER())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getGOLD_FLOWER())))
         ));
 
         register(context, DIAMOND_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getDIAMOND_FLOWER())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getDIAMOND_FLOWER())))
         ));
 
         register(context, EMERALD_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getEMERALD_FLOWER())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getEMERALD_FLOWER())))
         ));
 
         register(context, JACK_FLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 90, 20, 15, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getJACK_FLOWER())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getJACK_FLOWER())))
         ));
 
         register(context, WORLDS_ROOT, Feature.FLOWER, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(FlowerRegistry.INSTANCE.getROOT_OF_THE_WORLDS())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getROOT_OF_THE_WORLDS())))
         ));
     }
 

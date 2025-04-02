@@ -9,8 +9,9 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
+import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.flowers.AutumnAsters;
-import net.valion.manyflowers.registry.BlockEntityRegistry;
+import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,12 +22,12 @@ public class AutumnAstersEntity extends BlockEntity {
     public static final int delay = 300;
     public static int counter = 0;
     public AutumnAstersEntity(BlockPos pos, BlockState state) {
-        super(BlockEntityRegistry.INSTANCE.getAUTUMN_ASTERS_ENTITY(), pos, state);
+        super(BlocksEntitiesRegistry.INSTANCE.getAUTUMN_ASTERS_ENTITY(), pos, state);
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState state, AutumnAstersEntity entity) {
         if (world.isClient) return;
-        if (!ManyFlowers.CONFIG.still_asters) return;
+        if (!ManyFlowers.INSTANCE.getCONFIG().still_asters) return;
         if (counter < 0) counter = 0;
         List<ItemEntity> items = world.getEntitiesByClass(ItemEntity.class, new Box(blockPos).expand(5), item -> item instanceof ItemEntity);
 

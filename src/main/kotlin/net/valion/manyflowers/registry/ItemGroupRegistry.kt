@@ -18,7 +18,7 @@ object ItemGroupRegistry {
             Registries.ITEM_GROUP, MANY_FLOWERS,
             FabricItemGroup.builder()
                 .icon{
-                    FlowerRegistry.ALSTROEMERIA.asItem().defaultStack
+                    BlocksRegistry.ALSTROEMERIA.asItem().defaultStack
                 }
                 .displayName(Text.of("Many Flowers"))
                 .build()

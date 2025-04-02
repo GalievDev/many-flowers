@@ -1,6 +1,6 @@
 package net.valion.manyflowers.world.gen;
 
-public class ModWorldGen {
+public class ModWorldGeneration {
     public static void generateModWorldGen(){
         ModFlowerGeneration.generateFlower();
     }

@@ -6,6 +6,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 
 public class WorldsHelper {
@@ -31,7 +32,16 @@ public class WorldsHelper {
 
         getRandomSafePosition(serverWorld, blockPos);
 
-        player.teleport(serverWorld, blockPos.getX() + 0.5, blockPos.getY(), blockPos.getZ() + 0.5, player.getYaw(), player.getPitch());
+        player.teleport(
+                serverWorld,
+                blockPos.getX() + 0.5,
+                blockPos.getY(),
+                blockPos.getZ() + 0.5,
+                new HashSet<>(),
+                player.getYaw(),
+                player.getPitch() ,
+                false
+        );
     }
 
     private static void getRandomSafePosition(World world, BlockPos.Mutable blockPos) {

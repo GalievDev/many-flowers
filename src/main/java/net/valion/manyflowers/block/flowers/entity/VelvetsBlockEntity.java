@@ -6,7 +6,8 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.valion.manyflowers.registry.BlockEntityRegistry;
+import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -19,12 +20,12 @@ public class VelvetsBlockEntity extends BlockEntity {
     private int counter = 0;
 
     public VelvetsBlockEntity(BlockPos pos, BlockState state) {
-        super(BlockEntityRegistry.INSTANCE.getVELVETS_ENTITY(), pos, state);
+        super(BlocksEntitiesRegistry.INSTANCE.getVELVETS_ENTITY(), pos, state);
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState state, VelvetsBlockEntity entity) {
         if (world.isClient) return;
-        if (!ManyFlowers.CONFIG.nether_velvets) return;
+        if (!ManyFlowers.INSTANCE.getCONFIG().nether_velvets) return;
         if (entity.counter < 0) entity.counter = 0;
         if (entity.counter == entity.delay) {
             if (poses.isEmpty()) {

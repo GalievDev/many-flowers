@@ -12,7 +12,7 @@ import net.minecraft.world.gen.feature.PlacedFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.valion.manyflowers.ManyFlowers;
-import net.valion.manyflowers.registry.FlowerRegistry;
+import net.valion.manyflowers.registry.BlocksRegistry;
 
 import java.util.List;
 
@@ -47,7 +47,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ALSTROEMERIA_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(47),
-                        FlowerRegistry.INSTANCE.getALSTROEMERIA()
+                        BlocksRegistry.INSTANCE.getALSTROEMERIA()
                 )
         );
 
@@ -55,7 +55,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HYDRANGEA_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(32),
-                        FlowerRegistry.INSTANCE.getHYDRANGEA()
+                        BlocksRegistry.INSTANCE.getHYDRANGEA()
                 )
         );
 
@@ -63,7 +63,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MARIGOLD_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(33),
-                        FlowerRegistry.INSTANCE.getMARIGOLD()
+                        BlocksRegistry.INSTANCE.getMARIGOLD()
                 )
         );
 
@@ -71,7 +71,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DAISIES),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(40),
-                        FlowerRegistry.INSTANCE.getDAISES()
+                        BlocksRegistry.INSTANCE.getDAISES()
                 )
         );
 
@@ -79,7 +79,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ZINNIA),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(54),
-                        FlowerRegistry.INSTANCE.getZINNIA()
+                        BlocksRegistry.INSTANCE.getZINNIA()
                 )
         );
 
@@ -87,7 +87,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SWEET_ALYSSUM),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(44),
-                        FlowerRegistry.INSTANCE.getSWEET_ALYSSUM()
+                        BlocksRegistry.INSTANCE.getSWEET_ALYSSUM()
                 )
         );
 
@@ -95,7 +95,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GAILLARDIA),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(25),
-                        FlowerRegistry.INSTANCE.getGAILLARDIA()
+                        BlocksRegistry.INSTANCE.getGAILLARDIA()
                 )
         );
 
@@ -103,7 +103,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ORIENTAL_POPPY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(256),
-                        FlowerRegistry.INSTANCE.getORIENTAL_POPPY()
+                        BlocksRegistry.INSTANCE.getORIENTAL_POPPY()
                 )
         );
 
@@ -111,7 +111,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HEMLOCK),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(33),
-                        FlowerRegistry.INSTANCE.getWATER_HEMLOCK()
+                        BlocksRegistry.INSTANCE.getWATER_HEMLOCK()
                 )
         );
 
@@ -119,7 +119,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OENOTHERA),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(33),
-                        FlowerRegistry.INSTANCE.getOENOTHERA()
+                        BlocksRegistry.INSTANCE.getOENOTHERA()
                 )
         );
 
@@ -127,7 +127,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CHRYSANTHEMUM),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(100),
-                        FlowerRegistry.INSTANCE.getCHRYSANTHEMUM()
+                        BlocksRegistry.INSTANCE.getCHRYSANTHEMUM()
                 )
         );
 
@@ -153,7 +153,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AUTUMN_ASTERS),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(200),
-                        FlowerRegistry.INSTANCE.getAUTUMN_ASTERS()
+                        BlocksRegistry.INSTANCE.getAUTUMN_ASTERS()
                 )
         );
 
@@ -161,7 +161,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COAL_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(500),
-                        FlowerRegistry.INSTANCE.getCOAL_FLOWER()
+                        BlocksRegistry.INSTANCE.getCOAL_FLOWER()
                 )
         );
 
@@ -169,7 +169,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COPPER_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(500),
-                        FlowerRegistry.INSTANCE.getCOPPER_FLOWER()
+                        BlocksRegistry.INSTANCE.getCOPPER_FLOWER()
                 )
         );
 
@@ -177,7 +177,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.IRON_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(500),
-                        FlowerRegistry.INSTANCE.getIRON_FLOWER()
+                        BlocksRegistry.INSTANCE.getIRON_FLOWER()
                 )
         );
 
@@ -185,7 +185,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GOLD_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(500),
-                        FlowerRegistry.INSTANCE.getGOLD_FLOWER()
+                        BlocksRegistry.INSTANCE.getGOLD_FLOWER()
                 )
         );
 
@@ -193,7 +193,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DIAMOND_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(500),
-                        FlowerRegistry.INSTANCE.getDIAMOND_FLOWER()
+                        BlocksRegistry.INSTANCE.getDIAMOND_FLOWER()
                 )
         );
 
@@ -201,7 +201,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.EMERALD_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(500),
-                        FlowerRegistry.INSTANCE.getEMERALD_FLOWER()
+                        BlocksRegistry.INSTANCE.getEMERALD_FLOWER()
                 )
         );
 
@@ -209,7 +209,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.JACK_FLOWER),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(50),
-                        FlowerRegistry.INSTANCE.getJACK_FLOWER()
+                        BlocksRegistry.INSTANCE.getJACK_FLOWER()
                 )
         );
 
@@ -217,7 +217,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WORLDS_ROOT),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(500),
-                        FlowerRegistry.INSTANCE.getROOT_OF_THE_WORLDS()
+                        BlocksRegistry.INSTANCE.getROOT_OF_THE_WORLDS()
                 )
         );
     }

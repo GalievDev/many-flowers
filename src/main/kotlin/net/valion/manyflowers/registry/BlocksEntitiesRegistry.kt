@@ -9,13 +9,13 @@ import net.valion.manyflowers.ManyFlowers.MOD_ID
 import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity
 import net.valion.manyflowers.block.flowers.entity.VelvetsBlockEntity
 
-object BlockEntityRegistry {
+object BlocksEntitiesRegistry {
 
     val VELVETS_ENTITY: BlockEntityType<VelvetsBlockEntity> = Registry.register(
         Registries.BLOCK_ENTITY_TYPE,
         Identifier.of(MOD_ID, "velvets_entity"),
         FabricBlockEntityTypeBuilder.create(
-            ::VelvetsBlockEntity, FlowerRegistry.VELVETS
+            ::VelvetsBlockEntity, BlocksRegistry.VELVETS
         ).build()
     )
 
@@ -23,7 +23,7 @@ object BlockEntityRegistry {
         Registries.BLOCK_ENTITY_TYPE,
         Identifier.of(MOD_ID, "autumn_asters_entity"),
         FabricBlockEntityTypeBuilder.create(
-            ::AutumnAstersEntity, FlowerRegistry.AUTUMN_ASTERS
+            ::AutumnAstersEntity, BlocksRegistry.AUTUMN_ASTERS
         ).build()
     )
 }

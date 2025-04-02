@@ -9,7 +9,7 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-import net.valion.manyflowers.registry.ItemRegistry;
+import net.valion.manyflowers.registry.ItemsRegistry;
 
 public class GoldPlant extends CropBlock {
     private final static MapCodec<GoldPlant> CODEC = createCodec(GoldPlant::new);
@@ -24,7 +24,7 @@ public class GoldPlant extends CropBlock {
     }
 
     public ItemConvertible getSeedsItem() {
-        return ItemRegistry.INSTANCE.getGOLD_SEEDS();
+        return ItemsRegistry.INSTANCE.getGOLD_SEEDS();
     }
 
     @Override

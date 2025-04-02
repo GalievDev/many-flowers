@@ -6,7 +6,7 @@ import net.minecraft.block.FlowerBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
-import net.valion.manyflowers.particle.FlowerParticles;
+import net.valion.manyflowers.registry.ParticlesRegistry;
 
 public class SweetAlyssum extends BaseFlower {
     private final static MapCodec<SweetAlyssum> CODEC = createCodec(SweetAlyssum::new);
@@ -24,7 +24,7 @@ public class SweetAlyssum extends BaseFlower {
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         float chance = 0.35f;
         if(chance < random.nextFloat()) {
-            world.addParticle(FlowerParticles.SWEET_ALYSSUM_PARTICLES, pos.getX() + 0.5D,
+            world.addParticle(ParticlesRegistry.INSTANCE.getSWEET_ALYSSUM_PARTICLES(), pos.getX() + 0.5D,
                     pos.getY() + 0.5D, pos.getZ() + 0.5D,
                     0.2d,0.1d,0.3d);
         }

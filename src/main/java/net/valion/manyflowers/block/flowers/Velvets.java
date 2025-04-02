@@ -13,7 +13,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.valion.manyflowers.block.flowers.entity.VelvetsBlockEntity;
-import net.valion.manyflowers.registry.BlockEntityRegistry;
+import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 import org.jetbrains.annotations.Nullable;
 
 public class Velvets extends ExtendedFlower {
@@ -47,7 +47,7 @@ public class Velvets extends ExtendedFlower {
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateTicker(type, BlockEntityRegistry.INSTANCE.getVELVETS_ENTITY(), VelvetsBlockEntity::tick);
+        return validateTicker(type, BlocksEntitiesRegistry.INSTANCE.getVELVETS_ENTITY(), VelvetsBlockEntity::tick);
     }
 
     @Override

@@ -30,7 +30,7 @@ import net.minecraft.world.*;
 import net.minecraft.world.tick.ScheduledTickView;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity;
-import net.valion.manyflowers.registry.BlockEntityRegistry;
+import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 import org.jetbrains.annotations.Nullable;
 
 import static net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity.ids;
@@ -166,7 +166,7 @@ public class AutumnAsters extends ExtendedFlower {
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateTicker(type, BlockEntityRegistry.INSTANCE.getAUTUMN_ASTERS_ENTITY(), AutumnAstersEntity::tick);
+        return validateTicker(type, BlocksEntitiesRegistry.INSTANCE.getAUTUMN_ASTERS_ENTITY(), AutumnAstersEntity::tick);
     }
 
     @Override

@@ -7,7 +7,7 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldView;
-import net.valion.manyflowers.registry.ItemRegistry;
+import net.valion.manyflowers.registry.ItemsRegistry;
 
 public class CopperPlant extends CropBlock {
     private final static MapCodec<CopperPlant> CODEC = createCodec(CopperPlant::new);
@@ -22,7 +22,7 @@ public class CopperPlant extends CropBlock {
     }
 
     public ItemConvertible getSeedsItem() {
-        return ItemRegistry.INSTANCE.getCOPPER_SEEDS();
+        return ItemsRegistry.INSTANCE.getCOPPER_SEEDS();
     }
 
     @Override
