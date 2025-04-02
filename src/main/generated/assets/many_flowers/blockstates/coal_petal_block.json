@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "many_flowers:block/coal_petal_block"
+    }
+  }
+}

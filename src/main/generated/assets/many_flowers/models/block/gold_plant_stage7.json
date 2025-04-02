@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "many_flowers:block/gold_plant_stage7"
+  }
+}

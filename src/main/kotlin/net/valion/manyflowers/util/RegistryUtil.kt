@@ -1,20 +1,19 @@
 package net.valion.manyflowers.util
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
-import net.minecraft.block.*
-import net.minecraft.block.piston.PistonBehavior
+import net.minecraft.block.AbstractBlock
+import net.minecraft.block.Block
+import net.minecraft.block.Blocks
 import net.minecraft.item.Item
 import net.minecraft.item.Items
 import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
-import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.Rarity
 import net.valion.manyflowers.ManyFlowers.MOD_ID
 import net.valion.manyflowers.registry.ItemGroupRegistry.MANY_FLOWERS
 
 object RegistryUtil {
-
     inline fun <reified T : Item> registerItem(
         name: String,
         crossinline factory: (Item.Settings) -> T,
@@ -28,7 +27,7 @@ object RegistryUtil {
         ) as T
     }
 
-    inline fun <reified T: Block> registerFlower(
+    inline fun <reified T : Block> registerBlock(
         name: String,
         rarity: Rarity,
         crossinline factory: (AbstractBlock.Settings) -> T,
@@ -39,13 +38,7 @@ object RegistryUtil {
             RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, name)),
             { factory(settings) },
             settings
-                .mapColor(MapColor.DARK_GREEN)
-                .nonOpaque()
-                .noCollision()
-                .breakInstantly()
-                .sounds(BlockSoundGroup.GRASS)
-                .offset(AbstractBlock.OffsetType.XZ)
-                .pistonBehavior(PistonBehavior.DESTROY)
+
         ) as T
 
         Items.register(block) { blockItemSettings: Item.Settings ->
@@ -80,22 +73,16 @@ object RegistryUtil {
         return block
     }
 
-    fun registerCropBlock(
+    inline fun <reified T: Block> registerBlockWithoutItem(
         name: String,
-        factory: (AbstractBlock.Settings) -> CropBlock,
+        crossinline factory: (AbstractBlock.Settings) -> T,
         settingsBuilder: AbstractBlock.Settings.() -> Unit = {}
-    ): CropBlock {
+    ): T {
         val settings = AbstractBlock.Settings.create().apply(settingsBuilder)
         return Blocks.register(
             RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, name)),
             { factory(settings) },
             settings
-                .nonOpaque()
-                .noCollision()
-                .ticksRandomly()
-                .breakInstantly()
-                .sounds(BlockSoundGroup.CROP)
-                .pistonBehavior(PistonBehavior.DESTROY)
-        ) as CropBlock
+        ) as T
     }
 }

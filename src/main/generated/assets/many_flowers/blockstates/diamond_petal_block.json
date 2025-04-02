@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "many_flowers:block/diamond_petal_block"
+    }
+  }
+}

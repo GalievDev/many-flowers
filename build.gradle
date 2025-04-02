@@ -18,7 +18,9 @@ repositories {
 }
 
 fabricApi {
-    configureDataGeneration()
+    configureDataGeneration() {
+        client = true
+    }
 }
 
 dependencies {
@@ -35,7 +37,7 @@ dependencies {
 }
 
 processResources {
-    inputs.property "version", project.version
+    inputs.property "version", project.mod_version
     inputs.property "fabricloader", project.loader_version
     inputs.property "fabric-api", project.fabric_version
     inputs.property "minecraft", project.minecraft_version
@@ -46,14 +48,16 @@ processResources {
 
 
     filesMatching("fabric.mod.json") {
-        expand "version": project.version
-        expand "fabricloader": project.loader_version
-        expand "fabric-api": project.fabric_version
-        expand "minecraft": project.minecraft_version
-        expand "java": JavaVersion.VERSION_21
-        expand "fstats": project.fstats
-        expand "ducky-updater-lib": project.ducky_updater
-        expand "fabric-language-kotlin": project.kotlin_fabric
+        expand([
+        "mod_version": project.mod_version,
+        "loader_version": project.loader_version,
+        "fabric_version": project.fabric_version,
+        "minecraft_version": project.minecraft_version,
+        "java_version": JavaVersion.VERSION_21,
+        "fstats_version": project.fstats,
+        "ducky_updater_version": project.ducky_updater,
+        "kotlin_fabric": project.kotlin_fabric
+        ])
     }
 }
 

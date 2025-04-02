@@ -24,7 +24,7 @@
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "many_flowers:hemlock"
+          "Name": "many_flowers:water_hemlock"
         }
       }
     }

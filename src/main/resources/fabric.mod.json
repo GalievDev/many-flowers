@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "many_flowers",
-  "version": "${version}",
+  "version": "${mod_version}",
   "name": "ManyFlowers",
   "description": "Decorate your world with new, colorful Flowers!",
   "authors": [
@@ -24,7 +24,10 @@
       }
     ],
     "fabric-datagen": [
-      "net.valion.manyflowers.ManyFlowersDataGen"
+      {
+        "adapter": "kotlin",
+        "value": "net.valion.manyflowers.ManyFlowersDataGenerator"
+      }
     ]
   },
   "custom": {
@@ -38,8 +41,8 @@
     "ManyFlowers.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${fabric_loader}",
-    "fabric-api": ">=${fabric_api}",
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": ">=${fabric_version}",
     "minecraft": ">=${minecraft_version}",
     "fabric-language-kotlin": ">=${kotlin_fabric}",
     "java": ">=${java_version}"
