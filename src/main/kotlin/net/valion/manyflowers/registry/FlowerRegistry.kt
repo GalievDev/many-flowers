@@ -13,7 +13,7 @@ object FlowerRegistry {
 
     val HYDRANGEA = registerFlower("hydrangea", Rarity.COMMON, ::BaseFlower)
 
-    val MARIGOLD = registerFlower("hydrangea", Rarity.COMMON, ::BaseFlower)
+    val MARIGOLD = registerFlower("marigold", Rarity.COMMON, ::BaseFlower)
 
     val DAISES = registerFlower("daises", Rarity.COMMON, ::BaseFlower)
 
