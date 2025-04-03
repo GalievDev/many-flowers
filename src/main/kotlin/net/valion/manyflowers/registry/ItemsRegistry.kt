@@ -1,6 +1,5 @@
 package net.valion.manyflowers.registry
 
-import net.minecraft.block.Block
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.valion.manyflowers.util.RegistryUtil.registerItem
@@ -48,8 +47,4 @@ object ItemsRegistry {
     val DIAMOND_PETAL = registerItem("diamond_petal", ::Item)
 
     val EMERALD_PETAL = registerItem("emerald_petal", ::Item)
-
-    private fun createBlockItemWithUniqueName(block: Block): (Item.Settings) -> Item {
-        return { BlockItem(block, it.useItemPrefixedTranslationKey()) }
-    }
 }
