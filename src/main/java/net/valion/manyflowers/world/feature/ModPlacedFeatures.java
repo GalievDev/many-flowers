@@ -71,7 +71,7 @@ public class ModPlacedFeatures {
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DAISIES),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(40),
-                        BlocksRegistry.INSTANCE.getDAISES()
+                        BlocksRegistry.INSTANCE.getDAISIES()
                 )
         );
 

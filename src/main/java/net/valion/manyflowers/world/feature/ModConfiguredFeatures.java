@@ -51,7 +51,7 @@ public class ModConfiguredFeatures {
 
         register(context, DAISIES, Feature.FLOWER, new RandomPatchFeatureConfig(
                 64, 7, 9, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getDAISES())))
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getDAISIES())))
         ));
 
         register(context, ZINNIA, Feature.FLOWER, new RandomPatchFeatureConfig(

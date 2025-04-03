@@ -19,7 +19,7 @@ public class ManyFlowersClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getALSTROEMERIA(), RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getHYDRANGEA(), RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getMARIGOLD(), RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getDAISES(), RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getDAISIES(), RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getZINNIA(), RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getSWEET_ALYSSUM(), RenderLayer.getCutout());

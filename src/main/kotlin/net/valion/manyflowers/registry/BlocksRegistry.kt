@@ -19,7 +19,7 @@ object BlocksRegistry {
 
     val MARIGOLD = RegistryUtil.registerBlock("marigold", Rarity.COMMON, ::BaseFlower, createFlowerSettings())
 
-    val DAISES = RegistryUtil.registerBlock("daises", Rarity.COMMON, ::BaseFlower, createFlowerSettings())
+    val DAISIES = RegistryUtil.registerBlock("daisies", Rarity.COMMON, ::BaseFlower, createFlowerSettings())
 
     val ZINNIA = RegistryUtil.registerBlock("zinnia", Rarity.COMMON, ::TallFlowerBlock, createFlowerSettings())
 
@@ -42,6 +42,7 @@ object BlocksRegistry {
     val VELVETS = RegistryUtil.registerBlock("velvets", Rarity.RARE, ::Velvets, createFlowerSettings())
 
     val AUTUMN_ASTERS = RegistryUtil.registerBlock("autumn_asters", Rarity.RARE, ::AutumnAsters, createFlowerSettings())
+
     // Ore Flowers
 
     val COAL_FLOWER = RegistryUtil.registerBlock("coal_flower", Rarity.RARE, ::BaseFlower, createFlowerSettings())
@@ -77,7 +78,7 @@ object BlocksRegistry {
     }, createFlowerPotSettings())
 
     val POTTED_DAISES = RegistryUtil.registerBlockWithoutItem("potted_daises", {
-        FlowerPotBlock(DAISES, it)
+        FlowerPotBlock(DAISIES, it)
     }, createFlowerPotSettings())
 
     val POTTED_SWEET_ALYSSUM = RegistryUtil.registerBlockWithoutItem("potted_sweet_alyssum", {

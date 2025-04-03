@@ -17,7 +17,7 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         generator.registerFlowerPotPlantAndItem(BlocksRegistry.ALSTROEMERIA, BlocksRegistry.POTTED_ALSTROEMERIA, CrossType.NOT_TINTED)
         generator.registerFlowerPotPlantAndItem(BlocksRegistry.HYDRANGEA, BlocksRegistry.POTTED_HYDRANGEA, CrossType.NOT_TINTED)
         generator.registerFlowerPotPlantAndItem(BlocksRegistry.MARIGOLD, BlocksRegistry.POTTED_MARIGOLD, CrossType.NOT_TINTED)
-        generator.registerFlowerPotPlantAndItem(BlocksRegistry.DAISES, BlocksRegistry.POTTED_DAISES, CrossType.NOT_TINTED)
+        generator.registerFlowerPotPlantAndItem(BlocksRegistry.DAISIES, BlocksRegistry.POTTED_DAISES, CrossType.NOT_TINTED)
         generator.registerDoubleBlockAndItem(BlocksRegistry.ZINNIA, CrossType.NOT_TINTED)
 
         generator.registerFlowerPotPlantAndItem(BlocksRegistry.SWEET_ALYSSUM, BlocksRegistry.POTTED_SWEET_ALYSSUM, CrossType.NOT_TINTED)
