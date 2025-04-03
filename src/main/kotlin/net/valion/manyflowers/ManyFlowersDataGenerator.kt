@@ -6,6 +6,7 @@ import net.minecraft.registry.RegistryBuilder
 import net.minecraft.registry.RegistryKeys
 import net.valion.manyflowers.data.ModModelProvider
 import net.valion.manyflowers.data.ModWorldGenerator
+import net.valion.manyflowers.data.ModLootTablesProvider
 import net.valion.manyflowers.world.feature.ModConfiguredFeatures
 import net.valion.manyflowers.world.feature.ModPlacedFeatures
 
@@ -16,6 +17,7 @@ class ManyFlowersDataGenerator: DataGeneratorEntrypoint {
 
         pack.addProvider(::ModModelProvider)
         pack.addProvider(::ModWorldGenerator)
+        pack.addProvider(::ModLootTablesProvider)
     }
 
     override fun buildRegistry(registryBuilder: RegistryBuilder) {
