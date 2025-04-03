@@ -43,7 +43,7 @@ public class JackFlower extends BaseFlower implements Fertilizable {
 
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if (world.getTimeOfDay() >= 10000) {
+        if (world.isNight()) {
             if (!state.get(LIT)) {
                 updateState(state, world, pos);
             }

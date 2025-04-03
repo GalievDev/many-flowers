@@ -3,7 +3,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "many_flowers:block/jack_flower_light",
-		"particle": "minecraft:block/grass"
+		"particle": "minecraft:block/jack_o_lantern"
 	},
 	"elements": [
 		{
