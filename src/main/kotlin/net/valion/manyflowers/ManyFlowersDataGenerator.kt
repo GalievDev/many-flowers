@@ -4,9 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
 import net.minecraft.registry.RegistryBuilder
 import net.minecraft.registry.RegistryKeys
-import net.valion.manyflowers.data.ModModelProvider
-import net.valion.manyflowers.data.ModWorldGenerator
-import net.valion.manyflowers.data.ModLootTablesProvider
+import net.valion.manyflowers.data.*
 import net.valion.manyflowers.world.feature.ModConfiguredFeatures
 import net.valion.manyflowers.world.feature.ModPlacedFeatures
 
@@ -18,6 +16,7 @@ class ManyFlowersDataGenerator: DataGeneratorEntrypoint {
         pack.addProvider(::ModModelProvider)
         pack.addProvider(::ModWorldGenerator)
         pack.addProvider(::ModLootTablesProvider)
+        pack.addProvider(::ModBlockTagProvider)
     }
 
     override fun buildRegistry(registryBuilder: RegistryBuilder) {
