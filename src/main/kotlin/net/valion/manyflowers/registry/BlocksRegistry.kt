@@ -93,16 +93,8 @@ object BlocksRegistry {
         FlowerPotBlock(ORIENTAL_POPPY, it)
     }, createFlowerPotSettings())
 
-    val POTTED_WATER_HEMLOCK = RegistryUtil.registerBlockWithoutItem("potted_water_hemlock", {
-        FlowerPotBlock(WATER_HEMLOCK, it)
-    }, createFlowerPotSettings())
-
     val POTTED_CHRYSANTHEMUM = RegistryUtil.registerBlockWithoutItem("potted_chrysanthemum", {
         FlowerPotBlock(CHRYSANTHEMUM, it)
-    }, createFlowerPotSettings())
-
-    val POTTED_AUTUMN_CROCUS = RegistryUtil.registerBlockWithoutItem("potted_autumn_crocus", {
-        FlowerPotBlock(AUTUMN_CROCUS, it)
     }, createFlowerPotSettings())
 
     val POTTED_ROOT_OF_THE_WORLDS = RegistryUtil.registerBlockWithoutItem("potted_root_of_the_worlds", {

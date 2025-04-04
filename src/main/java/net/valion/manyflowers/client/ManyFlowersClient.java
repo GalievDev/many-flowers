@@ -32,6 +32,16 @@ public class ManyFlowersClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getVELVETS(), RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getAUTUMN_ASTERS(), RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getPOTTED_ALSTROEMERIA(), RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getPOTTED_HYDRANGEA(), RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getPOTTED_MARIGOLD(), RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getPOTTED_DAISIES(), RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getPOTTED_SWEET_ALYSSUM(), RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getPOTTED_GAILLARDIA(), RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getPOTTED_ORIENTAL_POPPY(), RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getPOTTED_CHRYSANTHEMUM(), RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getPOTTED_ROOT_OF_THE_WORLDS(), RenderLayer.getCutout());
+
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getCOAL_FLOWER(), RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getCOAL_PLANT(), RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getCOPPER_FLOWER(), RenderLayer.getCutout());

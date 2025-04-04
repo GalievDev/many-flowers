@@ -82,9 +82,7 @@ class ModLootTablesProvider(
         addPottedPlantDrops(BlocksRegistry.POTTED_SWEET_ALYSSUM)
         addPottedPlantDrops(BlocksRegistry.POTTED_GAILLARDIA)
         addPottedPlantDrops(BlocksRegistry.POTTED_ORIENTAL_POPPY)
-        addPottedPlantDrops(BlocksRegistry.POTTED_WATER_HEMLOCK)
         addPottedPlantDrops(BlocksRegistry.POTTED_CHRYSANTHEMUM)
-        addPottedPlantDrops(BlocksRegistry.POTTED_AUTUMN_CROCUS)
         addPottedPlantDrops(BlocksRegistry.POTTED_ROOT_OF_THE_WORLDS)
 
         addCropLoot(
