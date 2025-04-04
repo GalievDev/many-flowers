@@ -77,7 +77,7 @@ object BlocksRegistry {
         FlowerPotBlock(MARIGOLD, it)
     }, createFlowerPotSettings())
 
-    val POTTED_DAISES = RegistryUtil.registerBlockWithoutItem("potted_daises", {
+    val POTTED_DAISIES = RegistryUtil.registerBlockWithoutItem("potted_daisies", {
         FlowerPotBlock(DAISIES, it)
     }, createFlowerPotSettings())
 

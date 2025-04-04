@@ -78,7 +78,7 @@ class ModLootTablesProvider(
         addPottedPlantDrops(BlocksRegistry.POTTED_ALSTROEMERIA)
         addPottedPlantDrops(BlocksRegistry.POTTED_HYDRANGEA)
         addPottedPlantDrops(BlocksRegistry.POTTED_MARIGOLD)
-        addPottedPlantDrops(BlocksRegistry.POTTED_DAISES)
+        addPottedPlantDrops(BlocksRegistry.POTTED_DAISIES)
         addPottedPlantDrops(BlocksRegistry.POTTED_SWEET_ALYSSUM)
         addPottedPlantDrops(BlocksRegistry.POTTED_GAILLARDIA)
         addPottedPlantDrops(BlocksRegistry.POTTED_ORIENTAL_POPPY)
