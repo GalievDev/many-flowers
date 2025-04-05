@@ -17,6 +17,7 @@ class ManyFlowersDataGenerator: DataGeneratorEntrypoint {
         pack.addProvider(::ModWorldGenerator)
         pack.addProvider(::ModLootTablesProvider)
         pack.addProvider(::ModBlockTagProvider)
+        pack.addProvider(::ModRecipeProvider)
     }
 
     override fun buildRegistry(registryBuilder: RegistryBuilder) {

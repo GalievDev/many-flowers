@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_copper_flower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:copper_flower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "many_flowers:copper_seeds"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_copper_flower"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "many_flowers:copper_seeds"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "many_flowers:copper_petal_block",
+    "I": "minecraft:copper_ingot",
+    "P": "many_flowers:copper_petal"
+  },
+  "pattern": [
+    "PBP",
+    "BIB",
+    "PBP"
+  ],
+  "result": {
+    "count": 2,
+    "id": "minecraft:copper_ingot"
+  }
+}

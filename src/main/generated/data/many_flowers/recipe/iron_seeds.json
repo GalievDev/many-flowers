@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "many_flowers:iron_flower"
+  ],
+  "result": {
+    "count": 1,
+    "id": "many_flowers:iron_seeds"
+  }
+}

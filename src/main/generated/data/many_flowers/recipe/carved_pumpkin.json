@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "many_flowers:jack_flower"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:carved_pumpkin"
+  }
+}

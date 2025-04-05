@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:white_dye_from_zinnia"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_zinnia": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:zinnia"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_zinnia"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:white_dye_from_zinnia"
+    ]
+  }
+}

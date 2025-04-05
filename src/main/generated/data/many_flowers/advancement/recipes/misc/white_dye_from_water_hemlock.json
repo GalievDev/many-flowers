@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:white_dye_from_water_hemlock"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_water_hemlock": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:water_hemlock"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_water_hemlock"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:white_dye_from_water_hemlock"
+    ]
+  }
+}

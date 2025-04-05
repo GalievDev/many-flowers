@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coal_flower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:coal_flower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "many_flowers:coal_seeds"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_coal_flower"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "many_flowers:coal_seeds"
+    ]
+  }
+}

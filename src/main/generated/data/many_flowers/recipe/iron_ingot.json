@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "many_flowers:iron_petal_block",
+    "I": "minecraft:iron_ingot",
+    "P": "many_flowers:iron_petal"
+  },
+  "pattern": [
+    "PBP",
+    "BIB",
+    "PBP"
+  ],
+  "result": {
+    "count": 2,
+    "id": "minecraft:iron_ingot"
+  }
+}

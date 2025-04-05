@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "many_flowers:copper_petal_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "many_flowers:copper_petal"
+  }
+}
