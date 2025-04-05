@@ -20,11 +20,17 @@ object RegistryUtil {
         settingsBuilder: Item.Settings.() -> Unit = {}
     ): T {
         val settings = Item.Settings().apply(settingsBuilder)
-        return Items.register(
+        val item = Items.register(
             RegistryKey.of(
                 RegistryKeys.ITEM, Identifier.of(MOD_ID, name)
             ), { factory(settings) }, settings
         ) as T
+
+        ItemGroupEvents.modifyEntriesEvent(MANY_FLOWERS).register {
+            it.add(item)
+        }
+
+        return item
     }
 
     inline fun <reified T : Block> registerBlock(
