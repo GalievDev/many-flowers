@@ -13,14 +13,12 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -33,7 +31,7 @@ import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity;
 import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 import org.jetbrains.annotations.Nullable;
 
-import static net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity.ids;
+import static net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity.stacks;
 
 public class AutumnAsters extends ExtendedFlower {
     private final static MapCodec<AutumnAsters> CODEC = createCodec(AutumnAsters::new);
@@ -53,12 +51,12 @@ public class AutumnAsters extends ExtendedFlower {
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!ManyFlowers.INSTANCE.getCONFIG().still_asters || world.isClient) return;
-        if (entity instanceof PlayerEntity) {
-            if (ids.size() < 10) {
+        if (entity instanceof PlayerEntity player) {
+            if (stacks.size() < 10) {
                 if (canStill) {
-                    var stack = new ItemStack(((PlayerEntity) entity).getStackInHand(((PlayerEntity) entity).getActiveHand()).getItem(), 1);
-                    ids.put(Registries.ITEM.getId(stack.getItem()).toString(), stack.getCount());
-                    ((PlayerEntity) entity).getInventory().removeStack(((PlayerEntity) entity).getInventory().selectedSlot, stack.getCount());
+                    var stack = new ItemStack(player.getStackInHand(player.getActiveHand()).getItem(), 1);
+                    stacks.add(stack);
+                    player.getInventory().removeStack(player.getInventory().selectedSlot, stack.getCount());
                     canStill = false;
                 }
             }
@@ -67,18 +65,14 @@ public class AutumnAsters extends ExtendedFlower {
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (!world.isClient && !ids.isEmpty()) {
-            for (int i = 0; i < ids.size(); i++) {
+        if (!world.isClient && !stacks.isEmpty()) {
+            for (ItemStack stack : stacks) {
                 if (player.getMainHandStack().isIn(ItemTags.SHOVELS)) {
-                    var id = ids.keySet().stream().toList().get(i);
-                    var count = ids.values().stream().toList().get(i);
-
-                    var stack = new ItemStack(Registries.ITEM.get(Identifier.of(id)), count);
                     var entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack);
                     world.spawnEntity(entity);
                 }
             }
-            ids.clear();
+            stacks.clear();
             AutumnAstersEntity.counter = 0;
             canStill = false;
         }
@@ -117,7 +111,7 @@ public class AutumnAsters extends ExtendedFlower {
     @Override
     public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!world.isClient) {
-            ids.clear();
+            stacks.clear();
             if (player.isCreative()) {
                 onBreakInCreative(world, pos, state, player);
             } else {
