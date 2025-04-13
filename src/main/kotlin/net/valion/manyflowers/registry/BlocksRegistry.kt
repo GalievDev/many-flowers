@@ -39,6 +39,8 @@ object BlocksRegistry {
 
     val AUTUMN_CROCUS = RegistryUtil.registerBlock("autumn_crocus", Rarity.UNCOMMON, ::AutumnCrocus, createFlowerSettings())
 
+    // Rare Flowers
+
     val VELVETS = RegistryUtil.registerBlock("velvets", Rarity.RARE, ::Velvets, createFlowerSettings())
 
     val AUTUMN_ASTERS = RegistryUtil.registerBlock("autumn_asters", Rarity.RARE, ::AutumnAsters, createFlowerSettings())
