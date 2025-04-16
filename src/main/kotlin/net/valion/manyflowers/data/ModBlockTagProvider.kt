@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
 import net.minecraft.registry.RegistryWrapper
 import net.minecraft.registry.tag.BlockTags
+import net.valion.manyflowers.registry.BlockTagsRegistry
 import net.valion.manyflowers.registry.BlocksRegistry
 import java.util.concurrent.CompletableFuture
 
@@ -33,6 +34,38 @@ class ModBlockTagProvider(
             BlocksRegistry.JACK_FLOWER,
             BlocksRegistry.ROOT_OF_THE_WORLDS,
         )
+
+        getOrCreateTagBuilder(BlockTagsRegistry.COMMON_FLOWERS)
+            .add(BlocksRegistry.ALSTROEMERIA)
+            .add(BlocksRegistry.HYDRANGEA)
+            .add(BlocksRegistry.MARIGOLD)
+            .add(BlocksRegistry.DAISIES)
+            .add(BlocksRegistry.ZINNIA)
+
+        getOrCreateTagBuilder(BlockTagsRegistry.UNCOMMON_FLOWERS)
+            .add(BlocksRegistry.SWEET_ALYSSUM)
+            .add(BlocksRegistry.GAILLARDIA)
+            .add(BlocksRegistry.ORIENTAL_POPPY)
+            .add(BlocksRegistry.WATER_HEMLOCK)
+            .add(BlocksRegistry.OENOTHERA)
+            .add(BlocksRegistry.CHRYSANTHEMUM)
+            .add(BlocksRegistry.AUTUMN_CROCUS)
+
+        getOrCreateTagBuilder(BlockTagsRegistry.RARE_FLOWERS)
+            .add(BlocksRegistry.VELVETS)
+            .add(BlocksRegistry.AUTUMN_ASTERS)
+
+        getOrCreateTagBuilder(BlockTagsRegistry.ORE_FLOWERS)
+            .add(BlocksRegistry.COAL_FLOWER)
+            .add(BlocksRegistry.COPPER_FLOWER)
+            .add(BlocksRegistry.IRON_FLOWER)
+            .add(BlocksRegistry.GOLD_FLOWER)
+            .add(BlocksRegistry.DIAMOND_FLOWER)
+            .add(BlocksRegistry.EMERALD_FLOWER)
+
+        getOrCreateTagBuilder(BlockTagsRegistry.EPIC_FLOWERS)
+            .add(BlocksRegistry.JACK_FLOWER)
+            .add(BlocksRegistry.ROOT_OF_THE_WORLDS)
 
         getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
             .add(*smallFlowers)
