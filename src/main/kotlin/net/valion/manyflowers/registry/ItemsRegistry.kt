@@ -2,6 +2,7 @@ package net.valion.manyflowers.registry
 
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
+import net.valion.manyflowers.item.FloralMeal
 import net.valion.manyflowers.util.RegistryUtil.registerItem
 
 object ItemsRegistry {
@@ -47,4 +48,6 @@ object ItemsRegistry {
     val DIAMOND_PETAL = registerItem("diamond_petal", ::Item)
 
     val EMERALD_PETAL = registerItem("emerald_petal", ::Item)
+
+    val FLORAL_MEAL = registerItem("floral_meal", ::FloralMeal)
 }

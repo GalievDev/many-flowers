@@ -61,6 +61,7 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         generator.register(ItemsRegistry.GOLD_PETAL, Models.GENERATED)
         generator.register(ItemsRegistry.DIAMOND_PETAL, Models.GENERATED)
         generator.register(ItemsRegistry.EMERALD_PETAL, Models.GENERATED)
+        generator.register(ItemsRegistry.FLORAL_MEAL, Models.GENERATED)
     }
 
     private fun registerFlowerWithItem(generator: BlockStateModelGenerator, block: Block, crossType: CrossType) {

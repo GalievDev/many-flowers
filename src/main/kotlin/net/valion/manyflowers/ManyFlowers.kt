@@ -14,11 +14,13 @@ import net.valion.manyflowers.registry.ParticlesRegistry
 import net.valion.manyflowers.world.gen.ModWorldGeneration
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
+import kotlin.random.Random
 
 object ManyFlowers: ModInitializer {
     const val MOD_ID: String = "many_flowers"
     val CONFIG: MFConfig = MFConfig.HANDLER.instance()
     val LOGGER: Logger = LogManager.getLogger(MOD_ID)
+    val RANDOM: Random = Random(System.currentTimeMillis())
 
     override fun onInitialize() {
         ItemsRegistry
