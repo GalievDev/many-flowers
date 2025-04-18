@@ -64,7 +64,7 @@ public class FloralMeal extends Item {
     public static void useOnGrass(ItemStack stack, ServerWorld world, BlockPos pos) {
         BlockPos growingPos = pos.up();
         label:
-        for (int i = 0; i < 128; i++) {
+        for (int i = 0; i < 64; i++) {
             for (int j = 0; j < i / 16; j++) {
                 growingPos = growingPos.add(
                         ManyFlowers.INSTANCE.getRANDOM().nextInt(3) - 1,
