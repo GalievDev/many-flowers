@@ -48,7 +48,7 @@ public class Gaillardia extends BaseFlower {
                     }
                 }
 
-                if (hasFrostWalker) {
+                if (!hasFrostWalker) {
                     entity.damage((ServerWorld) world, world.getDamageSources().inFire(), 1.0F);
                 }
             }
