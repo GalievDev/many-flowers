@@ -4,10 +4,12 @@ import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.ProbabilityConfig;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.registry.BlocksRegistry;
+import net.valion.manyflowers.registry.FeaturesRegistry;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> ALSTROEMERIA_FLOWER = registerKey("alstroemeria_flower");
@@ -74,10 +76,7 @@ public class ModConfiguredFeatures {
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getORIENTAL_POPPY())))
         ));
 
-        register(context, HEMLOCK, Feature.FLOWER, new RandomPatchFeatureConfig(
-                42, 10, 10, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getWATER_HEMLOCK())))
-        ));
+        register(context, HEMLOCK, FeaturesRegistry.INSTANCE.getHEMLOCK_FEATURE(), new ProbabilityConfig(0.06F));
 
         register(context, OENOTHERA, Feature.FLOWER, new RandomPatchFeatureConfig(
                 52, 4, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,

@@ -7,10 +7,7 @@ import net.minecraft.server.MinecraftServer
 import net.valion.manyflowers.config.MFConfig
 import net.valion.manyflowers.helpers.SoundsHelper
 import net.valion.manyflowers.helpers.WorldsHelper
-import net.valion.manyflowers.registry.BlocksEntitiesRegistry
-import net.valion.manyflowers.registry.BlocksRegistry
-import net.valion.manyflowers.registry.ItemsRegistry
-import net.valion.manyflowers.registry.ParticlesRegistry
+import net.valion.manyflowers.registry.*
 import net.valion.manyflowers.world.gen.ModWorldGeneration
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
@@ -27,6 +24,7 @@ object ManyFlowers: ModInitializer {
         BlocksRegistry
         BlocksEntitiesRegistry
         ParticlesRegistry
+        FeaturesRegistry
 
         MFConfig.HANDLER.load()
         MFConfig.HANDLER.save()

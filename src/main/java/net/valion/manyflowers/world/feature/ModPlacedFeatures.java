@@ -109,9 +109,11 @@ public class ModPlacedFeatures {
 
         register(context, HEMLOCK_PLACED,
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HEMLOCK),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
-                        RarityFilterPlacementModifier.of(33),
-                        BlocksRegistry.INSTANCE.getWATER_HEMLOCK()
+                List.of(
+                        SquarePlacementModifier.of(),
+                        PlacedFeatures.OCEAN_FLOOR_WG_HEIGHTMAP,
+                        CountPlacementModifier.of(64),
+                        BiomePlacementModifier.of()
                 )
         );
 
