@@ -12,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
 import net.minecraft.world.event.GameEvent;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.RandomPatchFeatureConfig;
 import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.plant.OrePlant;
@@ -83,6 +84,7 @@ public class FloralMeal extends Item {
                         .getEntrySet().stream()
                         .filter(entry -> entry.getKey().getValue().getNamespace().equals(ManyFlowers.MOD_ID))
                         .map(Map.Entry::getValue)
+                        .filter(feature -> feature.feature() == Feature.FLOWER)
                         .filter(configuredFeature -> configuredFeature.config() instanceof RandomPatchFeatureConfig)
                         .toList();
                 if (flowers.isEmpty()) {

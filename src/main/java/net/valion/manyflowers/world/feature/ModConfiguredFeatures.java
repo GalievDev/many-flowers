@@ -56,7 +56,7 @@ public class ModConfiguredFeatures {
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getDAISIES())))
         ));
 
-        register(context, ZINNIA, Feature.FLOWER, new RandomPatchFeatureConfig(
+        register(context, ZINNIA, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
                 34, 7, 9, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getZINNIA())))
         ));
@@ -78,7 +78,7 @@ public class ModConfiguredFeatures {
 
         register(context, HEMLOCK, FeaturesRegistry.INSTANCE.getHEMLOCK_FEATURE(), new ProbabilityConfig(0.06F));
 
-        register(context, OENOTHERA, Feature.FLOWER, new RandomPatchFeatureConfig(
+        register(context, OENOTHERA, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
                 52, 4, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getOENOTHERA())))
         ));
@@ -97,7 +97,7 @@ public class ModConfiguredFeatures {
                 120, 7, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getVELVETS())))));
 
-        register(context, AUTUMN_ASTERS, Feature.FLOWER, new RandomPatchFeatureConfig(
+        register(context, AUTUMN_ASTERS, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
                 1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getAUTUMN_ASTERS())))
         ));

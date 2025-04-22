@@ -80,26 +80,44 @@ public class AutumnAsters extends ExtendedFlower {
     }
 
     @Override
-    protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
+    protected BlockState getStateForNeighborUpdate(
+            BlockState state,
+            WorldView world,
+            ScheduledTickView tickView,
+            BlockPos pos,
+            Direction direction,
+            BlockPos neighborPos,
+            BlockState neighborState,
+            Random random
+    ) {
         DoubleBlockHalf doubleBlockHalf = state.get(HALF);
-        if (!(direction.getAxis() != Direction.Axis.Y || doubleBlockHalf == DoubleBlockHalf.LOWER != (direction == Direction.UP) || neighborState.isOf(this) && neighborState.get(HALF) != doubleBlockHalf)) {
+        if (direction.getAxis() != Direction.Axis.Y
+                || doubleBlockHalf == DoubleBlockHalf.LOWER != (direction == Direction.UP)
+                || neighborState.isOf(this) && neighborState.get(HALF) != doubleBlockHalf) {
+            return doubleBlockHalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canPlaceAt(world, pos)
+                    ? Blocks.AIR.getDefaultState()
+                    : super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
+        } else {
             return Blocks.AIR.getDefaultState();
         }
-        if (doubleBlockHalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canPlaceAt(world, pos)) {
-            return Blocks.AIR.getDefaultState();
-        }
-        return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
     }
 
-    @Override
     @Nullable
+    @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockPos blockPos = ctx.getBlockPos();
         World world = ctx.getWorld();
-        if (blockPos.getY() < world.getTopY(Heightmap.Type.WORLD_SURFACE, blockPos.getX(), blockPos.getZ()) - 1 && world.getBlockState(blockPos.up()).canReplace(ctx)) {
-            return super.getPlacementState(ctx);
+        return blockPos.getY() < world.getTopYInclusive() && world.getBlockState(blockPos.up()).canReplace(ctx) ? super.getPlacementState(ctx) : null;
+    }
+
+    @Override
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+        if (state.get(HALF) != DoubleBlockHalf.UPPER) {
+            return super.canPlaceAt(state, world, pos);
+        } else {
+            BlockState blockState = world.getBlockState(pos.down());
+            return blockState.isOf(this) && blockState.get(HALF) == DoubleBlockHalf.LOWER;
         }
-        return null;
     }
 
     @Override
