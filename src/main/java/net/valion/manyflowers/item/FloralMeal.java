@@ -2,6 +2,8 @@ package net.valion.manyflowers.item;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.GrassBlock;
+import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
@@ -29,22 +31,23 @@ public class FloralMeal extends Item {
     public ActionResult useOnBlock(ItemUsageContext context) {
         World world = context.getWorld();
         BlockPos blockPos = context.getBlockPos();
-
         if (useOnOreCrop(context.getStack(), world, blockPos)) {
             if (!world.isClient()) {
                 context.getPlayer().emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
                 world.syncWorldEvent(WorldEvents.BONE_MEAL_USED, blockPos, 15);
             }
-
+            return ActionResult.SUCCESS;
         } else {
-            if (!world.isClient) {
-                useOnGrass(context.getStack(), (ServerWorld) world, blockPos);
-                context.getPlayer().emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
-                world.syncWorldEvent(WorldEvents.BONE_MEAL_USED, blockPos, 15);
+            if (world.getBlockState(blockPos) == Blocks.GRASS_BLOCK.getDefaultState()) {
+                if (!world.isClient) {
+                    useOnGrass(context.getStack(), (ServerWorld) world, blockPos);
+                    context.getPlayer().emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
+                    world.syncWorldEvent(WorldEvents.BONE_MEAL_USED, blockPos, 15);
+                }
+                return ActionResult.SUCCESS;
             }
-
         }
-        return ActionResult.SUCCESS;
+        return ActionResult.PASS;
     }
 
     public static boolean useOnOreCrop(ItemStack stack, World world, BlockPos pos) {
@@ -63,35 +66,27 @@ public class FloralMeal extends Item {
     }
 
     public static void useOnGrass(ItemStack stack, ServerWorld world, BlockPos pos) {
-        BlockPos growingPos = pos.up();
-        label:
-        for (int i = 0; i < 64; i++) {
-            for (int j = 0; j < i / 16; j++) {
-                growingPos = growingPos.add(
-                        ManyFlowers.INSTANCE.getRANDOM().nextInt(3) - 1,
-                        (ManyFlowers.INSTANCE.getRANDOM().nextInt(3) - 1) * ManyFlowers.INSTANCE.getRANDOM().nextInt(3) / 2,
-                        ManyFlowers.INSTANCE.getRANDOM().nextInt(3) - 1
-                );
-                if (!world.getBlockState(growingPos.down()).isOf(Blocks.GRASS_BLOCK) || world.getBlockState(growingPos).isFullCube(world, growingPos)) {
-                    continue label;
+        for (BlockPos growingPos: BlockPos.iterate(pos.add(1, 0, 1), pos.add(-1, 0, -1))) {
+            BlockPos blockPos = growingPos.up();
+            if (world.getBlockState(blockPos.down()).isOf(Blocks.GRASS_BLOCK) || world.getBlockState(blockPos).isFullCube(world, blockPos)) {
+                BlockState blockState = world.getBlockState(blockPos);
+                if (blockState.isAir()) {
+                    var flowers = world.getRegistryManager()
+                            .getOrThrow(RegistryKeys.CONFIGURED_FEATURE)
+                            .getEntrySet().stream()
+                            .filter(entry -> entry.getKey().getValue().getNamespace().equals(ManyFlowers.MOD_ID))
+                            .map(Map.Entry::getValue)
+                            .filter(feature -> feature.feature() == Feature.FLOWER)
+                            .filter(configuredFeature -> configuredFeature.config() instanceof RandomPatchFeatureConfig)
+                            .toList();
+                    if (flowers.isEmpty()) {
+                        continue;
+                    }
+                    if (ManyFlowers.INSTANCE.getRANDOM().nextInt(0, 10) >= 5) {
+                        ((RandomPatchFeatureConfig) flowers.get(ManyFlowers.INSTANCE.getRANDOM().nextInt(0, flowers.size() / 2 - 1)).config()).feature().value()
+                                .generateUnregistered(world, world.getChunkManager().getChunkGenerator(), world.random, blockPos);
+                    }
                 }
-            }
-
-            BlockState blockState = world.getBlockState(growingPos);
-            if (blockState.isAir()) {
-                var flowers = world.getRegistryManager()
-                        .getOrThrow(RegistryKeys.CONFIGURED_FEATURE)
-                        .getEntrySet().stream()
-                        .filter(entry -> entry.getKey().getValue().getNamespace().equals(ManyFlowers.MOD_ID))
-                        .map(Map.Entry::getValue)
-                        .filter(feature -> feature.feature() == Feature.FLOWER)
-                        .filter(configuredFeature -> configuredFeature.config() instanceof RandomPatchFeatureConfig)
-                        .toList();
-                if (flowers.isEmpty()) {
-                    continue;
-                }
-                ((RandomPatchFeatureConfig) flowers.get(ManyFlowers.INSTANCE.getRANDOM().nextInt(0, flowers.size() - 1)).config()).feature().value()
-                        .generateUnregistered(world, world.getChunkManager().getChunkGenerator(), world.random, growingPos);
             }
         }
         stack.decrement(1);
