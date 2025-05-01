@@ -1,0 +1,14 @@
+{
+  "ethereal_orchid_ambient": {
+    "subtitle": "sound.many_flowers.ethereal_orchid_ambient",
+    "sounds": [
+      "many_flowers:ethereal_orchid_ambient"
+    ]
+  },
+  "ethereal_orchid_placed": {
+    "subtitle": "sound.many_flowers.ethereal_orchid_placed",
+    "sounds": [
+      "many_flowers:ethereal_orchid_placed"
+    ]
+  }
+}

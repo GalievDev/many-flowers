@@ -25,6 +25,7 @@ object ManyFlowers: ModInitializer {
         BlocksEntitiesRegistry
         ParticlesRegistry
         FeaturesRegistry
+        SoundsRegistry
 
         MFConfig.HANDLER.load()
         MFConfig.HANDLER.save()

@@ -33,6 +33,7 @@ import net.minecraft.world.CollisionView;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import net.valion.manyflowers.registry.ItemsRegistry;
+import net.valion.manyflowers.registry.SoundsRegistry;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -119,7 +120,7 @@ public class EtherealOrchid extends BaseFlower {
             ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) placer;
             if (serverPlayerEntity.getSpawnPointDimension() != world.getRegistryKey() || !pos.equals(serverPlayerEntity.getSpawnPointPosition())) {
                 serverPlayerEntity.setSpawnPoint(world.getRegistryKey(), pos, 0.0F, false, true);
-                world.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundEvents.BLOCK_RESPAWN_ANCHOR_SET_SPAWN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                world.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundsRegistry.INSTANCE.getETHEREAL_ORCHID_PLACED_SOUND(), SoundCategory.BLOCKS, 1.0F, 1.0F);
             }
         }
         super.onPlaced(world, pos, state, placer, itemStack);
@@ -135,7 +136,7 @@ public class EtherealOrchid extends BaseFlower {
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (state.get(CHARGES) != 0) {
             if (random.nextInt(100) == 0) {
-                world.playSoundAtBlockCenter(pos, SoundEvents.BLOCK_RESPAWN_ANCHOR_AMBIENT, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+                world.playSoundAtBlockCenter(pos, SoundsRegistry.INSTANCE.getETHEREAL_ORCHID_AMBIENT(), SoundCategory.BLOCKS, 1.0F, 1.0F, false);
             }
 
             double d = pos.getX() + 0.5 + (0.5 - random.nextDouble());

@@ -6,8 +6,11 @@ import net.minecraft.block.Block
 import net.minecraft.block.Blocks
 import net.minecraft.item.Item
 import net.minecraft.item.Items
+import net.minecraft.registry.Registries
+import net.minecraft.registry.Registry
 import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
+import net.minecraft.sound.SoundEvent
 import net.minecraft.util.Identifier
 import net.minecraft.util.Rarity
 import net.valion.manyflowers.ManyFlowers.MOD_ID
@@ -90,5 +93,10 @@ object RegistryUtil {
             { factory(settings) },
             settings
         ) as T
+    }
+
+    fun registerSound(id: String?): SoundEvent {
+        val identifier = Identifier.of(MOD_ID, id)
+        return Registry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier))
     }
 }
