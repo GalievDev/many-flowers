@@ -2,10 +2,7 @@ package net.valion.manyflowers.block.flowers;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowerBlock;
+import net.minecraft.block.*;
 import net.minecraft.entity.Dismounting;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -67,6 +64,19 @@ public class EtherealOrchid extends BaseFlower {
     @Override
     public MapCodec<? extends FlowerBlock> getCodec() {
         return CODEC;
+    }
+
+    @Override
+    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        if (!world.isClient) {
+            ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) player;
+            if (serverPlayerEntity.getSpawnPointDimension() != world.getRegistryKey() || !pos.equals(serverPlayerEntity.getSpawnPointPosition())) {
+                serverPlayerEntity.setSpawnPoint(world.getRegistryKey(), pos, 0.0F, false, true);
+                world.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundsRegistry.INSTANCE.getETHEREAL_ORCHID_PLACED_SOUND(), SoundCategory.BLOCKS, 1.0F, 1.0F);
+                return ActionResult.SUCCESS_SERVER;
+            }
+        }
+        return ActionResult.CONSUME;
     }
 
     @Override
