@@ -37,6 +37,7 @@
       "featured": false
     }
   },
+  "accessWidener" : "ManyFlowers.accesswidener",
   "mixins": [
     "ManyFlowers.mixins.json"
   ],
