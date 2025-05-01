@@ -65,6 +65,8 @@ object BlocksRegistry {
 
     val ROOT_OF_THE_WORLDS = RegistryUtil.registerBlock("root_of_the_worlds", Rarity.EPIC, ::RootOfTheWorlds, createFlowerSettings())
 
+    val ETHEREAL_ORCHID = RegistryUtil.registerBlock("ethereal_orchid", Rarity.EPIC, ::EtherealOrchid, createFlowerSettings())
+
     // Potted Flower Blocks
 
     val POTTED_ALSTROEMERIA = RegistryUtil.registerBlockWithoutItem("potted_alstroemeria", {
