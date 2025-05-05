@@ -5,9 +5,16 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.entity.EntityRenderer;
+import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.state.EntityRenderState;
+import net.minecraft.entity.Entity;
 import net.valion.manyflowers.particle.custom.SweetAlyssumParticles;
 import net.valion.manyflowers.registry.BlocksRegistry;
+import net.valion.manyflowers.registry.EntitiesTypeRegistry;
 import net.valion.manyflowers.registry.ParticlesRegistry;
 
 @Environment(EnvType.CLIENT)
@@ -58,5 +65,23 @@ public class ManyFlowersClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getJACK_FLOWER(), RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getROOT_OF_THE_WORLDS(), RenderLayer.getCutout());
 
+        EntityRendererRegistry.register(EntitiesTypeRegistry.INSTANCE.getDREADPETAL_ENTITY(), EmptyRenderer::new);
+    }
+
+    private static class EmptyRenderer extends EntityRenderer<Entity, EntityRenderState> {
+
+        protected EmptyRenderer(EntityRendererFactory.Context context) {
+            super(context);
+        }
+
+        @Override
+        public boolean shouldRender(Entity entity, Frustum frustum, double x, double y, double z) {
+            return false;
+        }
+
+        @Override
+        public EntityRenderState createRenderState() {
+            return new EntityRenderState();
+        }
     }
 }
