@@ -1,5 +1,6 @@
 package net.valion.manyflowers.entity;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -11,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Arm;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
 import net.valion.manyflowers.registry.EntitiesTypeRegistry;
 
 public class FleeDreadpetalEntity extends LivingEntity {
@@ -51,6 +53,12 @@ public class FleeDreadpetalEntity extends LivingEntity {
     @Override
     public Arm getMainArm() {
         return null;
+    }
+
+    @Override
+    public void kill(ServerWorld world) {
+        this.remove(Entity.RemovalReason.KILLED);
+        this.emitGameEvent(GameEvent.ENTITY_DIE);
     }
 
     public static DefaultAttributeContainer createAttributes() {

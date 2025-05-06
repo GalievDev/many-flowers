@@ -41,7 +41,8 @@ object ManyFlowers: ModInitializer {
 
         ServerEntityEvents.ENTITY_LOAD.register(ServerEntityEvents.Load { entity: Entity?, world: ServerWorld? ->
             if (entity is HostileEntity) {
-                (entity as MobEntityAccessor).goalSelector.add(1, FleeEntityGoal(entity, FleeDreadpetalEntity::class.java, 5.0f, 1.2, 1.5))
+                (entity as MobEntityAccessor).goalSelector.add(1, FleeEntityGoal(entity,
+                    FleeDreadpetalEntity::class.java, 5.0f, 1.2, 1.5))
             }
         })
 
