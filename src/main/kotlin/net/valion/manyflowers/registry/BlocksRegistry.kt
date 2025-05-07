@@ -69,6 +69,8 @@ object BlocksRegistry {
 
     val DREADPETAL = RegistryUtil.registerBlock("dreadpetal", Rarity.EPIC, ::Dreadpetal, createFlowerSettings())
 
+    val BLINDBLOSSOM = RegistryUtil.registerBlock("blindblossom", Rarity.EPIC, ::Blindblossom, createFlowerSettings())
+
     // Potted Flower Blocks
 
     val POTTED_ALSTROEMERIA = RegistryUtil.registerBlockWithoutItem("potted_alstroemeria", {

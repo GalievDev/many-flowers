@@ -8,6 +8,7 @@ import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.util.Identifier
 import net.valion.manyflowers.ManyFlowers.MOD_ID
+import net.valion.manyflowers.entity.BlindblossomEntity
 import net.valion.manyflowers.entity.DreadpetalEntity
 
 object EntitiesTypeRegistry {
@@ -17,4 +18,11 @@ object EntitiesTypeRegistry {
         EntityType.Builder.create(::DreadpetalEntity, SpawnGroup.MISC)
             .dimensions(0.001F, 0.001F)
             .build(RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(MOD_ID, "dreadpetal_entity"))))
+
+    val BLINDBLOSSOM_ENTITY: EntityType<BlindblossomEntity> = Registry.register(
+        Registries.ENTITY_TYPE,
+        Identifier.of(MOD_ID, "blindblossom_entity"),
+        EntityType.Builder.create(::BlindblossomEntity, SpawnGroup.MISC)
+            .dimensions(0.001F, 0.001F)
+            .build(RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(MOD_ID, "blindblossom_entity"))))
 }

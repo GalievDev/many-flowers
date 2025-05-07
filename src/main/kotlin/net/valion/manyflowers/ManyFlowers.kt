@@ -11,7 +11,9 @@ import net.minecraft.entity.mob.HostileEntity
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.world.ServerWorld
 import net.valion.manyflowers.config.MFConfig
+import net.valion.manyflowers.entity.BlindblossomEntity
 import net.valion.manyflowers.entity.DreadpetalEntity
+import net.valion.manyflowers.entity.goal.BlindblossomGoal
 import net.valion.manyflowers.helpers.SoundsHelper
 import net.valion.manyflowers.helpers.WorldsHelper
 import net.valion.manyflowers.mixin.MobEntityAccessor
@@ -37,12 +39,28 @@ object ManyFlowers: ModInitializer {
         SoundsRegistry
         EntitiesTypeRegistry
 
-        FabricDefaultAttributeRegistry.register(EntitiesTypeRegistry.DREADPETAL_ENTITY, DreadpetalEntity.createAttributes())
+        FabricDefaultAttributeRegistry.register(
+            EntitiesTypeRegistry.DREADPETAL_ENTITY,
+            DreadpetalEntity.createAttributes()
+        )
+        FabricDefaultAttributeRegistry.register(
+            EntitiesTypeRegistry.BLINDBLOSSOM_ENTITY,
+            BlindblossomEntity.createAttributes()
+        )
 
         ServerEntityEvents.ENTITY_LOAD.register(ServerEntityEvents.Load { entity: Entity?, world: ServerWorld? ->
             if (entity is HostileEntity) {
-                (entity as MobEntityAccessor).goalSelector.add(1, FleeEntityGoal(entity,
-                    DreadpetalEntity::class.java, 5.0f, 1.2, 1.5))
+                (entity as MobEntityAccessor).goalSelector.add(
+                    1, FleeEntityGoal(
+                        entity,
+                        DreadpetalEntity::class.java, 5.0f, 1.2, 1.5
+                    )
+                )
+                (entity as MobEntityAccessor).goalSelector.add(
+                    1, BlindblossomGoal(
+                        entity, 1.0, 5.0f
+                    )
+                )
             }
         })
 

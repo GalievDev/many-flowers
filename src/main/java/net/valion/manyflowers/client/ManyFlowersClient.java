@@ -66,6 +66,7 @@ public class ManyFlowersClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.INSTANCE.getROOT_OF_THE_WORLDS(), RenderLayer.getCutout());
 
         EntityRendererRegistry.register(EntitiesTypeRegistry.INSTANCE.getDREADPETAL_ENTITY(), EmptyRenderer::new);
+        EntityRendererRegistry.register(EntitiesTypeRegistry.INSTANCE.getBLINDBLOSSOM_ENTITY(), EmptyRenderer::new);
     }
 
     private static class EmptyRenderer extends EntityRenderer<Entity, EntityRenderState> {
