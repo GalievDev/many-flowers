@@ -8,13 +8,13 @@ import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.util.Identifier
 import net.valion.manyflowers.ManyFlowers.MOD_ID
-import net.valion.manyflowers.entity.FleeDreadpetalEntity
+import net.valion.manyflowers.entity.DreadpetalEntity
 
 object EntitiesTypeRegistry {
-    val DREADPETAL_ENTITY: EntityType<FleeDreadpetalEntity> = Registry.register(
+    val DREADPETAL_ENTITY: EntityType<DreadpetalEntity> = Registry.register(
         Registries.ENTITY_TYPE,
         Identifier.of(MOD_ID, "dreadpetal_entity"),
-        EntityType.Builder.create(::FleeDreadpetalEntity, SpawnGroup.MISC)
+        EntityType.Builder.create(::DreadpetalEntity, SpawnGroup.MISC)
             .dimensions(0.001F, 0.001F)
             .build(RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(MOD_ID, "dreadpetal_entity"))))
 }

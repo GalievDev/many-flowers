@@ -11,7 +11,7 @@ import net.minecraft.entity.mob.HostileEntity
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.world.ServerWorld
 import net.valion.manyflowers.config.MFConfig
-import net.valion.manyflowers.entity.FleeDreadpetalEntity
+import net.valion.manyflowers.entity.DreadpetalEntity
 import net.valion.manyflowers.helpers.SoundsHelper
 import net.valion.manyflowers.helpers.WorldsHelper
 import net.valion.manyflowers.mixin.MobEntityAccessor
@@ -37,12 +37,12 @@ object ManyFlowers: ModInitializer {
         SoundsRegistry
         EntitiesTypeRegistry
 
-        FabricDefaultAttributeRegistry.register(EntitiesTypeRegistry.DREADPETAL_ENTITY, FleeDreadpetalEntity.createAttributes())
+        FabricDefaultAttributeRegistry.register(EntitiesTypeRegistry.DREADPETAL_ENTITY, DreadpetalEntity.createAttributes())
 
         ServerEntityEvents.ENTITY_LOAD.register(ServerEntityEvents.Load { entity: Entity?, world: ServerWorld? ->
             if (entity is HostileEntity) {
                 (entity as MobEntityAccessor).goalSelector.add(1, FleeEntityGoal(entity,
-                    FleeDreadpetalEntity::class.java, 5.0f, 1.2, 1.5))
+                    DreadpetalEntity::class.java, 5.0f, 1.2, 1.5))
             }
         })
 

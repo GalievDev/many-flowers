@@ -15,13 +15,13 @@ import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import net.valion.manyflowers.registry.EntitiesTypeRegistry;
 
-public class FleeDreadpetalEntity extends LivingEntity {
+public class DreadpetalEntity extends LivingEntity {
 
-    public FleeDreadpetalEntity(EntityType<? extends LivingEntity> entityType, World world) {
+    public DreadpetalEntity(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public FleeDreadpetalEntity(World world) {
+    public DreadpetalEntity(World world) {
         this(EntitiesTypeRegistry.INSTANCE.getDREADPETAL_ENTITY(), world);
         noClip = true;
     }
