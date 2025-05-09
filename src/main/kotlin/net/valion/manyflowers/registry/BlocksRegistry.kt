@@ -47,6 +47,8 @@ object BlocksRegistry {
 
     val BONE_FLOWER = RegistryUtil.registerBlock("bone_flower", Rarity.RARE, ::BoneFlower, createFlowerSettings())
 
+    val TRADE_FLOWER = RegistryUtil.registerBlock("trade_flower", Rarity.RARE, ::TradeFlower, createFlowerSettings())
+
     // Ore Flowers
 
     val COAL_FLOWER = RegistryUtil.registerBlock("coal_flower", Rarity.RARE, ::BaseFlower, createFlowerSettings())

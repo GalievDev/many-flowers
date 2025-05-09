@@ -15,6 +15,7 @@ import net.valion.manyflowers.entity.BlindblossomEntity
 import net.valion.manyflowers.entity.DreadpetalEntity
 import net.valion.manyflowers.entity.goal.BlindblossomGoal
 import net.valion.manyflowers.helpers.SoundsHelper
+import net.valion.manyflowers.helpers.TagToBlocksHelper
 import net.valion.manyflowers.helpers.WorldsHelper
 import net.valion.manyflowers.mixin.MobEntityAccessor
 import net.valion.manyflowers.registry.*
@@ -70,8 +71,9 @@ object ManyFlowers: ModInitializer {
         ModWorldGeneration.generateModWorldGen()
 
         ServerLifecycleEvents.SERVER_STARTED.register(ServerStarted { server: MinecraftServer ->
-            SoundsHelper.putSounds()
             server.worlds.forEach(WorldsHelper::putWorld)
+            SoundsHelper.putSounds()
+            TagToBlocksHelper.init()
         })
     }
 }

@@ -7,6 +7,7 @@ import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
 import net.valion.manyflowers.ManyFlowers.MOD_ID
 import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity
+import net.valion.manyflowers.block.flowers.entity.TradeFlowerBlockEntity
 import net.valion.manyflowers.block.flowers.entity.VelvetsBlockEntity
 
 object BlocksEntitiesRegistry {
@@ -24,6 +25,14 @@ object BlocksEntitiesRegistry {
         Identifier.of(MOD_ID, "autumn_asters_entity"),
         FabricBlockEntityTypeBuilder.create(
             ::AutumnAstersEntity, BlocksRegistry.AUTUMN_ASTERS
+        ).build()
+    )
+
+    val TRADE_FLOWER_ENTITY: BlockEntityType<TradeFlowerBlockEntity> = Registry.register(
+        Registries.BLOCK_ENTITY_TYPE,
+        Identifier.of(MOD_ID, "trade_flower_entity"),
+        FabricBlockEntityTypeBuilder.create(
+            ::TradeFlowerBlockEntity, BlocksRegistry.TRADE_FLOWER
         ).build()
     )
 }
