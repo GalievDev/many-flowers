@@ -28,6 +28,9 @@
         "adapter": "kotlin",
         "value": "net.valion.manyflowers.ManyFlowersDataGenerator"
       }
+    ],
+    "modmenu": [
+      "net.valion.manyflowers.config.ModMenuIntegration"
     ]
   },
   "custom": {
@@ -47,6 +50,9 @@
     "minecraft": ">=${minecraft_version}",
     "fabric-language-kotlin": ">=${kotlin_fabric}",
     "java": ">=${java_version}"
+  },
+  "optional": {
+    "modmenu": ">=${modmenu_version}"
   },
   "suggests": {
     "fstats": ">=${fstats_version}",
