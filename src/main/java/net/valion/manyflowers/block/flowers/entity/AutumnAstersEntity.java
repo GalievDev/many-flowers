@@ -5,6 +5,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.AirBlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.RegistryWrapper;
@@ -16,9 +17,7 @@ import net.valion.manyflowers.block.flowers.AutumnAsters;
 import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class AutumnAstersEntity extends BlockEntity {
     public static List<ItemStack> stacks = new ArrayList<>();
@@ -56,7 +55,7 @@ public class AutumnAstersEntity extends BlockEntity {
     protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup lookup) {
         nbt.putInt("mf.counter", counter);
         stacks.forEach(itemStack -> {
-            nbt.putString("mf.id", itemStack.getItem().toString());
+            nbt.putInt("mf.id", Item.getRawId(itemStack.getItem()));
             nbt.putInt("mf.count", itemStack.getCount());
         });
         super.writeNbt(nbt, lookup);
@@ -64,9 +63,11 @@ public class AutumnAstersEntity extends BlockEntity {
 
     @Override
     public void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup lookup) {
-        nbt.getInt("mf.counter");
-        nbt.getString("mf.id");
-        nbt.getInt("mf.count");
+        counter = nbt.getInt("mf.counter");
+        stacks.add(new ItemStack(
+                Item.byRawId(nbt.getInt("mf.id")),
+                nbt.getInt("mf.count")
+        ));
         super.readNbt(nbt, lookup);
     }
 }
