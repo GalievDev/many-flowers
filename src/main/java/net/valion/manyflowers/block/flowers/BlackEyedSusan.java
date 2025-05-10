@@ -29,7 +29,7 @@ public class BlackEyedSusan extends BaseFlower {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL) {
             if (entity instanceof LivingEntity livingEntity) {
                 if (!livingEntity.isInvulnerableTo((ServerWorld) world, world.getDamageSources().magic())) {
-                    livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20, 1));
+                    livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 150, 0));
                 }
             }
 

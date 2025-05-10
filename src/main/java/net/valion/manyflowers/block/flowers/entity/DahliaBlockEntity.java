@@ -23,20 +23,20 @@ public class DahliaBlockEntity extends BlockEntity {
 
         var players = world.getEntitiesByClass(
                 PlayerEntity.class,
-                new Box(blockPos).expand(10),
+                new Box(blockPos).expand(8),
                 entity -> entity instanceof ServerPlayerEntity
         );
 
         if (!players.isEmpty()) {
             var hostiles = world.getEntitiesByClass(
                     HostileEntity.class,
-                    new Box(blockPos).expand(10),
+                    new Box(blockPos).expand(8),
                     entity -> entity instanceof HostileEntity
             );
 
             if (!hostiles.isEmpty()) {
                 for (var player : players) {
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 50, 1));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 150, 0));
                 }
             }
         }

@@ -20,14 +20,14 @@ public class LavenderBlockEntity extends BlockEntity {
 
         var livingEntities = world.getEntitiesByClass(
                 LivingEntity.class,
-                new Box(blockPos).expand(10),
+                new Box(blockPos).expand(8),
                 entity -> entity instanceof LivingEntity
         );
 
         if (!livingEntities.isEmpty()) {
             for (var livingEntity : livingEntities) {
-                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 150, 1));
-                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 150, 1));
+                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 150, 0));
+                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 150, 0));
             }
         }
     }

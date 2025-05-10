@@ -28,7 +28,7 @@ public class Coreopsis extends BaseFlower {
         if (!world.isClient) {
             if (entity instanceof LivingEntity livingEntity) {
                 if (!livingEntity.isInvulnerableTo((ServerWorld) world, world.getDamageSources().magic())) {
-                    livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.LUCK, 20, 2));
+                    livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.LUCK, 150, 1));
                 }
             }
 

@@ -13,7 +13,6 @@ import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import net.minecraft.world.block.WireOrientation;
 import net.minecraft.world.event.GameEvent;
-import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.entity.DreadpetalEntity;
 import net.valion.manyflowers.registry.EntitiesTypeRegistry;
 import org.jetbrains.annotations.Nullable;
@@ -62,6 +61,5 @@ public class Dreadpetal extends BaseFlower {
                 entity.emitGameEvent(GameEvent.ENTITY_DIE);
             }
         }
-        ManyFlowers.INSTANCE.getLOGGER().info(entities);
     }
 }
