@@ -16,7 +16,7 @@ public class BoneFlower extends BaseFlower {
 
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        for (var targetPos : BlockPos.iterate(pos.add(-1, -1, -1), pos.add(1, 0, 1))) {
+        for (var targetPos : BlockPos.iterate(pos.add(-1, -1, -1), pos.add(1, 1, 1))) {
             var targetState = world.getBlockState(targetPos);
             if (targetState.getBlock() instanceof CropBlock cropBlock && cropBlock.isFertilizable(world, targetPos, targetState)) {
                 if (world.isDay() && cropBlock.canGrow(world, random, targetPos, targetState)) {
