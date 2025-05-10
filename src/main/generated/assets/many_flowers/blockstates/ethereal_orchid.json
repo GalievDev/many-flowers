@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "charges=0": {
+      "model": "many_flowers:block/ethereal_orchid_0"
+    },
+    "charges=1": {
+      "model": "many_flowers:block/ethereal_orchid_1"
+    },
+    "charges=2": {
+      "model": "many_flowers:block/ethereal_orchid_2"
+    },
+    "charges=3": {
+      "model": "many_flowers:block/ethereal_orchid"
+    }
+  }
+}

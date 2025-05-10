@@ -2,7 +2,10 @@ package net.valion.manyflowers.block.flowers;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.entity.Dismounting;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -16,7 +19,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -38,7 +40,7 @@ import java.util.function.ToIntFunction;
 
 public class EtherealOrchid extends BaseFlower {
     public static final MapCodec<EtherealOrchid> CODEC = createCodec(EtherealOrchid::new);
-    public static final IntProperty CHARGES = Properties.CHARGES;
+    public static final IntProperty CHARGES = IntProperty.of("charges", 0, 3);
     private static final ImmutableList<Vec3i> VALID_HORIZONTAL_SPAWN_OFFSETS = ImmutableList.of(
             new Vec3i(0, 0, -1),
             new Vec3i(-1, 0, 0),

@@ -23,6 +23,18 @@ object BlocksRegistry {
 
     val ZINNIA = RegistryUtil.registerBlock("zinnia", Rarity.COMMON, ::TallFlowerBlock, createFlowerSettings())
 
+    val COSMOS = RegistryUtil.registerBlock("cosmos", Rarity.COMMON, ::TallFlowerBlock, createFlowerSettings())
+
+    val PURPLE_CORNFLOWER = RegistryUtil.registerBlock("purple_cornflower", Rarity.COMMON, ::BaseFlower, createFlowerSettings())
+
+    val PETUNIA = RegistryUtil.registerBlock("petunia", Rarity.COMMON, ::BaseFlower, createFlowerSettings())
+
+    val GERANIUM = RegistryUtil.registerBlock("geranium", Rarity.COMMON, ::TallFlowerBlock, createFlowerSettings())
+
+    val BEGONIA = RegistryUtil.registerBlock("begonia", Rarity.COMMON, ::BaseFlower, createFlowerSettings())
+
+    val SNAPDRAGON = RegistryUtil.registerBlock("snapdragon", Rarity.COMMON, ::BaseFlower, createFlowerSettings())
+
     // Uncommon Flowers
 
     val SWEET_ALYSSUM = RegistryUtil.registerBlock("sweet_alyssum", Rarity.UNCOMMON, ::SweetAlyssum, createFlowerSettings())
@@ -93,6 +105,22 @@ object BlocksRegistry {
         FlowerPotBlock(HYDRANGEA, it)
     }, createFlowerPotSettings())
 
+    val POTTED_PURPLE_CORNFLOWER = RegistryUtil.registerBlockWithoutItem("potted_purple_cornflower", {
+        FlowerPotBlock(PURPLE_CORNFLOWER, it)
+    }, createFlowerPotSettings())
+
+    val POTTED_PETUNIA = RegistryUtil.registerBlockWithoutItem("potted_petunia", {
+        FlowerPotBlock(PETUNIA, it)
+    }, createFlowerPotSettings())
+
+    val POTTED_BEGONIA = RegistryUtil.registerBlockWithoutItem("potted_begonia", {
+        FlowerPotBlock(BEGONIA, it)
+    }, createFlowerPotSettings())
+
+    val POTTED_SNAPDRAGON = RegistryUtil.registerBlockWithoutItem("potted_snapdragon", {
+        FlowerPotBlock(SNAPDRAGON, it)
+    }, createFlowerPotSettings())
+
     val POTTED_MARIGOLD = RegistryUtil.registerBlockWithoutItem("potted_marigold", {
         FlowerPotBlock(MARIGOLD, it)
     }, createFlowerPotSettings())
@@ -115,6 +143,22 @@ object BlocksRegistry {
 
     val POTTED_CHRYSANTHEMUM = RegistryUtil.registerBlockWithoutItem("potted_chrysanthemum", {
         FlowerPotBlock(CHRYSANTHEMUM, it)
+    }, createFlowerPotSettings())
+
+    val POTTED_BLACK_EYED_SUSAN = RegistryUtil.registerBlockWithoutItem("potted_black_eyed_susan", {
+        FlowerPotBlock(BLACK_EYED_SUSAN, it)
+    }, createFlowerPotSettings())
+
+    val POTTED_COREOPSIS = RegistryUtil.registerBlockWithoutItem("potted_coreopsis", {
+        FlowerPotBlock(COREOPSIS, it)
+    }, createFlowerPotSettings())
+
+    val POTTED_DAHLIA = RegistryUtil.registerBlockWithoutItem("potted_dahlia", {
+        FlowerPotBlock(DAHLIA, it)
+    }, createFlowerPotSettings())
+
+    val POTTED_LAVENDER = RegistryUtil.registerBlockWithoutItem("potted_lavender", {
+        FlowerPotBlock(LAVENDER, it)
     }, createFlowerPotSettings())
 
     val POTTED_ROOT_OF_THE_WORLDS = RegistryUtil.registerBlockWithoutItem("potted_root_of_the_worlds", {
