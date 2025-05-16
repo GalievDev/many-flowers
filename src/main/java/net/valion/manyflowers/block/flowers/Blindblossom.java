@@ -17,14 +17,14 @@ import net.valion.manyflowers.entity.BlindblossomEntity;
 import net.valion.manyflowers.registry.EntitiesTypeRegistry;
 import org.jetbrains.annotations.Nullable;
 
-public class Blindblossom extends BaseFlower {
+public class Blindblossom extends FlowerWithEntity {
     public Blindblossom(Settings settings) {
-        super(settings);
+        super(settings, EntitiesTypeRegistry.INSTANCE.getBLINDBLOSSOM_ENTITY());
     }
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
-        var entity = EntitiesTypeRegistry.INSTANCE.getBLINDBLOSSOM_ENTITY().create(world, SpawnReason.TRIGGERED);
+        var entity = getEntityType().create(world, SpawnReason.TRIGGERED);
         if (!world.isClient && entity != null) {
             entity.setPos(pos.getX(), pos.getY(), pos.getZ());
             world.spawnEntity(entity);

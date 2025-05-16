@@ -17,14 +17,14 @@ import net.valion.manyflowers.entity.DreadpetalEntity;
 import net.valion.manyflowers.registry.EntitiesTypeRegistry;
 import org.jetbrains.annotations.Nullable;
 
-public class Dreadpetal extends BaseFlower {
+public class Dreadpetal extends FlowerWithEntity {
     public Dreadpetal(Settings settings) {
-        super(settings);
+        super(settings, EntitiesTypeRegistry.INSTANCE.getDREADPETAL_ENTITY());
     }
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
-        var entity = EntitiesTypeRegistry.INSTANCE.getDREADPETAL_ENTITY().create(world, SpawnReason.TRIGGERED);
+        var entity = getEntityType().create(world, SpawnReason.TRIGGERED);
         if (!world.isClient && entity != null) {
             entity.setPos(pos.getX(), pos.getY(), pos.getZ());
             world.spawnEntity(entity);
