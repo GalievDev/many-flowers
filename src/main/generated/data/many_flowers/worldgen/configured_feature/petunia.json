@@ -8,10 +8,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "many_flowers:autumn_asters",
-              "Properties": {
-                "half": "lower"
-              }
+              "Name": "many_flowers:petunia"
             }
           }
         }
@@ -26,8 +23,8 @@
         }
       ]
     },
-    "tries": 1,
-    "xz_spread": 2,
-    "y_spread": 3
+    "tries": 50,
+    "xz_spread": 7,
+    "y_spread": 9
   }
 }

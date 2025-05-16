@@ -22,6 +22,12 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> MARIGOLD_FLOWER_PLACED = registerKey("marigold_placed");
     public static final RegistryKey<PlacedFeature> DAISIES_PLACED = registerKey("daisies_placed");
     public static final RegistryKey<PlacedFeature> ZINNIA = registerKey("zinnia_placed");
+    public static final RegistryKey<PlacedFeature> COSMOS = registerKey("cosmos_placed");
+    public static final RegistryKey<PlacedFeature> PURPLE_CORNFLOWER = registerKey("purple_cornflower_placed");
+    public static final RegistryKey<PlacedFeature> PETUNIA = registerKey("petunia_placed");
+    public static final RegistryKey<PlacedFeature> GERANIUM = registerKey("geranium_placed");
+    public static final RegistryKey<PlacedFeature> BEGONIA = registerKey("begonia_placed");
+    public static final RegistryKey<PlacedFeature> SNAPDRAGON = registerKey("snapdragon_placed");
     public static final RegistryKey<PlacedFeature> ALYSSUM_FLOWER_PLACED = registerKey("sweet_alyssum_placed");
     public static final RegistryKey<PlacedFeature> GAILLARDIA_PLACED = registerKey("gaillardia_placed");
     public static final RegistryKey<PlacedFeature> POPPY_PLACED = registerKey("poppy_placed");
@@ -29,8 +35,14 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> OENOTHERA_PLACED = registerKey("oenothera_placed");
     public static final RegistryKey<PlacedFeature> CHRYSANTHEMUM_PLACED = registerKey("chrysanthemum_placed");
     public static final RegistryKey<PlacedFeature> AUTUMN_CROCUS = registerKey("autumn_crocus_placed");
+    public static final RegistryKey<PlacedFeature> BLACK_EYED_SUSAN = registerKey("black_eyed_susan_placed");
+    public static final RegistryKey<PlacedFeature> COREOPSIS = registerKey("coreopsis_placed");
+    public static final RegistryKey<PlacedFeature> DAHLIA = registerKey("dahlia_placed");
+    public static final RegistryKey<PlacedFeature> LAVENDER = registerKey("lavender_placed");
     public static final RegistryKey<PlacedFeature> VELVETS_PLACED = registerKey("velvets_placed");
     public static final RegistryKey<PlacedFeature> AUTUMN_ASTERS = registerKey("autumn_asters_placed");
+    public static final RegistryKey<PlacedFeature> BONE_FLOWER = registerKey("bone_flower_placed");
+    public static final RegistryKey<PlacedFeature> TRADE_FLOWER = registerKey("trade_flower_placed");
     public static final RegistryKey<PlacedFeature> COAL_FLOWER_PLACED = registerKey("coal_flower_placed");
     public static final RegistryKey<PlacedFeature> COPPER_FLOWER_PLACED = registerKey("copper_flower_placed");
     public static final RegistryKey<PlacedFeature> IRON_FLOWER_PLACED = registerKey("iron_flower_placed");
@@ -39,6 +51,9 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> EMERALD_FLOWER_PLACED = registerKey("emerald_flower_placed");
     public static final RegistryKey<PlacedFeature> JACK_FLOWER = registerKey("jack_placed");
     public static final RegistryKey<PlacedFeature> WORLDS_ROOT_PLACED = registerKey("worlds_root_placed");
+    public static final RegistryKey<PlacedFeature> ETHEREAL_ORCHID = registerKey("ethereal_orchid_placed");
+    public static final RegistryKey<PlacedFeature> DREADPETAL = registerKey("dreadpetal_placed");
+    public static final RegistryKey<PlacedFeature> BLINDBLOSSOM = registerKey("blindblossom_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -80,6 +95,54 @@ public class ModPlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(54),
                         BlocksRegistry.INSTANCE.getZINNIA()
+                )
+        );
+
+        register(context, COSMOS,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COSMOS),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(50),
+                        BlocksRegistry.INSTANCE.getCOSMOS()
+                )
+        );
+
+        register(context, PURPLE_CORNFLOWER,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PURPLE_CORNFLOWER),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(60),
+                        BlocksRegistry.INSTANCE.getPURPLE_CORNFLOWER()
+                )
+        );
+
+        register(context, PETUNIA,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PETUNIA),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(44),
+                        BlocksRegistry.INSTANCE.getPETUNIA()
+                )
+        );
+
+        register(context, GERANIUM,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GERANIUM),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(40),
+                        BlocksRegistry.INSTANCE.getGERANIUM()
+                )
+        );
+
+        register(context, BEGONIA,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BEGONIA),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(52),
+                        BlocksRegistry.INSTANCE.getBEGONIA()
+                )
+        );
+
+        register(context, SNAPDRAGON,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SNAPDRAGON),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(36),
+                        BlocksRegistry.INSTANCE.getSNAPDRAGON()
                 )
         );
 
@@ -141,6 +204,38 @@ public class ModPlacedFeatures {
                 BiomePlacementModifier.of()
         );
 
+        register(context, BLACK_EYED_SUSAN,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLACK_EYED_SUSAN),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(100),
+                        BlocksRegistry.INSTANCE.getBLACK_EYED_SUSAN()
+                )
+        );
+
+        register(context, COREOPSIS,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COREOPSIS),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(104),
+                        BlocksRegistry.INSTANCE.getCOREOPSIS()
+                )
+        );
+
+        register(context, DAHLIA,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DAHLIA),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(120),
+                        BlocksRegistry.INSTANCE.getDAHLIA()
+                )
+        );
+
+        register(context, LAVENDER,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LAVENDER),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(100),
+                        BlocksRegistry.INSTANCE.getLAVENDER()
+                )
+        );
+
         var velvet = configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.VELVETS);
         register(context, VELVETS_PLACED, velvet,
                 List.of(
@@ -156,6 +251,22 @@ public class ModPlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(200),
                         BlocksRegistry.INSTANCE.getAUTUMN_ASTERS()
+                )
+        );
+
+        PlacedFeatures.register(context, BONE_FLOWER,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BONE_FLOWER),
+                RarityFilterPlacementModifier.of(200),
+                PlacedFeatures.BOTTOM_TO_120_RANGE,
+                SquarePlacementModifier.of(),
+                BiomePlacementModifier.of()
+        );
+
+        register(context, TRADE_FLOWER,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TRADE_FLOWER),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(390),
+                        BlocksRegistry.INSTANCE.getTRADE_FLOWER()
                 )
         );
 
@@ -220,6 +331,30 @@ public class ModPlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(500),
                         BlocksRegistry.INSTANCE.getROOT_OF_THE_WORLDS()
+                )
+        );
+
+        register(context, ETHEREAL_ORCHID,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ETHEREAL_ORCHID),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(600),
+                        BlocksRegistry.INSTANCE.getETHEREAL_ORCHID()
+                )
+        );
+
+        register(context, DREADPETAL,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DREADPETAL),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(450),
+                        BlocksRegistry.INSTANCE.getDREADPETAL()
+                )
+        );
+
+        register(context, BLINDBLOSSOM,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLINDBLOSSOM),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        RarityFilterPlacementModifier.of(400),
+                        BlocksRegistry.INSTANCE.getBLINDBLOSSOM()
                 )
         );
     }

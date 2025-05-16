@@ -57,6 +57,58 @@ public class ModFlowerGeneration {
 
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(
+                        BiomeKeys.PLAINS, BiomeKeys.FLOWER_FOREST
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.COSMOS
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.PLAINS, BiomeKeys.FOREST
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.PURPLE_CORNFLOWER
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.PLAINS, BiomeKeys.FLOWER_FOREST
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.PETUNIA
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.FLOWER_FOREST
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.GERANIUM
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.JUNGLE, BiomeKeys.SWAMP, BiomeKeys.MANGROVE_SWAMP
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.BEGONIA
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.tag(
+                        BiomeTags.IS_MOUNTAIN
+                ).and(
+                        BiomeSelectors.tag(
+                                BiomeTags.IS_TAIGA
+                        )
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.SNAPDRAGON
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
                         BiomeKeys.RIVER, BiomeKeys.OCEAN
                 ),
                 GenerationStep.Feature.VEGETAL_DECORATION,
@@ -117,6 +169,38 @@ public class ModFlowerGeneration {
         );
 
         BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS, BiomeKeys.SAVANNA
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.BLACK_EYED_SUSAN
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.PLAINS, BiomeKeys.SWAMP, BiomeKeys.FOREST
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.COREOPSIS
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.FLOWER_FOREST, BiomeKeys.WINDSWEPT_HILLS
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.DAHLIA
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.SAVANNA, BiomeKeys.DESERT
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.LAVENDER
+        );
+
+        BiomeModifications.addFeature(
                 BiomeSelectors.tag(
                         BiomeTags.IS_NETHER
                 ),
@@ -130,6 +214,22 @@ public class ModFlowerGeneration {
                 ),
                 GenerationStep.Feature.UNDERGROUND_DECORATION,
                 ModPlacedFeatures.AUTUMN_ASTERS
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.DEEP_DARK, BiomeKeys.DRIPSTONE_CAVES
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.BONE_FLOWER
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.PLAINS, BiomeKeys.SAVANNA
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.TRADE_FLOWER
         );
 
         BiomeModifications.addFeature(
@@ -198,6 +298,42 @@ public class ModFlowerGeneration {
                 ),
                 GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.WORLDS_ROOT_PLACED
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.PLAINS, BiomeKeys.FOREST,
+                        BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.WINDSWEPT_HILLS,
+                        BiomeKeys.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.SAVANNA_PLATEAU,
+                        BiomeKeys.SAVANNA, BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS,
+                        BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.BAMBOO_JUNGLE
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.ETHEREAL_ORCHID
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.PLAINS, BiomeKeys.FOREST,
+                        BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.WINDSWEPT_HILLS,
+                        BiomeKeys.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.SAVANNA_PLATEAU,
+                        BiomeKeys.SAVANNA, BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS,
+                        BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.BAMBOO_JUNGLE
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.DREADPETAL
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(
+                        BiomeKeys.PLAINS, BiomeKeys.FOREST,
+                        BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.WINDSWEPT_HILLS,
+                        BiomeKeys.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.SAVANNA_PLATEAU,
+                        BiomeKeys.SAVANNA, BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS,
+                        BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.BAMBOO_JUNGLE
+                ),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.BLINDBLOSSOM
         );
     }
 }

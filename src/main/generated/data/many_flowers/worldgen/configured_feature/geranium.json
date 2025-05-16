@@ -8,7 +8,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "many_flowers:autumn_asters",
+              "Name": "many_flowers:geranium",
               "Properties": {
                 "half": "lower"
               }
@@ -26,8 +26,8 @@
         }
       ]
     },
-    "tries": 1,
-    "xz_spread": 2,
-    "y_spread": 3
+    "tries": 47,
+    "xz_spread": 5,
+    "y_spread": 9
   }
 }
