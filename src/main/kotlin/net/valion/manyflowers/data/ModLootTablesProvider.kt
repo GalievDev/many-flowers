@@ -41,6 +41,24 @@ class ModLootTablesProvider(
                 DoubleBlockHalf.LOWER
             )
         }
+        addDrop(BlocksRegistry.COSMOS) { block ->
+            dropsWithProperty(
+                block,
+                TallPlantBlock.HALF,
+                DoubleBlockHalf.LOWER
+            )
+        }
+        addDrop(BlocksRegistry.PURPLE_CORNFLOWER)
+        addDrop(BlocksRegistry.PETUNIA)
+        addDrop(BlocksRegistry.GERANIUM) { block ->
+            dropsWithProperty(
+                block,
+                TallPlantBlock.HALF,
+                DoubleBlockHalf.LOWER
+            )
+        }
+        addDrop(BlocksRegistry.BEGONIA)
+        addDrop(BlocksRegistry.SNAPDRAGON)
 
         addDrop(BlocksRegistry.SWEET_ALYSSUM)
         addDrop(BlocksRegistry.GAILLARDIA)
@@ -53,9 +71,13 @@ class ModLootTablesProvider(
                 DoubleBlockHalf.LOWER
             )
         }
-
         addDrop(BlocksRegistry.CHRYSANTHEMUM)
         addDrop(BlocksRegistry.AUTUMN_CROCUS)
+        addDrop(BlocksRegistry.BLACK_EYED_SUSAN)
+        addDrop(BlocksRegistry.COREOPSIS)
+        addDrop(BlocksRegistry.DAHLIA)
+        addDrop(BlocksRegistry.LAVENDER)
+
         addDrop(BlocksRegistry.VELVETS)
         addDrop(BlocksRegistry.AUTUMN_ASTERS) { block ->
             dropsWithProperty(
@@ -64,6 +86,8 @@ class ModLootTablesProvider(
                 DoubleBlockHalf.LOWER
             )
         }
+        addDrop(BlocksRegistry.BONE_FLOWER)
+        addDrop(BlocksRegistry.TRADE_FLOWER)
 
         addDrop(BlocksRegistry.COAL_FLOWER)
         addDrop(BlocksRegistry.COPPER_FLOWER)
@@ -74,15 +98,26 @@ class ModLootTablesProvider(
 
         addDrop(BlocksRegistry.JACK_FLOWER)
         addDrop(BlocksRegistry.ROOT_OF_THE_WORLDS)
+        addDrop(BlocksRegistry.ETHEREAL_ORCHID)
+        addDrop(BlocksRegistry.DREADPETAL)
+        addDrop(BlocksRegistry.BLINDBLOSSOM)
 
         addPottedPlantDrops(BlocksRegistry.POTTED_ALSTROEMERIA)
         addPottedPlantDrops(BlocksRegistry.POTTED_HYDRANGEA)
+        addPottedPlantDrops(BlocksRegistry.POTTED_PURPLE_CORNFLOWER)
+        addPottedPlantDrops(BlocksRegistry.POTTED_PETUNIA)
+        addPottedPlantDrops(BlocksRegistry.POTTED_BEGONIA)
+        addPottedPlantDrops(BlocksRegistry.POTTED_SNAPDRAGON)
         addPottedPlantDrops(BlocksRegistry.POTTED_MARIGOLD)
         addPottedPlantDrops(BlocksRegistry.POTTED_DAISIES)
         addPottedPlantDrops(BlocksRegistry.POTTED_SWEET_ALYSSUM)
         addPottedPlantDrops(BlocksRegistry.POTTED_GAILLARDIA)
         addPottedPlantDrops(BlocksRegistry.POTTED_ORIENTAL_POPPY)
         addPottedPlantDrops(BlocksRegistry.POTTED_CHRYSANTHEMUM)
+        addPottedPlantDrops(BlocksRegistry.POTTED_BLACK_EYED_SUSAN)
+        addPottedPlantDrops(BlocksRegistry.POTTED_COREOPSIS)
+        addPottedPlantDrops(BlocksRegistry.POTTED_DAHLIA)
+        addPottedPlantDrops(BlocksRegistry.POTTED_LAVENDER)
         addPottedPlantDrops(BlocksRegistry.POTTED_ROOT_OF_THE_WORLDS)
 
         addCropLoot(
