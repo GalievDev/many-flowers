@@ -290,11 +290,7 @@ public class ModFlowerGeneration {
 
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(
-                        BiomeKeys.PLAINS, BiomeKeys.FOREST,
-                        BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.WINDSWEPT_HILLS,
-                        BiomeKeys.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.SAVANNA_PLATEAU,
-                        BiomeKeys.SAVANNA, BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS,
-                        BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.BAMBOO_JUNGLE
+                        BiomeKeys.FOREST
                 ),
                 GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.WORLDS_ROOT_PLACED
@@ -302,11 +298,7 @@ public class ModFlowerGeneration {
 
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(
-                        BiomeKeys.PLAINS, BiomeKeys.FOREST,
-                        BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.WINDSWEPT_HILLS,
-                        BiomeKeys.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.SAVANNA_PLATEAU,
-                        BiomeKeys.SAVANNA, BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS,
-                        BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.BAMBOO_JUNGLE
+                        BiomeKeys.PLAINS
                 ),
                 GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.ETHEREAL_ORCHID
@@ -314,11 +306,7 @@ public class ModFlowerGeneration {
 
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(
-                        BiomeKeys.PLAINS, BiomeKeys.FOREST,
-                        BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.WINDSWEPT_HILLS,
-                        BiomeKeys.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.SAVANNA_PLATEAU,
-                        BiomeKeys.SAVANNA, BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS,
-                        BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.BAMBOO_JUNGLE
+                        BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.WINDSWEPT_HILLS
                 ),
                 GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.DREADPETAL
@@ -326,11 +314,7 @@ public class ModFlowerGeneration {
 
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(
-                        BiomeKeys.PLAINS, BiomeKeys.FOREST,
-                        BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.WINDSWEPT_HILLS,
-                        BiomeKeys.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.SAVANNA_PLATEAU,
-                        BiomeKeys.SAVANNA, BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS,
-                        BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.BAMBOO_JUNGLE
+                        BiomeKeys.SAVANNA_PLATEAU, BiomeKeys.SAVANNA
                 ),
                 GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.BLINDBLOSSOM
