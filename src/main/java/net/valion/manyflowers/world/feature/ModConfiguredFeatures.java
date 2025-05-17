@@ -81,12 +81,12 @@ public class ModConfiguredFeatures {
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getCOSMOS())))
         ));
 
-        register(context, PURPLE_CORNFLOWER, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
+        register(context, PURPLE_CORNFLOWER, Feature.FLOWER, new RandomPatchFeatureConfig(
                 54, 4, 7, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getPURPLE_CORNFLOWER())))
         ));
 
-        register(context, PETUNIA, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
+        register(context, PETUNIA, Feature.FLOWER, new RandomPatchFeatureConfig(
                 50, 7, 9, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getPETUNIA())))
         ));
@@ -96,12 +96,12 @@ public class ModConfiguredFeatures {
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getGERANIUM())))
         ));
 
-        register(context, BEGONIA, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
+        register(context, BEGONIA, Feature.FLOWER, new RandomPatchFeatureConfig(
                 44, 7, 9, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getBEGONIA())))
         ));
 
-        register(context, SNAPDRAGON, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
+        register(context, SNAPDRAGON, Feature.FLOWER, new RandomPatchFeatureConfig(
                 40, 10, 9, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(BlocksRegistry.INSTANCE.getSNAPDRAGON())))
         ));
