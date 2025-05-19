@@ -13,6 +13,7 @@ import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import net.minecraft.world.block.WireOrientation;
 import net.minecraft.world.event.GameEvent;
+import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.entity.BlindblossomEntity;
 import net.valion.manyflowers.registry.EntitiesTypeRegistry;
 import org.jetbrains.annotations.Nullable;
@@ -25,7 +26,7 @@ public class Blindblossom extends FlowerWithEntity {
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         var entity = getEntityType().create(world, SpawnReason.TRIGGERED);
-        if (!world.isClient && entity != null) {
+        if (!world.isClient && entity != null && ManyFlowers.INSTANCE.getCONFIG().blindblossom_attraction) {
             entity.setPos(pos.getX(), pos.getY(), pos.getZ());
             world.spawnEntity(entity);
         }

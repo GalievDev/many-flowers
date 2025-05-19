@@ -31,6 +31,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.CollisionView;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.registry.ItemsRegistry;
 import net.valion.manyflowers.registry.SoundsRegistry;
 import org.jetbrains.annotations.Nullable;
@@ -70,6 +71,8 @@ public class EtherealOrchid extends BaseFlower {
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        if (!ManyFlowers.INSTANCE.getCONFIG().ethereal_orchid_respawn) return ActionResult.FAIL;
+
         if (!world.isClient) {
             ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) player;
             if (serverPlayerEntity.getSpawnPointDimension() != world.getRegistryKey() || !pos.equals(serverPlayerEntity.getSpawnPointPosition())) {
@@ -128,6 +131,8 @@ public class EtherealOrchid extends BaseFlower {
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
+        if (!ManyFlowers.INSTANCE.getCONFIG().ethereal_orchid_respawn) return;
+
         if (!world.isClient) {
             ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) placer;
             if (serverPlayerEntity.getSpawnPointDimension() != world.getRegistryKey() || !pos.equals(serverPlayerEntity.getSpawnPointPosition())) {
@@ -146,6 +151,8 @@ public class EtherealOrchid extends BaseFlower {
 
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+        if (!ManyFlowers.INSTANCE.getCONFIG().ethereal_orchid_respawn) return;
+
         if (state.get(CHARGES) != 0) {
             if (random.nextInt(100) == 0) {
                 world.playSoundAtBlockCenter(pos, SoundsRegistry.INSTANCE.getETHEREAL_ORCHID_AMBIENT(), SoundCategory.BLOCKS, 1.0F, 1.0F, false);

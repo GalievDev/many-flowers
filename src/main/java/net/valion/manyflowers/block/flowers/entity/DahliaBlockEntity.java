@@ -10,6 +10,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
+import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 
 public class DahliaBlockEntity extends BlockEntity {
@@ -20,6 +21,7 @@ public class DahliaBlockEntity extends BlockEntity {
 
     public static void tick(World world, BlockPos blockPos, BlockState blockState, DahliaBlockEntity blockEntity) {
         if (world.isClient) return;
+        if (!ManyFlowers.INSTANCE.getCONFIG().dahlia_effect) return;
 
         var players = world.getEntitiesByClass(
                 PlayerEntity.class,

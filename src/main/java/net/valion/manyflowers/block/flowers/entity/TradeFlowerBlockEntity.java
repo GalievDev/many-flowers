@@ -35,6 +35,7 @@ public class TradeFlowerBlockEntity extends BlockEntity {
     public static void tick(World world, BlockPos blockPos, BlockState blockState, TradeFlowerBlockEntity blockEntity) {
         if (world.isClient) return;
         if (counter < 0) counter = 0;
+        if (!ManyFlowers.INSTANCE.getCONFIG().trades_trade_flower) return;
 
         Optional<ItemEntity> optionalItemEntity = world.getEntitiesByClass(
                 ItemEntity.class,

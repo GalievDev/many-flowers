@@ -25,6 +25,24 @@ public class MFConfig {
     @SerialEntry
     public boolean damage_hemlock = true;
     @SerialEntry
+    public boolean black_eyed_susan_effect = true;
+    @SerialEntry
+    public boolean bone_flower_effect = true;
+    @SerialEntry
+    public boolean blindblossom_attraction = true;
+    @SerialEntry
+    public boolean coreopsis_effect = true;
+    @SerialEntry
+    public boolean dahlia_effect = true;
+    @SerialEntry
+    public boolean dreadpetal_flee = true;
+    @SerialEntry
+    public boolean ethereal_orchid_respawn = true;
+    @SerialEntry
+    public boolean lavender_effect = true;
+    @SerialEntry
+    public boolean trades_trade_flower = true;
+    @SerialEntry
     public boolean damage_oenothera = true;
     @SerialEntry
     public boolean teleport_ROTW = true;
@@ -77,6 +95,26 @@ public class MFConfig {
                                         .binding(true, () -> config.sound_crocus, newVal -> config.sound_crocus = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
+                                .option(Option.<Boolean>createBuilder()
+                                        .name(Text.literal("Protection from Black-Eyed Susan"))
+                                        .binding(true, () -> config.black_eyed_susan_effect, newVal -> config.black_eyed_susan_effect = newVal)
+                                        .controller(TickBoxControllerBuilderImpl::new)
+                                        .build())
+                                .option(Option.<Boolean>createBuilder()
+                                        .name(Text.literal("Luck from Coreopsis"))
+                                        .binding(true, () -> config.coreopsis_effect, newVal -> config.coreopsis_effect = newVal)
+                                        .controller(TickBoxControllerBuilderImpl::new)
+                                        .build())
+                                .option(Option.<Boolean>createBuilder()
+                                        .name(Text.literal("Strength from Dahlia"))
+                                        .binding(true, () -> config.dahlia_effect, newVal -> config.dahlia_effect = newVal)
+                                        .controller(TickBoxControllerBuilderImpl::new)
+                                        .build())
+                                .option(Option.<Boolean>createBuilder()
+                                        .name(Text.literal("Slowness and weakness from Lavender"))
+                                        .binding(true, () -> config.lavender_effect, newVal -> config.lavender_effect = newVal)
+                                        .controller(TickBoxControllerBuilderImpl::new)
+                                        .build())
                                 .build())
                         .group(OptionGroup.createBuilder()
                                 .name(Text.literal("Rare flowers"))
@@ -91,6 +129,16 @@ public class MFConfig {
                                         .binding(true, () -> config.still_asters, newVal -> config.still_asters = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
+                                .option(Option.<Boolean>createBuilder()
+                                        .name(Text.literal("Growing crops from Bone Flower"))
+                                        .binding(true, () -> config.bone_flower_effect, newVal -> config.bone_flower_effect = newVal)
+                                        .controller(TickBoxControllerBuilderImpl::new)
+                                        .build())
+                                .option(Option.<Boolean>createBuilder()
+                                        .name(Text.literal("Trades from Trade Flower"))
+                                        .binding(true, () -> config.trades_trade_flower, newVal -> config.trades_trade_flower = newVal)
+                                        .controller(TickBoxControllerBuilderImpl::new)
+                                        .build())
                                 .build())
                         .group(OptionGroup.createBuilder()
                                 .name(Text.literal("Epic flowers"))
@@ -98,6 +146,21 @@ public class MFConfig {
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.literal("Teleport to random world Root Of The Worlds"))
                                         .binding(true, () -> config.teleport_ROTW, newVal -> config.teleport_ROTW = newVal)
+                                        .controller(TickBoxControllerBuilderImpl::new)
+                                        .build())
+                                .option(Option.<Boolean>createBuilder()
+                                        .name(Text.literal("Respawn point from Ethereal Orchid"))
+                                        .binding(true, () -> config.ethereal_orchid_respawn, newVal -> config.ethereal_orchid_respawn = newVal)
+                                        .controller(TickBoxControllerBuilderImpl::new)
+                                        .build())
+                                .option(Option.<Boolean>createBuilder()
+                                        .name(Text.literal("Flee from Dreadpetal (Works after rejoining world)"))
+                                        .binding(true, () -> config.dreadpetal_flee, newVal -> config.dreadpetal_flee = newVal)
+                                        .controller(TickBoxControllerBuilderImpl::new)
+                                        .build())
+                                .option(Option.<Boolean>createBuilder()
+                                        .name(Text.literal("Attraction from Blindblossom"))
+                                        .binding(true, () -> config.blindblossom_attraction, newVal -> config.blindblossom_attraction = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
                                 .build())

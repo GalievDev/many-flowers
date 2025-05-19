@@ -6,6 +6,7 @@ import net.minecraft.block.CropBlock;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.valion.manyflowers.ManyFlowers;
 
 public class BoneFlower extends BaseFlower {
     private final static MapCodec<BoneFlower> CODEC = createCodec(BoneFlower::new);
@@ -16,6 +17,8 @@ public class BoneFlower extends BaseFlower {
 
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (!ManyFlowers.INSTANCE.getCONFIG().bone_flower_effect) return;
+
         for (var targetPos : BlockPos.iterate(pos.add(-1, -1, -1), pos.add(1, 1, 1))) {
             var targetState = world.getBlockState(targetPos);
             if (targetState.getBlock() instanceof CropBlock cropBlock && cropBlock.isFertilizable(world, targetPos, targetState)) {
