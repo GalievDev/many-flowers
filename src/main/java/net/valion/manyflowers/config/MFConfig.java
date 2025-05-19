@@ -6,6 +6,7 @@ import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
 import dev.isxander.yacl3.impl.controller.TickBoxControllerBuilderImpl;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.valion.manyflowers.ManyFlowers;
@@ -38,8 +39,8 @@ public class MFConfig {
     @SerialEntry
     public boolean nether_velvets = true;
 
-    public YetAnotherConfigLib createScreen() {
-        return YetAnotherConfigLib.createBuilder()
+    public static Screen createScreen(Screen parent) {
+        return YetAnotherConfigLib.create(HANDLER, ((defaults, config, builder) -> builder
                 .title(Text.of("Many Flowers"))
                 .category(ConfigCategory.createBuilder()
                         .name(Text.literal("Flowers configuration"))
@@ -48,32 +49,32 @@ public class MFConfig {
                                 .description(OptionDescription.of(Text.literal("Configure flowers with simple effects")))
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.literal("Damage from Gaillardia"))
-                                        .binding(true, () -> this.damage_gaillardia, newVal -> this.damage_gaillardia = newVal)
+                                        .binding(true, () -> config.damage_gaillardia, newVal -> config.damage_gaillardia = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.literal("Oriental Poppy explosion"))
-                                        .binding(true, () -> this.explosion_oriental_poppy, newVal -> this.explosion_oriental_poppy = newVal)
+                                        .binding(true, () -> config.explosion_oriental_poppy, newVal -> config.explosion_oriental_poppy = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.literal("Poison from Water Hemlock"))
-                                        .binding(true, () -> this.damage_hemlock, newVal -> this.damage_hemlock = newVal)
+                                        .binding(true, () -> config.damage_hemlock, newVal -> config.damage_hemlock = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.literal("Damage from Oenothera"))
-                                        .binding(true, () -> this.damage_oenothera, newVal -> this.damage_oenothera = newVal)
+                                        .binding(true, () -> config.damage_oenothera, newVal -> config.damage_oenothera = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.literal("Healing from Chrysanthemum"))
-                                        .binding(true, () -> this.regen_chrysanthemum, newVal -> this.regen_chrysanthemum = newVal)
+                                        .binding(true, () -> config.regen_chrysanthemum, newVal -> config.regen_chrysanthemum = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.literal("Sounds from Autumn Crocus"))
-                                        .binding(true, () -> this.sound_crocus, newVal -> this.sound_crocus = newVal)
+                                        .binding(true, () -> config.sound_crocus, newVal -> config.sound_crocus = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
                                 .build())
@@ -82,12 +83,12 @@ public class MFConfig {
                                 .description(OptionDescription.of(Text.literal("Configure flowers with specific abilities")))
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.literal("Nether infection from Velvets"))
-                                        .binding(true, () -> this.nether_velvets, newVal -> this.nether_velvets = newVal)
+                                        .binding(true, () -> config.nether_velvets, newVal -> config.nether_velvets = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.literal("Stealing items from Autumn Crocus"))
-                                        .binding(true, () -> this.still_asters, newVal -> this.still_asters = newVal)
+                                        .binding(true, () -> config.still_asters, newVal -> config.still_asters = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
                                 .build())
@@ -96,11 +97,10 @@ public class MFConfig {
                                 .description(OptionDescription.of(Text.literal("Configure most strength flowers")))
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.literal("Teleport to random world Root Of The Worlds"))
-                                        .binding(true, () -> this.teleport_ROTW, newVal -> this.teleport_ROTW = newVal)
+                                        .binding(true, () -> config.teleport_ROTW, newVal -> config.teleport_ROTW = newVal)
                                         .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
                                 .build())
-                        .build())
-                .build();
+                        .build()))).generateScreen(parent);
     }
 }
