@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_uncommon_flowers",
+  "criteria": {
+    "got_lavender": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:lavender"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.lavender"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:lavender"
+    },
+    "title": {
+      "translate": "block.many_flowers.lavender"
+    }
+  },
+  "requirements": [
+    [
+      "got_lavender"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

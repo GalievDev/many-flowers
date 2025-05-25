@@ -1,0 +1,27 @@
+{
+  "parent": "many_flowers:join_world",
+  "criteria": {
+    "give_uncommon_flowers": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.uncommon_flowers.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:coreopsis"
+    },
+    "title": {
+      "translate": "advancement.mf.uncommon_flowers.title"
+    }
+  },
+  "requirements": [
+    [
+      "give_uncommon_flowers"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

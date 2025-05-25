@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "joint_world": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/dirt.png",
+    "description": {
+      "translate": "advancement.mf.first_join"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:alstroemeria"
+    },
+    "title": "Many Flowers"
+  },
+  "requirements": [
+    [
+      "joint_world"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

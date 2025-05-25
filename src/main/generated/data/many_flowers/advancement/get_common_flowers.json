@@ -1,0 +1,64 @@
+{
+  "parent": "many_flowers:join_world",
+  "criteria": {
+    "got_common_flowers": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:alstroemeria"
+          },
+          {
+            "items": "many_flowers:hydrangea"
+          },
+          {
+            "items": "many_flowers:marigold"
+          },
+          {
+            "items": "many_flowers:daisies"
+          },
+          {
+            "items": "many_flowers:zinnia"
+          },
+          {
+            "items": "many_flowers:cosmos"
+          },
+          {
+            "items": "many_flowers:purple_cornflower"
+          },
+          {
+            "items": "many_flowers:petunia"
+          },
+          {
+            "items": "many_flowers:geranium"
+          },
+          {
+            "items": "many_flowers:begonia"
+          },
+          {
+            "items": "many_flowers:snapdragon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.common_flowers.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:hydrangea"
+    },
+    "title": {
+      "translate": "advancement.mf.common_flowers.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_common_flowers"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

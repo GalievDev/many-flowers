@@ -1,0 +1,27 @@
+{
+  "parent": "many_flowers:join_world",
+  "criteria": {
+    "give_ore_flowers": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.ore_flowers.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:gold_flower"
+    },
+    "title": {
+      "translate": "advancement.mf.ore_flowers.title"
+    }
+  },
+  "requirements": [
+    [
+      "give_ore_flowers"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

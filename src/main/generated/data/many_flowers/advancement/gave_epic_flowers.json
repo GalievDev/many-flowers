@@ -1,0 +1,27 @@
+{
+  "parent": "many_flowers:join_world",
+  "criteria": {
+    "give_epic_flowers": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.epic_flowers.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:ethereal_orchid"
+    },
+    "title": {
+      "translate": "advancement.mf.epic_flowers.title"
+    }
+  },
+  "requirements": [
+    [
+      "give_epic_flowers"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

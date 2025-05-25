@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_uncommon_flowers",
+  "criteria": {
+    "got_coreopsis": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:coreopsis"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.coreopsis"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:coreopsis"
+    },
+    "title": {
+      "translate": "block.many_flowers.coreopsis"
+    }
+  },
+  "requirements": [
+    [
+      "got_coreopsis"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

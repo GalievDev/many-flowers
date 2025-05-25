@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_epic_flowers",
+  "criteria": {
+    "got_dreadpetal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:dreadpetal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.dreadpetal"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:dreadpetal"
+    },
+    "title": {
+      "translate": "block.many_flowers.dreadpetal"
+    }
+  },
+  "requirements": [
+    [
+      "got_dreadpetal"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

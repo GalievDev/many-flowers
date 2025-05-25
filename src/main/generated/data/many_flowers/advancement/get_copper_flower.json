@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_ore_flowers",
+  "criteria": {
+    "got_copper_flower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:copper_flower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.copper_flower"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:copper_flower"
+    },
+    "title": {
+      "translate": "block.many_flowers.copper_flower"
+    }
+  },
+  "requirements": [
+    [
+      "got_copper_flower"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

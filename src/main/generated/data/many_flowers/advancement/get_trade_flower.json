@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_rare_flowers",
+  "criteria": {
+    "got_trade_flower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:trade_flower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.trade_flower"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:trade_flower"
+    },
+    "title": {
+      "translate": "block.many_flowers.trade_flower"
+    }
+  },
+  "requirements": [
+    [
+      "got_trade_flower"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

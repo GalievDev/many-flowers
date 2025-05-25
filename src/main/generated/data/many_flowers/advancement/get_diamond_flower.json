@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_ore_flowers",
+  "criteria": {
+    "got_diamond_flower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:diamond_flower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.diamond_flower"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:diamond_flower"
+    },
+    "title": {
+      "translate": "block.many_flowers.diamond_flower"
+    }
+  },
+  "requirements": [
+    [
+      "got_diamond_flower"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

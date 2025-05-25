@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_uncommon_flowers",
+  "criteria": {
+    "got_gaillardia": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:gaillardia"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.gaillardia"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:gaillardia"
+    },
+    "title": {
+      "translate": "block.many_flowers.gaillardia"
+    }
+  },
+  "requirements": [
+    [
+      "got_gaillardia"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

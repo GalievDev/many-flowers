@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_uncommon_flowers",
+  "criteria": {
+    "got_oenothera": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:oenothera"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.oenothera"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:oenothera"
+    },
+    "title": {
+      "translate": "block.many_flowers.oenothera"
+    }
+  },
+  "requirements": [
+    [
+      "got_oenothera"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

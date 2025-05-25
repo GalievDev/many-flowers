@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_rare_flowers",
+  "criteria": {
+    "got_velvets": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:velvets"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.velvets"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:velvets"
+    },
+    "title": {
+      "translate": "block.many_flowers.velvets"
+    }
+  },
+  "requirements": [
+    [
+      "got_velvets"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

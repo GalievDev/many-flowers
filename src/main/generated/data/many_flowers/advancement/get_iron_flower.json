@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_ore_flowers",
+  "criteria": {
+    "got_iron_flower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:iron_flower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.iron_flower"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:iron_flower"
+    },
+    "title": {
+      "translate": "block.many_flowers.iron_flower"
+    }
+  },
+  "requirements": [
+    [
+      "got_iron_flower"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

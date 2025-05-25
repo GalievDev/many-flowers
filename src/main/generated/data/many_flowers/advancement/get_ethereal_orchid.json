@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_epic_flowers",
+  "criteria": {
+    "got_ethereal_orchid": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:ethereal_orchid"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.ethereal_orchid"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:ethereal_orchid"
+    },
+    "title": {
+      "translate": "block.many_flowers.ethereal_orchid"
+    }
+  },
+  "requirements": [
+    [
+      "got_ethereal_orchid"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

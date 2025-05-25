@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_epic_flowers",
+  "criteria": {
+    "got_root_of_the_worlds": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:root_of_the_worlds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.root_of_the_worlds"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:root_of_the_worlds"
+    },
+    "title": {
+      "translate": "block.many_flowers.root_of_the_worlds"
+    }
+  },
+  "requirements": [
+    [
+      "got_root_of_the_worlds"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

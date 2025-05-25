@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_rare_flowers",
+  "criteria": {
+    "got_autumn_asters": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:autumn_asters"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.autumn_asters"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:autumn_asters"
+    },
+    "title": {
+      "translate": "block.many_flowers.autumn_asters"
+    }
+  },
+  "requirements": [
+    [
+      "got_autumn_asters"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

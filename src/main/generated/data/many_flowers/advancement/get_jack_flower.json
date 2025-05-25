@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_epic_flowers",
+  "criteria": {
+    "got_jack_flower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:jack_flower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.jack_flower"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:jack_flower"
+    },
+    "title": {
+      "translate": "block.many_flowers.jack_flower"
+    }
+  },
+  "requirements": [
+    [
+      "got_jack_flower"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

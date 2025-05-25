@@ -1,0 +1,27 @@
+{
+  "parent": "many_flowers:join_world",
+  "criteria": {
+    "give_rare_flowers": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.rare_flowers.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:velvets"
+    },
+    "title": {
+      "translate": "advancement.mf.rare_flowers.title"
+    }
+  },
+  "requirements": [
+    [
+      "give_rare_flowers"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

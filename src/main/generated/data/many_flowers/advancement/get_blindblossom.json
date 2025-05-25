@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_epic_flowers",
+  "criteria": {
+    "got_blindblossom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:blindblossom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.blindblossom"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:blindblossom"
+    },
+    "title": {
+      "translate": "block.many_flowers.blindblossom"
+    }
+  },
+  "requirements": [
+    [
+      "got_blindblossom"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

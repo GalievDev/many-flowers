@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_uncommon_flowers",
+  "criteria": {
+    "got_oriental_poppy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:oriental_poppy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.oriental_poppy"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:oriental_poppy"
+    },
+    "title": {
+      "translate": "block.many_flowers.oriental_poppy"
+    }
+  },
+  "requirements": [
+    [
+      "got_oriental_poppy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

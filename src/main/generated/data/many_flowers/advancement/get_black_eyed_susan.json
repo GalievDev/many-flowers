@@ -1,0 +1,34 @@
+{
+  "parent": "many_flowers:gave_uncommon_flowers",
+  "criteria": {
+    "got_black_eyed_susan": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:black_eyed_susan"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.mf.black_eyed_susan"
+    },
+    "icon": {
+      "count": 1,
+      "id": "many_flowers:black_eyed_susan"
+    },
+    "title": {
+      "translate": "block.many_flowers.black_eyed_susan"
+    }
+  },
+  "requirements": [
+    [
+      "got_black_eyed_susan"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
