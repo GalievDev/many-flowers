@@ -57,6 +57,11 @@
   "item.many_flowers.emerald_petal": "Emerald Petal",
   "item.many_flowers.copper_petal": "Copper Petal",
 
+  "tag.item.many_flowers.common_flowers": "Common Flowers",
+  "tag.item.many_flowers.uncommon_flowers": "Uncommon Flowers",
+  "tag.item.many_flowers.rare_flowers": "Rare Flowers",
+  "tag.item.many_flowers.ore_flowers": "Ore Flowers",
+
   "block.many_flowers.alstroemeria": "Alstroemeria",
   "block.many_flowers.hydrangea": "Hydrangea",
   "block.many_flowers.marigold": "Marigold",

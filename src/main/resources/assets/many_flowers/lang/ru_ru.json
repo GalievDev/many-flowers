@@ -57,6 +57,11 @@
   "item.many_flowers.emerald_petal": "Емеральдовый Лепесток",
   "item.many_flowers.copper_petal": "Медный Лепесток",
 
+  "tag.item.many_flowers.common_flowers": "Обычные Цветы",
+  "tag.item.many_flowers.uncommon_flowers": "Необычные Цветы",
+  "tag.item.many_flowers.rare_flowers": "Редкие Цветы",
+  "tag.item.many_flowers.ore_flowers": "Рудные Цветы",
+
   "block.many_flowers.alstroemeria": "Алстроемерия",
   "block.many_flowers.hydrangea": "Гортензия",
   "block.many_flowers.marigold": "Бархатцы",
