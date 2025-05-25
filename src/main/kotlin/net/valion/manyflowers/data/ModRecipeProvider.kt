@@ -113,6 +113,8 @@ class ModRecipeProvider(
                     .input('R', ItemTagsRegistry.RARE_FLOWERS)
                     .input('O', ItemTagsRegistry.ORE_FLOWERS)
                     .input('M', Items.BONE_MEAL)
+                    .criterion(hasItem(ItemsRegistry.FLORAL_MEAL), conditionsFromItem(ItemsRegistry.FLORAL_MEAL))
+                    .offerTo(exporter)
             }
 
             fun createOreRecipes(output: Item, petal: Item, petalBlock: Block) {

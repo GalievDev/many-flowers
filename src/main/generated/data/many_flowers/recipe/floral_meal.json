@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "#many_flowers:common_flowers",
+    "M": "minecraft:bone_meal",
+    "O": "#many_flowers:ore_flowers",
+    "R": "#many_flowers:rare_flowers",
+    "U": "#many_flowers:uncommon_flowers"
+  },
+  "pattern": [
+    "CUC",
+    "RMR",
+    "COC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "many_flowers:floral_meal"
+  }
+}
