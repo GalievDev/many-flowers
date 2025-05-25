@@ -29,7 +29,7 @@ public class Lavender extends ExtendedFlower {
 
     @Override
     public boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isIn(BlockTags.DIRT) || floor.isIn(BlockTags.BASE_STONE_OVERWORLD);
+        return floor.isIn(BlockTags.DIRT) || floor.isIn(BlockTags.SAND);
     }
 
     @Override
