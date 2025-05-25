@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_black_eyed_susan": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:black_eyed_susan"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:orange_dye_from_black_eyed_susan"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_black_eyed_susan"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:orange_dye_from_black_eyed_susan"
+    ]
+  }
+}

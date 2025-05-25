@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_geranium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:geranium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:magenta_dye_from_geranium"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_geranium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:magenta_dye_from_geranium"
+    ]
+  }
+}

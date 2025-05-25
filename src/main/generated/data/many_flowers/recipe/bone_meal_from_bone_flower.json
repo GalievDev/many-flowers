@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "bone_meal",
+  "ingredients": [
+    "many_flowers:bone_flower"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:bone_meal"
+  }
+}

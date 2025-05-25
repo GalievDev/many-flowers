@@ -12,6 +12,7 @@ import net.minecraft.registry.RegistryKeys
 import net.minecraft.registry.RegistryWrapper
 import net.valion.manyflowers.ManyFlowers.MOD_ID
 import net.valion.manyflowers.registry.BlocksRegistry
+import net.valion.manyflowers.registry.ItemTagsRegistry
 import net.valion.manyflowers.registry.ItemsRegistry
 import java.util.concurrent.CompletableFuture
 
@@ -35,6 +36,12 @@ class ModRecipeProvider(
                 offerSingleOutputShapelessRecipe(Items.ORANGE_DYE, BlocksRegistry.MARIGOLD, "orange_dye")
                 offerSingleOutputShapelessRecipe(Items.RED_DYE, BlocksRegistry.DAISIES, "red_dye")
                 offerShapelessRecipe(Items.WHITE_DYE, BlocksRegistry.ZINNIA, "white_dye", 2)
+                offerShapelessRecipe(Items.MAGENTA_DYE, BlocksRegistry.COSMOS, "magenta_dye", 2)
+                offerSingleOutputShapelessRecipe(Items.PURPLE_DYE, BlocksRegistry.PURPLE_CORNFLOWER, "purple_dye")
+                offerSingleOutputShapelessRecipe(Items.RED_DYE, BlocksRegistry.PETUNIA, "red_dye")
+                offerShapelessRecipe(Items.MAGENTA_DYE, BlocksRegistry.GERANIUM, "magenta_dye", 2)
+                offerSingleOutputShapelessRecipe(Items.RED_DYE, BlocksRegistry.BEGONIA, "red_dye")
+                offerSingleOutputShapelessRecipe(Items.WHITE_DYE, BlocksRegistry.SNAPDRAGON, "white_dye")
                 offerSingleOutputShapelessRecipe(Items.PINK_DYE, BlocksRegistry.SWEET_ALYSSUM, "pink_dye")
                 offerSingleOutputShapelessRecipe(Items.ORANGE_DYE, BlocksRegistry.GAILLARDIA, "orange_dye")
                 offerSingleOutputShapelessRecipe(Items.RED_DYE, BlocksRegistry.ORIENTAL_POPPY, "red_dye")
@@ -42,8 +49,14 @@ class ModRecipeProvider(
                 offerSingleOutputShapelessRecipe(Items.YELLOW_DYE, BlocksRegistry.OENOTHERA, "yellow_dye")
                 offerSingleOutputShapelessRecipe(Items.PINK_DYE, BlocksRegistry.CHRYSANTHEMUM, "pink_dye")
                 offerSingleOutputShapelessRecipe(Items.LIGHT_BLUE_DYE, BlocksRegistry.AUTUMN_CROCUS, "light_blue_dye")
+                offerSingleOutputShapelessRecipe(Items.ORANGE_DYE, BlocksRegistry.BLACK_EYED_SUSAN, "orange_dye")
+                offerSingleOutputShapelessRecipe(Items.YELLOW_DYE, BlocksRegistry.COREOPSIS, "yellow_dye")
+                offerSingleOutputShapelessRecipe(Items.RED_DYE, BlocksRegistry.DAHLIA, "red_dye")
+                offerSingleOutputShapelessRecipe(Items.LIGHT_BLUE_DYE, BlocksRegistry.LAVENDER, "light_blue_dye")
                 offerSingleOutputShapelessRecipe(Items.ORANGE_DYE, BlocksRegistry.VELVETS, "orange_dye")
                 offerSingleOutputShapelessRecipe(Items.PURPLE_DYE, BlocksRegistry.AUTUMN_ASTERS, "purple_dye")
+                offerSingleOutputShapelessRecipe(Items.BONE_MEAL, BlocksRegistry.BONE_FLOWER, "bone_meal")
+                offerSingleOutputShapelessRecipe(Items.EMERALD, BlocksRegistry.TRADE_FLOWER, "emerald")
 
                 createShapeless(RecipeCategory.MISC, ItemsRegistry.COAL_SEEDS)
                     .input(BlocksRegistry.COAL_FLOWER)
@@ -90,6 +103,16 @@ class ModRecipeProvider(
                 createOreRecipes(Items.GOLD_INGOT, ItemsRegistry.GOLD_PETAL, BlocksRegistry.GOLD_PETAL_BLOCK)
                 createOreRecipes(Items.DIAMOND, ItemsRegistry.DIAMOND_PETAL, BlocksRegistry.DIAMOND_PETAL_BLOCK)
                 createOreRecipes(Items.EMERALD, ItemsRegistry.EMERALD_PETAL, BlocksRegistry.EMERALD_PETAL_BLOCK)
+
+                createShaped(RecipeCategory.MISC, ItemsRegistry.FLORAL_MEAL, 1)
+                    .pattern("CUC")
+                    .pattern("RMR")
+                    .pattern("COC")
+                    .input('C', ItemTagsRegistry.COMMON_FLOWERS)
+                    .input('U', ItemTagsRegistry.UNCOMMON_FLOWERS)
+                    .input('R', ItemTagsRegistry.RARE_FLOWERS)
+                    .input('O', ItemTagsRegistry.ORE_FLOWERS)
+                    .input('M', Items.BONE_MEAL)
             }
 
             fun createOreRecipes(output: Item, petal: Item, petalBlock: Block) {

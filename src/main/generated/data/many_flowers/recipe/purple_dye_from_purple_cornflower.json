@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "purple_dye",
+  "ingredients": [
+    "many_flowers:purple_cornflower"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:purple_dye"
+  }
+}

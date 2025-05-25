@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "emerald",
+  "ingredients": [
+    "many_flowers:trade_flower"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:emerald"
+  }
+}

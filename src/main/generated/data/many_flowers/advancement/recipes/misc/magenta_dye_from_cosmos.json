@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cosmos": {
+      "conditions": {
+        "items": [
+          {
+            "items": "many_flowers:cosmos"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:magenta_dye_from_cosmos"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cosmos"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:magenta_dye_from_cosmos"
+    ]
+  }
+}
