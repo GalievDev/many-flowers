@@ -10,7 +10,7 @@ In minecraft there are not enough flowers that would decorate this world. And I 
 - Common Flowers, *usually vanilla flowers*
 - Uncommon Flowers, *gives some effects*
 - Rare Flowers, *affects the world and the players.*
-- Ore Flowers, *double ore items*
+- Ore Flowers, *doubles ore items*
 - Epic Flowers, *affects the behavior of mobs and the movement of players*
 
 You can grow any flower from mod with random chance by floral meal:
