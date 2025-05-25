@@ -51,7 +51,7 @@
     "fabric-language-kotlin": ">=${kotlin_fabric}",
     "java": ">=${java_version}"
   },
-  "optional": {
+  "recommends": {
     "modmenu": ">=${modmenu_version}"
   },
   "suggests": {
