@@ -1,7 +1,9 @@
 package net.valion.manyflowers.block.flowers;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Fertilizable;
+import net.minecraft.block.FluidFillable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -19,7 +21,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.*;
 import net.minecraft.world.tick.ScheduledTickView;
-import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.config.MFConfig;
 import org.jetbrains.annotations.Nullable;
 
 public class WaterHemlock extends BaseFlower implements Fertilizable, FluidFillable {
@@ -36,7 +38,7 @@ public class WaterHemlock extends BaseFlower implements Fertilizable, FluidFilla
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && ManyFlowers.INSTANCE.getCONFIG().damage_hemlock) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.HANDLER.instance().damage_hemlock) {
             if (entity instanceof LivingEntity livingEntity) {
                 if (!livingEntity.isInvulnerableTo((ServerWorld) world, world.getDamageSources().magic())) {
                     livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 50, 3));

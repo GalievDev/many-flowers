@@ -24,10 +24,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.*;
+import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldEvents;
+import net.minecraft.world.WorldView;
 import net.minecraft.world.tick.ScheduledTickView;
-import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.flowers.entity.AutumnAstersEntity;
+import net.valion.manyflowers.config.MFConfig;
 import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 import org.jetbrains.annotations.Nullable;
 
@@ -50,7 +53,7 @@ public class AutumnAsters extends ExtendedFlower {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!ManyFlowers.INSTANCE.getCONFIG().still_asters || world.isClient) return;
+        if (!MFConfig.HANDLER.instance().still_asters || world.isClient) return;
         if (entity instanceof PlayerEntity player) {
             if (stacks.size() < 10) {
                 if (canStill) {

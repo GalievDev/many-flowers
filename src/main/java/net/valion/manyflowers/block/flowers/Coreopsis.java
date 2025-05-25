@@ -10,7 +10,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.config.MFConfig;
 
 public class Coreopsis extends BaseFlower {
     private final static MapCodec<Coreopsis> CODEC = createCodec(Coreopsis::new);
@@ -26,7 +26,7 @@ public class Coreopsis extends BaseFlower {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!ManyFlowers.INSTANCE.getCONFIG().coreopsis_effect) return;
+        if (!MFConfig.HANDLER.instance().coreopsis_effect) return;
         if (!world.isClient) {
             if (entity instanceof LivingEntity livingEntity) {
                 if (!livingEntity.isInvulnerableTo((ServerWorld) world, world.getDamageSources().magic())) {

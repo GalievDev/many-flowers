@@ -5,7 +5,7 @@ import net.minecraft.entity.Entity
 import net.minecraft.entity.ai.goal.FleeEntityGoal
 import net.minecraft.entity.mob.HostileEntity
 import net.minecraft.server.world.ServerWorld
-import net.valion.manyflowers.ManyFlowers
+import net.valion.manyflowers.config.MFConfig
 import net.valion.manyflowers.entity.DreadpetalEntity
 import net.valion.manyflowers.entity.goal.BlindblossomGoal
 import net.valion.manyflowers.mixin.MobEntityAccessor
@@ -13,7 +13,7 @@ import net.valion.manyflowers.mixin.MobEntityAccessor
 object EntityLoadEvent: ServerEntityEvents.Load {
     override fun onLoad(entity: Entity?, world: ServerWorld?) {
         if (entity is HostileEntity) {
-            if (ManyFlowers.CONFIG.dreadpetal_flee) {
+            if (MFConfig.HANDLER.instance().dreadpetal_flee) {
                 (entity as MobEntityAccessor).goalSelector.add(
                     1, FleeEntityGoal(
                         entity,
@@ -21,7 +21,7 @@ object EntityLoadEvent: ServerEntityEvents.Load {
                     )
                 )
             }
-            if (ManyFlowers.CONFIG.blindblossom_attraction) {
+            if (MFConfig.HANDLER.instance().blindblossom_attraction) {
                 (entity as MobEntityAccessor).goalSelector.add(
                     1, BlindblossomGoal(
                         entity, 1.0, 5.0f

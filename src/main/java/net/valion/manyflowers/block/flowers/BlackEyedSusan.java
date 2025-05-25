@@ -11,7 +11,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.config.MFConfig;
 
 public class BlackEyedSusan extends BaseFlower {
     private final static MapCodec<BlackEyedSusan> CODEC = createCodec(BlackEyedSusan::new);
@@ -27,7 +27,7 @@ public class BlackEyedSusan extends BaseFlower {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && ManyFlowers.INSTANCE.getCONFIG().black_eyed_susan_effect) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.HANDLER.instance().black_eyed_susan_effect) {
             if (entity instanceof LivingEntity livingEntity) {
                 if (!livingEntity.isInvulnerableTo((ServerWorld) world, world.getDamageSources().magic())) {
                     livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 150, 0));

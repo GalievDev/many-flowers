@@ -8,7 +8,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.config.MFConfig;
 import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 
 public class LavenderBlockEntity extends BlockEntity {
@@ -18,7 +18,7 @@ public class LavenderBlockEntity extends BlockEntity {
 
     public static void tick(World world, BlockPos blockPos, BlockState blockState, LavenderBlockEntity blockEntity) {
         if (world.isClient) return;
-        if (!ManyFlowers.INSTANCE.getCONFIG().lavender_effect) return;
+        if (!MFConfig.HANDLER.instance().lavender_effect) return;
 
         var livingEntities = world.getEntitiesByClass(
                 LivingEntity.class,

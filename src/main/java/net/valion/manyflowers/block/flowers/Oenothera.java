@@ -11,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.config.MFConfig;
 
 public class Oenothera extends TallPlantBlock implements Fertilizable {
     private final static MapCodec<Oenothera> CODEC = createCodec(Oenothera::new);
@@ -27,7 +27,7 @@ public class Oenothera extends TallPlantBlock implements Fertilizable {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && ManyFlowers.INSTANCE.getCONFIG().damage_oenothera) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.HANDLER.instance().damage_oenothera) {
             if (entity instanceof LivingEntity livingEntity) {
                 if (!livingEntity.isInvulnerableTo((ServerWorld) world, world.getDamageSources().magic())) {
                     entity.damage((ServerWorld) world, world.getDamageSources().magic(), 1.0f);

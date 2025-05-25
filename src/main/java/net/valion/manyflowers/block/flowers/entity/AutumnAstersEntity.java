@@ -12,8 +12,8 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
 import net.valion.manyflowers.block.flowers.AutumnAsters;
+import net.valion.manyflowers.config.MFConfig;
 import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class AutumnAstersEntity extends BlockEntity {
 
     public static void tick(World world, BlockPos blockPos, BlockState state, AutumnAstersEntity entity) {
         if (world.isClient) return;
-        if (!ManyFlowers.INSTANCE.getCONFIG().still_asters) return;
+        if (!MFConfig.HANDLER.instance().still_asters) return;
         if (counter < 0) counter = 0;
         List<ItemEntity> items = world.getEntitiesByClass(
                 ItemEntity.class,

@@ -13,7 +13,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.config.MFConfig;
 
 import static net.valion.manyflowers.helpers.WorldsHelper.teleportToSafeZone;
 
@@ -33,7 +33,7 @@ public class RootOfTheWorlds extends BaseFlower {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (world instanceof ServerWorld && !entity.hasVehicle() &&
                 !entity.hasPassengers() && entity.canUsePortals(false) &&
-                entity.isPlayer() && ManyFlowers.INSTANCE.getCONFIG().teleport_ROTW) {
+                entity.isPlayer() && MFConfig.HANDLER.instance().teleport_ROTW) {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity) entity;
             teleportToSafeZone(serverPlayer);
         }

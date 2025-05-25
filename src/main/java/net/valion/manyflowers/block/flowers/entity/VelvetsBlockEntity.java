@@ -6,7 +6,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.config.MFConfig;
 import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,7 +25,7 @@ public class VelvetsBlockEntity extends BlockEntity {
 
     public static void tick(World world, BlockPos blockPos, BlockState state, VelvetsBlockEntity entity) {
         if (world.isClient) return;
-        if (!ManyFlowers.INSTANCE.getCONFIG().nether_velvets) return;
+        if (!MFConfig.HANDLER.instance().nether_velvets) return;
         if (entity.counter < 0) entity.counter = 0;
         if (entity.counter == entity.delay) {
             if (poses.isEmpty()) {

@@ -19,7 +19,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
-import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.config.MFConfig;
 
 public class Gaillardia extends BaseFlower {
     private final static MapCodec<Gaillardia> CODEC = createCodec(Gaillardia::new);
@@ -35,7 +35,7 @@ public class Gaillardia extends BaseFlower {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && ManyFlowers.INSTANCE.getCONFIG().damage_gaillardia) {
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.HANDLER.instance().damage_gaillardia) {
             if (!entity.isFireImmune() && entity instanceof LivingEntity) {
                 boolean hasFrostWalker = false;
                 var registryEntries = EnchantmentHelper.getEnchantments(((LivingEntity) entity)

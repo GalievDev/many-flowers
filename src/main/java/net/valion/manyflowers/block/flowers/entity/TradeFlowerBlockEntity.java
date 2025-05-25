@@ -14,6 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import net.valion.manyflowers.ManyFlowers;
+import net.valion.manyflowers.config.MFConfig;
 import net.valion.manyflowers.registry.BlocksEntitiesRegistry;
 import net.valion.manyflowers.registry.ItemsRegistry;
 import org.jetbrains.annotations.Nullable;
@@ -35,7 +36,7 @@ public class TradeFlowerBlockEntity extends BlockEntity {
     public static void tick(World world, BlockPos blockPos, BlockState blockState, TradeFlowerBlockEntity blockEntity) {
         if (world.isClient) return;
         if (counter < 0) counter = 0;
-        if (!ManyFlowers.INSTANCE.getCONFIG().trades_trade_flower) return;
+        if (!MFConfig.HANDLER.instance().trades_trade_flower) return;
 
         Optional<ItemEntity> optionalItemEntity = world.getEntitiesByClass(
                 ItemEntity.class,

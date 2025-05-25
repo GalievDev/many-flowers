@@ -15,7 +15,6 @@ import kotlin.random.Random
 
 object ManyFlowers: ModInitializer {
     const val MOD_ID: String = "many_flowers"
-    val CONFIG: MFConfig = MFConfig.HANDLER.instance()
     val LOGGER: Logger = LogManager.getLogger(MOD_ID)
     val RANDOM: Random = Random(System.currentTimeMillis())
 
@@ -33,7 +32,6 @@ object ManyFlowers: ModInitializer {
         ServerLifecycleEvents.SERVER_STARTED.register(ServerStartEvent)
 
         MFConfig.HANDLER.load()
-        MFConfig.HANDLER.save()
 
         ModWorldGeneration.generateModWorldGen()
     }
