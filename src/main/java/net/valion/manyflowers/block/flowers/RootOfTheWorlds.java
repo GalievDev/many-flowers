@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityCollisionHandler;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -30,7 +31,7 @@ public class RootOfTheWorlds extends BaseFlower {
     }
 
     @Override
-    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+    protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler) {
         if (world instanceof ServerWorld && !entity.hasVehicle() &&
                 !entity.hasPassengers() && entity.canUsePortals(false) &&
                 entity.isPlayer() && MFConfig.HANDLER.instance().teleport_ROTW) {
@@ -43,7 +44,7 @@ public class RootOfTheWorlds extends BaseFlower {
     public void randomDisplayTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
         float chance = 0.35f;
         if(chance < rand.nextFloat()) {
-            worldIn.addParticle(ParticleTypes.PORTAL, pos.getX() + 0.5D,
+            worldIn.addParticleClient(ParticleTypes.PORTAL, pos.getX() + 0.5D,
                     pos.getY() + 0.5D, pos.getZ() + 0.5D,
                     0.2d,0.1d,0.3d);
         }

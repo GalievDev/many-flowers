@@ -99,10 +99,12 @@ public class TradeFlowerBlockEntity extends BlockEntity {
     @Override
     protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registries) {
         var itemId = nbt.getInt("mf.stack");
-        if (itemId != 0) {
-            stack = new ItemStack(Item.byRawId(itemId));
+        if (itemId.isPresent() && itemId.get() != 0) {
+            stack = new ItemStack(Item.byRawId(itemId.get()));
         }
-        counter = nbt.getInt("mf.tradeCount");
+        var savedCounter = nbt.getInt("mf.tradeCount");
+        savedCounter.ifPresent(integer -> counter = integer);
+
         super.readNbt(nbt, registries);
     }
 }

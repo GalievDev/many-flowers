@@ -30,11 +30,6 @@ public class NonRepulsiveEntity extends LivingEntity {
     }
 
     @Override
-    public Iterable<ItemStack> getArmorItems() {
-        return null;
-    }
-
-    @Override
     public ItemStack getEquippedStack(EquipmentSlot slot) {
         return ItemStack.EMPTY;
     }

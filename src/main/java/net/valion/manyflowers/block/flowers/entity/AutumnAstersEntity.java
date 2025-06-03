@@ -63,11 +63,19 @@ public class AutumnAstersEntity extends BlockEntity {
 
     @Override
     public void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup lookup) {
-        counter = nbt.getInt("mf.counter");
-        stacks.add(new ItemStack(
-                Item.byRawId(nbt.getInt("mf.id")),
-                nbt.getInt("mf.count")
-        ));
+        var savedCounter = nbt.getInt("mf.counter");
+        var savedItemId = nbt.getInt("mf.id");
+        var savedItemCount = nbt.getInt("mf.count");
+
+        if (savedCounter.isPresent()) {
+            counter = savedCounter.get();
+            if (savedItemId.isPresent() && savedItemCount.isPresent()) {
+                stacks.add(new ItemStack(
+                        Item.byRawId(nbt.getInt("mf.id").get()),
+                        nbt.getInt("mf.count").get()
+                ));
+            }
+        }
         super.readNbt(nbt, lookup);
     }
 }

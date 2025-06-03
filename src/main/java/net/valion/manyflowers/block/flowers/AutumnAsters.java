@@ -7,6 +7,7 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityCollisionHandler;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -52,14 +53,14 @@ public class AutumnAsters extends ExtendedFlower {
     }
 
     @Override
-    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+    protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler) {
         if (!MFConfig.HANDLER.instance().still_asters || world.isClient) return;
         if (entity instanceof PlayerEntity player) {
             if (stacks.size() < 10) {
                 if (canStill) {
                     var stack = new ItemStack(player.getStackInHand(player.getActiveHand()).getItem(), 1);
                     stacks.add(stack);
-                    player.getInventory().removeStack(player.getInventory().selectedSlot, stack.getCount());
+                    player.getInventory().removeStack(player.getInventory().getSelectedSlot(), stack.getCount());
                     canStill = false;
                 }
             }

@@ -9,6 +9,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityCollisionHandler;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.particle.ParticleTypes;
@@ -34,12 +35,12 @@ public class Gaillardia extends BaseFlower {
     }
 
     @Override
-    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+    protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL && MFConfig.HANDLER.instance().damage_gaillardia) {
             if (!entity.isFireImmune() && entity instanceof LivingEntity) {
                 boolean hasFrostWalker = false;
                 var registryEntries = EnchantmentHelper.getEnchantments(((LivingEntity) entity)
-                                .getEquippedStack(EquipmentSlot.FEET)).getEnchantmentEntries();
+                        .getEquippedStack(EquipmentSlot.FEET)).getEnchantmentEntries();
 
                 for (Object2IntMap.Entry<RegistryEntry<Enchantment>> entry : registryEntries) {
                     var registryEntry = entry.getKey();
@@ -59,7 +60,7 @@ public class Gaillardia extends BaseFlower {
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         float chance = 0.35f;
         if(chance < random.nextFloat()) {
-            world.addParticle(ParticleTypes.LAVA, pos.getX() + 0.5D,
+            world.addParticleClient(ParticleTypes.LAVA, pos.getX() + 0.5D,
                     pos.getY() + 0.5D, pos.getZ() + 0.5D,
                     0.2d,0.1d,0.3d);
         }

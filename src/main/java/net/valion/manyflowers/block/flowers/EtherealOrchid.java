@@ -75,8 +75,8 @@ public class EtherealOrchid extends BaseFlower {
 
         if (!world.isClient) {
             ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) player;
-            if (serverPlayerEntity.getSpawnPointDimension() != world.getRegistryKey() || !pos.equals(serverPlayerEntity.getSpawnPointPosition())) {
-                serverPlayerEntity.setSpawnPoint(world.getRegistryKey(), pos, 0.0F, false, true);
+            if (serverPlayerEntity.getRespawn().dimension() != world.getRegistryKey() || !pos.equals(serverPlayerEntity.getRespawn().pos())) {
+                serverPlayerEntity.setSpawnPoint(new ServerPlayerEntity.Respawn(world.getRegistryKey(), pos, 0.5F, false), true);
                 world.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundsRegistry.INSTANCE.getETHEREAL_ORCHID_PLACED_SOUND(), SoundCategory.BLOCKS, 1.0F, 1.0F);
                 return ActionResult.SUCCESS_SERVER;
             }
@@ -135,8 +135,8 @@ public class EtherealOrchid extends BaseFlower {
 
         if (!world.isClient) {
             ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) placer;
-            if (serverPlayerEntity.getSpawnPointDimension() != world.getRegistryKey() || !pos.equals(serverPlayerEntity.getSpawnPointPosition())) {
-                serverPlayerEntity.setSpawnPoint(world.getRegistryKey(), pos, 0.0F, false, true);
+            if (serverPlayerEntity.getRespawn().dimension() != world.getRegistryKey() || !pos.equals(serverPlayerEntity.getRespawn().pos())) {
+                serverPlayerEntity.setSpawnPoint(new ServerPlayerEntity.Respawn(world.getRegistryKey(), pos, 0.5F, false), true);
                 world.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundsRegistry.INSTANCE.getETHEREAL_ORCHID_PLACED_SOUND(), SoundCategory.BLOCKS, 1.0F, 1.0F);
             }
         }
@@ -155,14 +155,14 @@ public class EtherealOrchid extends BaseFlower {
 
         if (state.get(CHARGES) != 0) {
             if (random.nextInt(100) == 0) {
-                world.playSoundAtBlockCenter(pos, SoundsRegistry.INSTANCE.getETHEREAL_ORCHID_AMBIENT(), SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+                world.playSoundAtBlockCenterClient(pos, SoundsRegistry.INSTANCE.getETHEREAL_ORCHID_AMBIENT(), SoundCategory.BLOCKS, 1.0F, 1.0F, false);
             }
 
             double d = pos.getX() + 0.5 + (0.5 - random.nextDouble());
             double e = pos.getY() + 1.0;
             double f = pos.getZ() + 0.5 + (0.5 - random.nextDouble());
             double g = random.nextFloat() * 0.04;
-            world.addParticle(ParticleTypes.REVERSE_PORTAL, d, e, f, 0.0, g, 0.0);
+            world.addParticleClient(ParticleTypes.REVERSE_PORTAL, d, e, f, 0.0, g, 0.0);
         }
     }
 

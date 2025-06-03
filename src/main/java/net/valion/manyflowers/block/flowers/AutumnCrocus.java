@@ -37,7 +37,7 @@ public class AutumnCrocus extends BaseFlower {
         if (!MFConfig.HANDLER.instance().sound_crocus) return;
         if (counter == delay) {
             if (!SoundsHelper.sounds.isEmpty() && world.isClient) {
-                world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundsHelper.getRandSound(), SoundCategory.HOSTILE, 2F, 0F, true);
+                world.playSound(null, pos, SoundsHelper.getRandSound(), SoundCategory.HOSTILE, 2F, 0F);
             } else {
                 SoundsHelper.putSounds();
             }

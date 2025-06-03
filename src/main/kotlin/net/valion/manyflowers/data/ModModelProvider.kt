@@ -5,8 +5,11 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.minecraft.block.Block
 import net.minecraft.client.data.*
 import net.minecraft.client.data.BlockStateModelGenerator.CrossType
+import net.minecraft.client.render.model.json.ModelVariant
+import net.minecraft.client.render.model.json.WeightedVariant
 import net.minecraft.state.property.Properties
 import net.minecraft.util.Identifier
+import net.minecraft.util.collection.Pool
 import net.valion.manyflowers.block.flowers.EtherealOrchid
 import net.valion.manyflowers.registry.BlocksRegistry
 import net.valion.manyflowers.registry.ItemsRegistry
@@ -107,10 +110,10 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
         generator.blockStateCollector
             .accept(
-                VariantsBlockStateSupplier.create(BlocksRegistry.ETHEREAL_ORCHID)
-                    .coordinate(
-                        BlockStateVariantMap.create(EtherealOrchid.CHARGES).register { charges: Int ->
-                            BlockStateVariant.create().put(VariantSettings.MODEL, identifiers[charges])
+                VariantsBlockModelDefinitionCreator.of(BlocksRegistry.ETHEREAL_ORCHID)
+                    .with(
+                        BlockStateVariantMap.models(EtherealOrchid.CHARGES).generate { charges: Int ->
+                            WeightedVariant(Pool.of(ModelVariant(identifiers[charges])))
                         }
                     )
             )
