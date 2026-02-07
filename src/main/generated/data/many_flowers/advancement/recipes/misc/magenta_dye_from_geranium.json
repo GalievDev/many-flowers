@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:magenta_dye_from_geranium"
+        "recipe": "many_flowers:magenta_dye_from_geranium"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:magenta_dye_from_geranium"
+      "many_flowers:magenta_dye_from_geranium"
     ]
   }
 }

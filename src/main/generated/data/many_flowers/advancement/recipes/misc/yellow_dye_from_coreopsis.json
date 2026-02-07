@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:yellow_dye_from_coreopsis"
+        "recipe": "many_flowers:yellow_dye_from_coreopsis"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:yellow_dye_from_coreopsis"
+      "many_flowers:yellow_dye_from_coreopsis"
     ]
   }
 }

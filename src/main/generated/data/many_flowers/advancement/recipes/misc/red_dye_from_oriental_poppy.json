@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:red_dye_from_oriental_poppy"
+        "recipe": "many_flowers:red_dye_from_oriental_poppy"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:red_dye_from_oriental_poppy"
+      "many_flowers:red_dye_from_oriental_poppy"
     ]
   }
 }

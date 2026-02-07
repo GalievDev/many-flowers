@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:red_dye_from_begonia"
+        "recipe": "many_flowers:red_dye_from_begonia"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:red_dye_from_begonia"
+      "many_flowers:red_dye_from_begonia"
     ]
   }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:carved_pumpkin"
+        "recipe": "many_flowers:carved_pumpkin"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:carved_pumpkin"
+      "many_flowers:carved_pumpkin"
     ]
   }
 }

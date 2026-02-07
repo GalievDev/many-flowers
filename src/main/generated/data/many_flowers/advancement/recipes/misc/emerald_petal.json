@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:emerald_petal"
+        "recipe": "many_flowers:emerald_petal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:emerald_petal"
+      "many_flowers:emerald_petal"
     ]
   }
 }

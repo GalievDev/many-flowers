@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:purple_dye_from_autumn_asters"
+        "recipe": "many_flowers:purple_dye_from_autumn_asters"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:purple_dye_from_autumn_asters"
+      "many_flowers:purple_dye_from_autumn_asters"
     ]
   }
 }

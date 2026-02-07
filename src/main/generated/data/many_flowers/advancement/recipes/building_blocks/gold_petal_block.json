@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:gold_petal_block"
+        "recipe": "many_flowers:gold_petal_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:gold_petal_block"
+      "many_flowers:gold_petal_block"
     ]
   }
 }

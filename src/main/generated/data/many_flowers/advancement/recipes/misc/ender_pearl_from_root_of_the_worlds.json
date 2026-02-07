@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ender_pearl_from_root_of_the_worlds"
+        "recipe": "many_flowers:ender_pearl_from_root_of_the_worlds"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ender_pearl_from_root_of_the_worlds"
+      "many_flowers:ender_pearl_from_root_of_the_worlds"
     ]
   }
 }

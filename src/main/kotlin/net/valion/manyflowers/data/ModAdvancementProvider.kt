@@ -29,7 +29,7 @@ class ModAdvancementProvider(
                 BlocksRegistry.ALSTROEMERIA,
                 Text.literal("Many Flowers"),
                 Text.translatable("advancement.mf.first_join"),
-                Identifier.ofVanilla("textures/block/dirt.png"),
+                Identifier.ofVanilla("block/dirt"),
                 AdvancementFrame.TASK,
                 true,
                 false,
