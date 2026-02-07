@@ -7,8 +7,8 @@ import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.AirBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
@@ -50,32 +50,29 @@ public class AutumnAstersEntity extends BlockEntity {
         } else counter++;
     }
 
-
     @Override
-    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup lookup) {
-        nbt.putInt("mf.counter", counter);
+    protected void writeData(WriteView view) {
+        view.putInt("mf.counter", counter);
         stacks.forEach(itemStack -> {
-            nbt.putInt("mf.id", Item.getRawId(itemStack.getItem()));
-            nbt.putInt("mf.count", itemStack.getCount());
+            view.putInt("mf.id", Item.getRawId(itemStack.getItem()));
+            view.putInt("mf.count", itemStack.getCount());
         });
-        super.writeNbt(nbt, lookup);
+        super.writeData(view);
     }
 
     @Override
-    public void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup lookup) {
-        var savedCounter = nbt.getInt("mf.counter");
-        var savedItemId = nbt.getInt("mf.id");
-        var savedItemCount = nbt.getInt("mf.count");
+    protected void readData(ReadView view) {
+        var savedCounter = view.getInt("mf.counter", 0);
+        var savedItemId = view.getInt("mf.id", 0);
+        var savedItemCount = view.getInt("mf.count", 0);
 
-        if (savedCounter.isPresent()) {
-            counter = savedCounter.get();
-            if (savedItemId.isPresent() && savedItemCount.isPresent()) {
-                stacks.add(new ItemStack(
-                        Item.byRawId(nbt.getInt("mf.id").get()),
-                        nbt.getInt("mf.count").get()
-                ));
-            }
+        counter = savedCounter;
+        if (savedItemId != 0 && savedItemCount != 0) {
+            stacks.add(new ItemStack(
+                    Item.byRawId(savedItemId),
+                    savedItemCount
+            ));
         }
-        super.readNbt(nbt, lookup);
+        super.readData(view);
     }
 }

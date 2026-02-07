@@ -75,8 +75,10 @@ public class EtherealOrchid extends BaseFlower {
 
         if (!world.isClient) {
             ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) player;
-            if (serverPlayerEntity.getRespawn().dimension() != world.getRegistryKey() || !pos.equals(serverPlayerEntity.getRespawn().pos())) {
-                serverPlayerEntity.setSpawnPoint(new ServerPlayerEntity.Respawn(world.getRegistryKey(), pos, 0.5F, false), true);
+            ServerPlayerEntity.Respawn playerRespawn = serverPlayerEntity.getRespawn();
+            ServerPlayerEntity.Respawn orchidRespawn = new ServerPlayerEntity.Respawn(world.getRegistryKey(), pos, 0.0F, false);
+            if (playerRespawn == null || !playerRespawn.equals(orchidRespawn)) {
+                serverPlayerEntity.setSpawnPoint(orchidRespawn, true);
                 world.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundsRegistry.INSTANCE.getETHEREAL_ORCHID_PLACED_SOUND(), SoundCategory.BLOCKS, 1.0F, 1.0F);
                 return ActionResult.SUCCESS_SERVER;
             }
@@ -135,8 +137,10 @@ public class EtherealOrchid extends BaseFlower {
 
         if (!world.isClient) {
             ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) placer;
-            if (serverPlayerEntity.getRespawn().dimension() != world.getRegistryKey() || !pos.equals(serverPlayerEntity.getRespawn().pos())) {
-                serverPlayerEntity.setSpawnPoint(new ServerPlayerEntity.Respawn(world.getRegistryKey(), pos, 0.5F, false), true);
+            ServerPlayerEntity.Respawn playerRespawn = serverPlayerEntity.getRespawn();
+            ServerPlayerEntity.Respawn orchidRespawn = new ServerPlayerEntity.Respawn(world.getRegistryKey(), pos, 0.0F, false);
+            if (playerRespawn == null || !playerRespawn.equals(orchidRespawn)) {
+                serverPlayerEntity.setSpawnPoint(orchidRespawn, true);
                 world.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundsRegistry.INSTANCE.getETHEREAL_ORCHID_PLACED_SOUND(), SoundCategory.BLOCKS, 1.0F, 1.0F);
             }
         }

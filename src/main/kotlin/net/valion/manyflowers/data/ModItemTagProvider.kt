@@ -12,7 +12,7 @@ class ModItemTagProvider(
     registriesFuture: CompletableFuture<RegistryWrapper.WrapperLookup>
 ): FabricTagProvider.ItemTagProvider(output, registriesFuture) {
     override fun configure(wrapperLookup: RegistryWrapper.WrapperLookup?) {
-        getOrCreateTagBuilder(ItemTagsRegistry.COMMON_FLOWERS)
+        valueLookupBuilder(ItemTagsRegistry.COMMON_FLOWERS)
             .add(BlocksRegistry.ALSTROEMERIA.asItem())
             .add(BlocksRegistry.HYDRANGEA.asItem())
             .add(BlocksRegistry.MARIGOLD.asItem())
@@ -25,7 +25,7 @@ class ModItemTagProvider(
             .add(BlocksRegistry.BEGONIA.asItem())
             .add(BlocksRegistry.SNAPDRAGON.asItem())
 
-        getOrCreateTagBuilder(ItemTagsRegistry.UNCOMMON_FLOWERS)
+        valueLookupBuilder(ItemTagsRegistry.UNCOMMON_FLOWERS)
             .add(BlocksRegistry.SWEET_ALYSSUM.asItem())
             .add(BlocksRegistry.GAILLARDIA.asItem())
             .add(BlocksRegistry.ORIENTAL_POPPY.asItem())
@@ -38,13 +38,13 @@ class ModItemTagProvider(
             .add(BlocksRegistry.DAHLIA.asItem())
             .add(BlocksRegistry.LAVENDER.asItem())
 
-        getOrCreateTagBuilder(ItemTagsRegistry.RARE_FLOWERS)
+        valueLookupBuilder(ItemTagsRegistry.RARE_FLOWERS)
             .add(BlocksRegistry.VELVETS.asItem())
             .add(BlocksRegistry.AUTUMN_ASTERS.asItem())
             .add(BlocksRegistry.BONE_FLOWER.asItem())
             .add(BlocksRegistry.TRADE_FLOWER.asItem())
 
-        getOrCreateTagBuilder(ItemTagsRegistry.ORE_FLOWERS)
+        valueLookupBuilder(ItemTagsRegistry.ORE_FLOWERS)
             .add(BlocksRegistry.COAL_FLOWER.asItem())
             .add(BlocksRegistry.COPPER_FLOWER.asItem())
             .add(BlocksRegistry.IRON_FLOWER.asItem())

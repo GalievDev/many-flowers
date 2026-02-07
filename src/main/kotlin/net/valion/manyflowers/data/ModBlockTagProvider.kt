@@ -48,7 +48,7 @@ class ModBlockTagProvider(
             BlocksRegistry.BLINDBLOSSOM,
         )
 
-        getOrCreateTagBuilder(BlockTagsRegistry.COMMON_FLOWERS)
+        valueLookupBuilder(BlockTagsRegistry.COMMON_FLOWERS)
             .add(BlocksRegistry.ALSTROEMERIA)
             .add(BlocksRegistry.HYDRANGEA)
             .add(BlocksRegistry.MARIGOLD)
@@ -61,7 +61,7 @@ class ModBlockTagProvider(
             .add(BlocksRegistry.BEGONIA)
             .add(BlocksRegistry.SNAPDRAGON)
 
-        getOrCreateTagBuilder(BlockTagsRegistry.UNCOMMON_FLOWERS)
+        valueLookupBuilder(BlockTagsRegistry.UNCOMMON_FLOWERS)
             .add(BlocksRegistry.SWEET_ALYSSUM)
             .add(BlocksRegistry.GAILLARDIA)
             .add(BlocksRegistry.ORIENTAL_POPPY)
@@ -74,13 +74,13 @@ class ModBlockTagProvider(
             .add(BlocksRegistry.DAHLIA)
             .add(BlocksRegistry.LAVENDER)
 
-        getOrCreateTagBuilder(BlockTagsRegistry.RARE_FLOWERS)
+        valueLookupBuilder(BlockTagsRegistry.RARE_FLOWERS)
             .add(BlocksRegistry.VELVETS)
             .add(BlocksRegistry.AUTUMN_ASTERS)
             .add(BlocksRegistry.BONE_FLOWER)
             .add(BlocksRegistry.TRADE_FLOWER)
 
-        getOrCreateTagBuilder(BlockTagsRegistry.ORE_FLOWERS)
+        valueLookupBuilder(BlockTagsRegistry.ORE_FLOWERS)
             .add(BlocksRegistry.COAL_FLOWER)
             .add(BlocksRegistry.COPPER_FLOWER)
             .add(BlocksRegistry.IRON_FLOWER)
@@ -88,17 +88,17 @@ class ModBlockTagProvider(
             .add(BlocksRegistry.DIAMOND_FLOWER)
             .add(BlocksRegistry.EMERALD_FLOWER)
 
-        getOrCreateTagBuilder(BlockTagsRegistry.EPIC_FLOWERS)
+        valueLookupBuilder(BlockTagsRegistry.EPIC_FLOWERS)
             .add(BlocksRegistry.JACK_FLOWER)
             .add(BlocksRegistry.ROOT_OF_THE_WORLDS)
             .add(BlocksRegistry.ETHEREAL_ORCHID)
             .add(BlocksRegistry.DREADPETAL)
             .add(BlocksRegistry.BLINDBLOSSOM)
 
-        getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
+        valueLookupBuilder(BlockTags.SMALL_FLOWERS)
             .add(*smallFlowers)
 
-        getOrCreateTagBuilder(BlockTags.FLOWERS)
+        valueLookupBuilder(BlockTags.FLOWERS)
             .add(*smallFlowers)
             .add(BlocksRegistry.ZINNIA)
             .add(BlocksRegistry.OENOTHERA)
@@ -106,7 +106,7 @@ class ModBlockTagProvider(
             .add(BlocksRegistry.COSMOS)
             .add(BlocksRegistry.GERANIUM)
 
-        getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
+        valueLookupBuilder(BlockTags.FLOWER_POTS)
             .add(BlocksRegistry.POTTED_ALSTROEMERIA)
             .add(BlocksRegistry.POTTED_HYDRANGEA)
             .add(BlocksRegistry.POTTED_PURPLE_CORNFLOWER)
@@ -125,7 +125,7 @@ class ModBlockTagProvider(
             .add(BlocksRegistry.POTTED_CHRYSANTHEMUM)
             .add(BlocksRegistry.POTTED_ROOT_OF_THE_WORLDS)
 
-        getOrCreateTagBuilder(BlockTags.CROPS)
+        valueLookupBuilder(BlockTags.CROPS)
             .add(BlocksRegistry.COAL_PLANT)
             .add(BlocksRegistry.COPPER_PLANT)
             .add(BlocksRegistry.IRON_PLANT)

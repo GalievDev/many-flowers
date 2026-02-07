@@ -8,8 +8,8 @@ import net.minecraft.item.AirBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
@@ -86,25 +86,25 @@ public class TradeFlowerBlockEntity extends BlockEntity {
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registries) {
-        nbt.putInt("mf.tradeCount", counter);
+    protected void writeData(WriteView view) {
+        view.putInt("mf.tradeCount", counter);
         if (stack != null) {
-            nbt.putInt("mf.stack", Item.getRawId(stack.getItem()));
+            view.putInt("mf.stack", Item.getRawId(stack.getItem()));
         } else {
-            nbt.putInt("mf.stack", 0);
+            view.putInt("mf.stack", 0);
         }
-        super.writeNbt(nbt, registries);
+        super.writeData(view);
     }
 
     @Override
-    protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registries) {
-        var itemId = nbt.getInt("mf.stack");
-        if (itemId.isPresent() && itemId.get() != 0) {
-            stack = new ItemStack(Item.byRawId(itemId.get()));
+    protected void readData(ReadView view) {
+        var itemId = view.getInt("mf.stack", 0);
+        if (itemId != 0) {
+            stack = new ItemStack(Item.byRawId(itemId));
         }
-        var savedCounter = nbt.getInt("mf.tradeCount");
-        savedCounter.ifPresent(integer -> counter = integer);
 
-        super.readNbt(nbt, registries);
+        counter = view.getInt("mf.tradeCount", 0);
+
+        super.readData(view);
     }
 }
